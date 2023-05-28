@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar-example">
+    <section id="sec1" style="background:red;"></section>
+    <section id="sec2" style="background:blue;"></section>
+    <section id="sec3" style="background:black;"></section>
+    <section id="sec4" style="background:orange;"></section>
+    <section id="sec5" style="background:grey;"></section>
+    <div class="floatWrap">
+        <div class="navbar-example">
+            <ul class="nav nav-tabs dotBox" role="tablist">
+                <li class=""><a href="#sec1"></a></li>
+                <li><a href="#sec2"></a></li>
+                <li><a href="#sec3"></a></li>
+                <li><a href="#sec4"></a></li>
+                <li><a href="#sec5"></a></li>
+            </ul>
+        </div>
+        <div class="goTop">⬆️</div>
+    </div>
+    <select name="" id="pageMove" onchange="window.open(value,'_blank');">
+        <option value="">선택</option>
+        <option value="https://www.tlj.co.kr:7008/story/health/flour.asp">밀가루</option>
+        <option value="https://www.tlj.co.kr:7008/story/health/salt.asp">천일염</option>
+    </select>
+    <div class="icon_garage couple"></div>
+</body>
+</html>
+
+<script src="script.js"></script>

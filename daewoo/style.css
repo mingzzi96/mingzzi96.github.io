@@ -1,0 +1,38 @@
+.fp-tableCell {
+    display: block !important;
+}
+
+.swiper {
+    height: calc(100vh - 100px);
+    background: #000;
+}
+
+.mySwiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mySwiper .text_box {
+    color: #fff;
+    text-align: center;
+}
+
+.mySwiper .text_box h2 {
+    font-size: 34px;
+}
+
+.mySwiper .text_box p {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.mySwiper .text_box span {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    width: 204px;
+    padding: 6px 2px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
