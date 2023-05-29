@@ -28,8 +28,6 @@ function headerColorChange() {
         let challengeTop = document.querySelector(".challenge").offsetTop;
         let possibleTop = document.querySelector(".slide--possibility").offsetTop;
         let challengeAssetTop = document.querySelector(".challenge--asset").offsetTop;
-        console.log(challengeAssetTop)
-        console.log(htmlTop)
         
         if(challengeTop <= htmlTop && htmlTop < possibleTop){
             // section challenge보다 htmlTop이 더 클때
@@ -55,3 +53,40 @@ headerColorChange()
 window.addEventListener("resize", function(){
     headerColorChange()
 })
+
+// footer marquee text
+const pTag1 = document.querySelector('.footer__marquee');
+
+const text1 = '<div class="marquee__join--item green"><span>JOIN</span><i>US</i></div><div class="marquee__join--item pink"><span>JOIN</span><i>US</i></div><div class="marquee__join--item blue"><span>JOIN</span><i>US</i></div><div class="marquee__join--item green"><span>JOIN</span><i>US</i></div><div class="marquee__join--item pink"><span>JOIN</span><i>US</i></div><div class="marquee__join--item blue"><span>JOIN</span><i>US</i></div>'
+
+const textArr1 = [];
+textArr1.push(text1);
+
+function initTexts(element, textArray) {
+    textArray.push(...textArray)
+    element.insertAdjacentHTML("afterbegin", textArray);
+}
+initTexts(pTag1, textArr1);
+
+let count1 = 0;
+
+function marqueeText(count, element, direction){
+    if (count > element.scrollWidth / 2){
+        element.style.transform = `translate(0)`
+        count = 0
+    }
+    element.style.transform = `translateX(${count * direction}px)`;
+    return count;
+}
+
+function animate() {
+    count1++;
+
+    count1 = marqueeText(count1, pTag1, 1);
+    // direction -1이면 왼쪽으로 흐르고 1은 오른쪽으로 흐름
+    // 대신 css로 전체 영역을 오른쪽 끄트머리에 맞춰주어야함 flex로 end 해주거나, right 0
+
+    window.requestAnimationFrame(animate)
+}
+
+animate();
