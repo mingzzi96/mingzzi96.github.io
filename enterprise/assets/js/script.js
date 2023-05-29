@@ -25,6 +25,7 @@ function headerColorChange() {
 
     window.addEventListener("scroll", function(){
         let htmlTop = document.querySelector("html").scrollTop;
+        let showcase = document.querySelector(".showcase").offsetTop;
         let challengeTop = document.querySelector(".challenge").offsetTop;
         let possibleTop = document.querySelector(".slide--possibility").offsetTop;
         let challengeAssetTop = document.querySelector(".challenge--asset").offsetTop;
@@ -46,8 +47,33 @@ function headerColorChange() {
             document.querySelector("header").classList.add("white")
             document.querySelector("body").classList.remove("dark")
         }
+
+        // goTop 버튼 제어
+        if( showcase <= htmlTop ){
+            $(window).bind('wheel', function(event){
+                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                    // scroll up
+                    document.querySelector(".goTop").classList.add("show")
+                }
+                else {
+                    // scroll down
+                    document.querySelector(".goTop").classList.remove("show")
+                }
+            });
+        }else {
+            document.querySelector(".goTop").classList.remove("show")
+        }
     })
 }
+
+// goTop 버튼 클릭 제어
+
+document.querySelector(".goTop").addEventListener("click", function(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+})
 
 headerColorChange()
 window.addEventListener("resize", function(){
