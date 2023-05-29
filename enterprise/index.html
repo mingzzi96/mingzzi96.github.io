@@ -9,6 +9,48 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <header tabindex="0" class="show">
+        <div class="header__container">
+            <h2 class="header__logo">
+                <img src="assets/images/ebc_logo.svg" alt="">
+            </h2>
+            <nav>
+                <ul role="list" class="header__nav">
+                    <li role="listitem" class="header__nav--item header__senario">
+                        <a href="javascript:void(0)">시나리오 보기</a>
+                    </li>
+                    <li role="listitem" class="header__nav--item header__qa">
+                        <a href="javascript:void(0)">제휴문의</a>
+                    </li>
+                    <li role="listitem" class="header__nav--item header__lang">
+                        <a href="javascript:void(0)">
+                            <span class="header__lang--img">
+                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill-rule="nonzero" fill="none">
+                                        <path stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 15h5v5H4zM9 15h5v5H9zM14 15h5v5h-5zM14 5h5v5h-5zM14 10h5v5h-5zM9 10h5v5H9zM4 10h5v5H4z"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="header__lang--txt">KR</span>
+                            <span class="header__lang--arw">
+                                <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m2 4 3 2 3-2" stroke="#FFF" stroke-width="1.2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <ul role="list" class="header__lang--subnav">
+                            <li role="listitem">
+                                <a href="/ko" class="active">KR</a>
+                            </li>
+                            <li role="listitem">
+                                <a href="/eng">ENG</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="container" role="main">
         <section class="intro">
             <div class="intro__description">
@@ -24,9 +66,30 @@
                     <!-- 그 이하일때 표시될 이미지 -->
                     <img src="assets/images/intro-poster--mo" alt="" srcset="">
                 </picture>
-                <video src="" muted loop playsinline onloadeddata="Vidload()">
+                <video muted loop autoplay onloadeddata="videoLoad()">
                     <source src="assets/video/vid_PC.mp4" type="">
                 </video>
+                <div class="intro__description--down-arw">
+                    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M40 40V0H0v40z"></path>
+                          <g stroke="#FFF" stroke-width="2">
+                            <path d="M20 31.18V6.566M31.429 21.29 20 32.72 8.571 21.29"></path>
+                          </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section class="showcase">
+            <div class="showcase__sticky">
+                <div class="showcase__img">
+                    <picture>
+                        <source media="(min-width: 740px)" srcset="assets/images">
+                    </picture>
+                </div>
+                <div class="showcase__title"></div>
+                <div class="showcase__discription"></div>
             </div>
         </section>
     </div>
