@@ -89,4 +89,24 @@ function animate() {
     window.requestAnimationFrame(animate)
 }
 
-animate();
+animate()
+
+
+
+// 스크롤 맨아래 감지
+function detectBottom() {
+    let scrollTop = $(window).scrollTop();
+    let innerHeight = $(window).innerHeight();
+    let scrollHeight = $('body').prop('scrollHeight');
+    if (scrollTop + innerHeight >= scrollHeight) {
+        $(".footer__marquee").addClass("show");
+        return true;
+    } else {
+        $(".footer__marquee").removeClass("show");
+        return false;
+    }
+}
+
+$(window).scroll(function(){
+    detectBottom ()
+});
