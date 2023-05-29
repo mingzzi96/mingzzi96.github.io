@@ -1,0 +1,55 @@
+/*
+=====================================
+intro
+=====================================
+*/
+
+.intro {
+    height: 600vh;
+    width: 100%;
+}
+
+.intro__description {
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.intro__description .intro__description--box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.intro__description picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.intro__description picture.loaded {
+    opacity: 0;
+}
+
+.intro__description img, .intro__description source {
+    width: 100%;
+    height: 100%;
+}
+
+.intro__description video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.intro__description video source {
+    width: 100%;
+    height: 100%;
+}
