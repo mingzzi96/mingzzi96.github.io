@@ -179,7 +179,7 @@ $(function () {
     marqueeMotion = gsap.to(".marquee__join", {
         duration: 45,
         xPercent: 100,
-        repeat: 1,
+        repeat: -1,
         ease: "none",
         paused: true
     })
@@ -190,20 +190,14 @@ $(function () {
         end: "100% 100%",
         // markers: true,
         onEnter: () => {
-            marqueeMotion.play()
+            marqueeMotion.play();
+            $(".footer__marquee").addClass("show");
         },
         onLeaveBack: () => {
             // start 지점을 빠져나갔을때
-            marqueeMotion.pause()
+            marqueeMotion.pause();
+            $(".footer__marquee").removeClass("show");
         }
-    })
-    // marquee show/hide
-    ScrollTrigger.create({
-        trigger: ".footer",
-        start: "80% 100%",
-        end: "190% 100%",
-        // markers: true,
-        toggleClass: { targets: ".footer__marquee", className: "show" },
     })
 
     // prove prove--asset
