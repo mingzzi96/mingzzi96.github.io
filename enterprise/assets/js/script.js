@@ -235,6 +235,10 @@ $(function () {
                 return window.innerWidth / 3;
             }
         }, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(1)", { opacity: 0 }, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 1 }, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 0 })
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child .text-gradient", { opacity: 1 })
 
     // slideMotion
     const slideServiceMotion = gsap.timeline({
