@@ -232,7 +232,7 @@ $(function () {
         .to(".slide--unchange .slide__slider", { xPercent: -100 }, "a")
         .to(".slide--unchange .slide__slider", {
             x: () => {
-                return window.innerWidth / 3;
+                return window.innerWidth / 3 + 23;
             }
         }, "a")
         .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(1)", { opacity: 0 }, "a")
