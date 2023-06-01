@@ -716,6 +716,276 @@ colorband
     z-index: 2;
 }
 
+
+/*
+=====================================
+sticky--area
+=====================================
+*/
+.sticky--area {
+    position: relative;
+    width: 100%;
+}
+
+/*
+=====================================
+unchange
+=====================================
+*/
+.slide--unchange {
+    position: sticky;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.slide--unchange.hide {
+    opacity: 0;
+}
+
+.slide--unchange .slide__card--list .slide__card--item {
+    width: 303px;
+    height: 404px;
+    border: 2px solid #fff;
+}
+
+.slide--unchange .slide__card--list .slide__card--item:nth-child(1),
+.slide--unchange .slide__card--list .slide__card--item:nth-child(2),
+.slide--unchange .slide__card--list .slide__card--item:nth-child(3) {
+    background: #000;
+}
+
+.slide--unchange .slide__card--list .slide__card--item:last-child .card__item--story {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slide--unchange .slide__card--list .slide__card--item:last-child img {
+    width: 150px;
+    height: 125px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+.slide--unchange .slide__card--list .slide__card--item:last-child .text-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.slide--unchange .slide__card--list .slide__card--item:last-child img:first-child {
+    opacity: 1;
+}
+.slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2) {
+    opacity: 0;
+}
+
+.slide--unchange .slide__card--list .slide__card--item:nth-child(1) .card__item--title {
+    margin-bottom: 40px;
+}
+
+.card__item--story img {
+    width: 219px;
+}
+
+/*
+=====================================
+everything
+=====================================
+*/
+.everything {
+    padding: 0 100px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: none;
+    opacity: 0;
+    margin-top: 100vh;
+}
+
+.everything.show {
+    opacity: 1;
+}
+
+.everything__inner {
+    display: flex;
+}
+
+.everything__card {
+}
+
+.everything__card--sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 303px;
+    display: flex;
+    align-items: center;
+}
+
+.everything__card--item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 404px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#000,#000),linear-gradient(300deg,#e657af,#0049ff,#43cf2e);
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+}
+
+.everything__card--item .text-gradient {
+    font-size: 36px;
+}
+
+.everything__main {
+    padding-top: 120vh;
+    padding-left: 9vh;
+}
+
+.everything__main .everything__main--title {
+    font-size: 56px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.everything__main--subtext {
+    font-size: 56px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.89;
+    margin-top: 24px;
+}
+
+.everything__list {
+    margin-top: 48px;
+}
+
+.everything__item {
+    display: flex;
+    align-items: center;
+}
+
+.everything__item ~ .everything__item {
+    margin-top: 36px;
+}
+
+.everything__item h3 {
+    padding-left: 52px;
+    font-size: 18px;
+    line-height: 1.89;
+    font-weight: 600;
+    color: #fff;
+}
+
+.everything__item--gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    /* flex: 0 0.5 400px; */
+    height: 200px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#000,#000),linear-gradient(300deg,#e657af,#0049ff,#43cf2e);
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+    width: 340px;
+    height: 170px;
+}
+
+.text-gradient {
+    background-image: linear-gradient(90deg,#43cf2e,#0049ff,#e657af);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.everything__main--service {
+    padding-top: 80px;
+    /* padding-left: 9vh; */
+    padding-bottom: 80vh;
+}
+
+.everything__main--service .service__list {
+    display: flex;
+    align-items: center;
+    gap: 0 26px;
+}
+
+.everything__main--service .service__link {
+    width: 240px;
+    height: 240px;
+    display: block;
+    margin-top: 48px;
+}
+
+.everything__main--service .service__link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.everything__main--service .service__discription {
+    font-size: 18px;
+    line-height: 1.89;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+/*
+=====================================
+slide--service
+=====================================
+*/
+
+.slide--service {
+    margin-top: -100vh;
+    opacity: 1;
+    padding: 0 100px;
+    opacity: 0;
+}
+
+.slide--service.show {
+    opacity: 1;
+}
+
+.slide--service .slide__slider {
+    padding-left: 24px;
+}
+
+.slide--service .slide__card--list .slide__card--item {
+    height: 404px;
+}
+
+.slide__card--list .slide__card--item.gradient-line {
+    padding: 0;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#000,#000),linear-gradient(300deg,#e657af,#0049ff,#43cf2e);
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+    width: 303px;
+    height: 404px;
+}
+
 /*
 =====================================
 challenge--asset
@@ -760,6 +1030,7 @@ slide--asset
     border-radius: 20px;
     overflow: hidden;
     width: 303px;
+    height: 404px;
 
 }
 .slide__card--list .slide__card--item:not(:last-child) {
@@ -834,11 +1105,15 @@ slide--asset
 }
 .slide__card--list .card__item--foot {
     position: relative;
-    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 9;
+    position: absolute;
+    bottom: 34px;
+    left: 0;
+    width: 100%;
+    padding: 0 34px;
 }
 .slide__card--list .card__item--foot h4 {
     font-weight: 600;
