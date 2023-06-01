@@ -132,7 +132,7 @@ $(function () {
             start: "0% 0%", // 트리거 기준  / 윈도우 기준
             end: "100% 100%", // 트리거 기준  / 윈도우 기준
             // markers: true,
-            scrub: 1, // 문대기
+            scrub: 0, // 문대기
             invalidateOnRefresh: true, // 반응형 잘 먹히도록
         },
         default: {
@@ -174,6 +174,91 @@ $(function () {
         .addLabel("a")
         .to(".colorband .bg", { opacity: 1 }, "a") // label-=1초 앞서서 들어가게끔 초단위
         .to(".colorband__text", { opacity: 1 }, "a")
+
+    // everything Motion
+    ScrollTrigger.create({
+        trigger: ".everything",
+        start: "0% 0%",
+        end: "100% 100%",
+        // markers: true,
+        scrub: 0,
+        onEnter: () => {
+            $(".slide--unchange").addClass("hide");
+            $(".everything").addClass("show");
+        },
+        onLeaveBack: () => {
+            // start 지점을 빠져나갔을때
+            $(".slide--unchange").removeClass("hide");
+            $(".everything").removeClass("show");
+        }
+    })
+
+    //  slide--service Motion
+    ScrollTrigger.create({
+        trigger: ".slide--service",
+        start: "0% 0%",
+        end: "100% 100%",
+        // markers: true,
+        scrub: 0,
+        onEnter: () => {
+            $(".slide--service").addClass("show");
+            $(".everything").removeClass("show");
+        },
+        onLeaveBack: () => {
+            // start 지점을 빠져나갔을때
+            $(".slide--service").removeClass("show");
+            $(".everything").addClass("show");
+        }
+    })
+
+
+    // slideMotion
+    const slideUnchangeMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".slide--unchange",
+            start: "0% 0%", // 트리거 기준  / 윈도우 기준
+            end: "100% 100%", // 트리거 기준  / 윈도우 기준
+            // markers: true,
+            scrub: 0, // 문대기
+            invalidateOnRefresh: true, // 반응형 잘 먹히도록
+        },
+        default: {
+            ease: "none"
+        }
+    })
+
+    slideUnchangeMotion
+        .addLabel("a")
+        .to(".slide--unchange .slide__slider", { xPercent: -100 }, "a")
+        .to(".slide--unchange .slide__slider", {
+            x: () => {
+                return window.innerWidth / 3;
+            }
+        }, "a")
+
+    // slideMotion
+    const slideServiceMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".slide--service",
+            start: "0% 0%", // 트리거 기준  / 윈도우 기준
+            end: "100% 100%", // 트리거 기준  / 윈도우 기준
+            // markers: true,
+            scrub: 0, // 문대기
+            invalidateOnRefresh: true, // 반응형 잘 먹히도록
+        },
+        default: {
+            ease: "none"
+        }
+    })
+
+    slideServiceMotion
+        .addLabel("a")
+        .to(".slide--service .slide__slider", { xPercent: -100 }, "a")
+        .to(".slide--service .slide__slider", {
+            x: () => {
+                return window.innerWidth / 3;
+            }
+        }, "a")
 
 
     marqueeMotion = gsap.to(".marquee__join", {
