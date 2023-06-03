@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ICON/30/Link</title>
+    <g id="ICON/30/Link" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="AREA" x="0" y="0" width="30" height="30"></rect>
+        <g id="icon" transform="translate(8.500000, 8.500000)" fill="#ffffff" stroke="#ffffff" stroke-width="1.03">
+            <path d="M12.4363799,0.515 L12.4366932,9.46530714 L11.8908339,9.46530714 L11.8898459,1.49580966 L1.11428064,12.2716749 L0.728307371,11.8857017 L11.5534011,1.05985802 L3.48642857,1.06077916 L3.48642857,0.515 L12.4363799,0.515 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

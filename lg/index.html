@@ -20,18 +20,144 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </head>
+
+<!-- LG 홈페이지에서 이미지 형식이 webp 형식으로 저장되어서 링크로 가져왔어욤 -->
 <body>
-    <header class="">
-    </header>
+    <!-- <header class="">
+    </header> -->
     <div class="container" role="main">
         <section class="intro">
             <!-- blind에 h2를 사용해도 되나요? -->
-            <h2 class="blind">WHY LG OLED</h2>
-            <div class="intro__stikcy">
-                <div class="intro__picture">
-                    <img src="https://www.lg.com/uk/why-lgoled/images/overview/kv/OVERVIEW_KV_02_PC_00001.jpg" alt="why oled scroll imgs">
+            <div class="blind">WHY LG OLED</div>
+            <div class="intro__picture">
+                <div class="intro--sticky"></div>
+                <div class="intro--discription">
+                    <p class="intro--discription--text">LG OLED evo Logo<br>
+                        This is the OLED evo<br>
+                        difference</p>
+                    <p class="intro--discription--text">Experience television<br>
+                        that bursts into life before<br>
+                        your eyes</p>
                 </div>
-                <div class="intro__video"></div>
+            </div>
+            <div class="intro__video">
+                <div class="intro--sticky">
+                    <video src="assets/video/LGLW_60s_Notext_PC-2.webm"></video>
+                </div>
+                <div class="intro--discription">
+                    <p class="intro--discription--text">Light up your world with<br>
+                        captivating LG OLED evo</p>
+                </div>
+            </div>
+        </section>
+        <section class="display">
+            <div class="blind">How it actually work</div>
+            <div class="display__title">
+                <div class="display__title--inner">
+                    <div class="display__title--left">
+                        <h2 class="main_tag">SELF-LIT</h2>
+                        <h3 class="display__title--text">Pixels illuminate<br>
+                            independently</h3>
+                    </div>
+                    <div class="display__title--right">
+                        <div class="display__title--right--inner">
+                            <p class="display__title--discription">Discover the full potential<br>
+                                of television free from<br>
+                                the confines of a backlight.</p>
+                            <a href="javascript:void(0)" class="learn_more">
+                                <span>LEARN MORE</span>
+                                <img src="https://www.lg.com/uk/why-lgoled/images/overview/more_arrow.png" alt="" class="display__arw">
+                                <img src="https://www.lg.com/uk/why-lgoled/images/overview/more_arrow_hover.png" alt="" class="display__arw--hover">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="display__pixcel">
+                <div class="display__pixcel--sticky">
+
+                </div>
+            </div>
+            <div class="display__vivid">
+                <h3 class="display__sub--text">Rich and vivid colours<br>
+                    take the stage.</h3>
+            </div>
+            <div class="display__size">
+                <div class="display__size--sticky">
+                    <h3 class="display__sub--text">From the personal,<br>
+                        to the EPIC screen size</h3>
+                    <div class="display__size--group">
+                        <div class="sz size1">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_42.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_42_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size2">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_48.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_48_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size3">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_55.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_55_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size4">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_65.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_65_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size5">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_77.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_77_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size6">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_83.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_83_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size7">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_88.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_88_blur.png" alt="" class="tv--blur">
+                        </div>
+                        <div class="sz size8">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_97.png" alt="" class="tv">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/screen_bt_bg.png" alt="" class="tv--shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="movie">
+            <div class="blind">LG OLED is perfect for movie</div>
+            <div class="movie__inner">
+                <div class="movie__sticky">
+                    <div class="movie__img">
+                        <img src="assets/images/room_1.jpeg" alt="">
+                        <img src="https://www.lg.com/uk/why-lgoled/images/overview/room_2.jpg" alt="">
+                    </div>
+                    <div class="movie__img2"></div>
+                    <div class="movie__video">
+                        <!-- auto play 줬는데 재생이 안돼용 -->
+                        <video autoplay src="https://www.lg.com/uk/why-lgoled/datafile/Why%20OLED_OVERVIEW_Cinema_PC.mp4"></video>
+                    </div>
+                    <div class="movie__title">
+                        <h2 class="main_tag">CINEMA</h2>
+                        <h3>Made for movie immersion</h3>
+                        <p>Watch your favourite films in a whole new light.</p>
+                        <a href="javascript:void(0)" class="learn_more">
+                            <span>LEARN MORE</span>
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/more_arrow.png" alt="" class="display__arw">
+                            <img src="https://www.lg.com/uk/why-lgoled/images/overview/more_arrow_hover.png" alt="" class="display__arw--hover">
+                        </a>
+                    </div>
+                    <div class="movie__scroll">
+                        <p>Breathtaking images<br>
+                            and heart-pounding sound<br>
+                            at its core</p>
+                        <img src="https://www.lg.com/uk/why-lgoled/images/overview/lite_overview_cinema_ai.jpg" alt="LG AI Processor Image">
+                        <a href="javascript:void(0)" class="learn_more">
+                            <span>DISCOVER AI PROCESSOR</span>
+                            <img src="assets/images/icon_arrow_link_white.svg" alt="" class="display__arw">
+                            <img src="assets/images/icon_arrow_link.svg" alt="" class="display__arw--hover">
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
