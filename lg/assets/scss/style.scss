@@ -101,7 +101,7 @@
             transform: translateX(-50%);
             display: block;
             width: 100%;
-            height: 100%;
+            // height: 100%;
             object-fit: cover;
             visibility: hidden;
         }
@@ -194,16 +194,28 @@
                 height: 100%;
                 object-fit: contain;
             }
+
+            .pixcelImg1 {
+                visibility: visible;
+            }
         }
     }
 
     &__vivid {
+        position: relative;
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
 
         .display__sub--text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
         }
     }
@@ -290,6 +302,7 @@
         position: sticky;
         top: 0;
         left: 0;
+        overflow: hidden;
     }
 
     &__img {
@@ -386,8 +399,9 @@
         padding: 140px 0;
         background: #000;
 
-        img {
+        .ai {
             width: 100%;
+            margin-bottom: 40px;
         }
 
         p {
@@ -397,7 +411,7 @@
             color: #fff;
             max-width: 540px;
             width: 100%;
-            margin: 0 auto 40px;
+            margin: 0 auto;
         }
 
         .learn_more {
@@ -425,6 +439,261 @@
             border: 2px solid #000;
             background: rgba(255,255,255,255);
             color: #000;
+        }
+    }
+}
+
+// game section
+.game {
+    &__inner {
+        height: 200vh;
+    }
+
+    &__sticky {
+        width: 100%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+
+        p {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.14;
+            letter-spacing: -0.02em;
+            margin-bottom: 30px;
+        }
+
+        .learn_more {
+            margin: 0 auto;
+        }
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// design section
+.design {
+    background: #000;
+    padding-top: 120px;
+
+    &__title {
+        color: #fff;
+        text-align: center;
+
+        h3 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.14;
+            letter-spacing: -0.02em;
+        }
+
+        .learn_more {
+            margin: 0 auto;
+        }
+    }
+
+    &__sticky {
+        height: 600vh;
+
+        &--box {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__img--wrap1,
+    &__img--wrap2 {
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &__img--wrap1 {
+        img {
+            visibility: hidden;
+
+            &:nth-child(2) {
+                visibility: visible;
+            }
+        }
+    }
+
+    &__img--wrap2 {
+        width: 100%;
+        height: 100vh;
+        clip-path: inset(0% 100% 0% 0%);
+    }
+
+    &__discription {
+        position: absolute;
+        bottom: -20%;
+        left: 30%;
+        color: #fff;
+        font-size: 30px;
+        // bottom: -50vh;
+        line-height: 1.14;
+        font-weight: 600;
+        opacity: 0;
+    }
+
+    &__scroll {
+        padding: 60px 0 100px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// smart section
+.smart {
+    padding: 40px 0 120px;
+    background: #000;
+
+    &__video {
+        max-width: 1200px;
+        margin: 0 auto 120px;
+    }
+
+    &__title {
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.14;
+            letter-spacing: -0.02em;
+        }
+
+        .learn_more {
+            margin: 0 auto;
+            max-width:350px;
+            width: 100%;
+        }
+    }
+}
+
+// discover section
+.discover {
+    padding: 100px 0;
+
+    &__inner {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 56px;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 75px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: start;
+        flex-wrap: wrap;
+        gap: 15px 11px;
+
+        &--item {
+            width: calc(33.36% - 11px);
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 487px;
+            max-height: 700px;
+            height: 54.68vw;
+            background: #f4f4f4;
+        }
+
+        &--content {
+            padding: 30px;
+            height: calc(100% - 315px);
+
+            h3 {
+                font-size: 26px;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            
+            p{
+                color: #666;
+                line-height: 1.2;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            span {
+                font-size: 15px;
+                color: #888;
+                margin: 15px 0 0 0;
+                line-height: 1.25;
+            }
+        }
+
+        &--sub {
+            padding: 94px 0 90px 22px;
+
+            li {
+                color: #888;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+        }
+
+        .learn_more {
+            width: auto;
+            display: inline-block;
+            padding: 12px;
+            margin-left: 30px;
+            background: #000;
+
+            &:hover {
+                background: #fff;
+                border: 2px solid #000;
+            }
         }
     }
 }
