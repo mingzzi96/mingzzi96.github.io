@@ -1,454 +1,324 @@
 $(function () {
-    gsap.set(".intro__description p", {
-        opacity: 0
-    })
 
-    const introMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".intro",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%",
-            // markers: true,
-            scrub: 0, // 문대기 없애줌
-        },
-        default: {
-            ease: "none" // ease 초기화해서 일정하게 들어가게끔
-        }
-    })
-
-    introMotion
-        .addLabel("a") // 같이 실행되고 싶은곳에만 추가
-        .to(".intro__description .bg", { opacity: 1 }, "a")
-        .to(".intro__description p:nth-child(1)", { opacity: 1 }, "a")
-        .to(".intro__description p:nth-child(1)", { opacity: 0 })
-        .to(".intro__description p:nth-child(2)", { opacity: 1 })
-        .to(".intro__description p:nth-child(2)", { opacity: 0 })
-        .to(".intro__description p:nth-child(3)", { opacity: 1 })
-        .to(".intro__description p:nth-child(3)", { opacity: 0 })
-        .to(".intro__description p:nth-child(4)", { opacity: 1 })
-
-    const introArwMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".intro",
-            start: "90% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%",
-            // markers: true,
-            scrub: 0, // 문대기 없애줌
-        },
-        default: {
-            ease: "none" // ease 초기화해서 일정하게 들어가게끔
-        }
-    })
-
-    introArwMotion
-        .to(".intro__description--down-arw", { opacity: 0 })
-
-    // showcase
-    // showcase__title--text
-
-    const showcaseMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".showcase",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%",
-            // markers: true,
-            scrub: 1, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    showcaseMotion
-        .from(".showcase__title", { opacity: 0 })
-        .to(".showcase .bg", { opacity: 1 })
-        .addLabel("a")
-        .to(".showcase__title--text:nth-child(1)", { xPercent: 100 }, "a")
-        .to(".showcase__title--text:nth-child(3)", { xPercent: -100 }, "a")
-        .addLabel("fadeOut")
-        .to(".showcase__title", { opacity: 0 }, "fadeOut")
-        .to(".showcase .bg", { opacity: 0 }, "fadeOut")
-
-
-        .to(".showcase__img picture:nth-child(3)", { height: 0 })
-        .to(".showcase__img picture:nth-child(2)", { height: 0 })
-        .addLabel("fadeIn")
-        .to(".showcase .showcase__discription", { opacity: 1 }, "fadeIn")
-        .to(".showcase .bg", { opacity: 1 }, "fadeIn")
-
-
-    // header-dark-area01  menu color change
-    ScrollTrigger.create({
-        trigger: ".header-dark-area01",
-        start: "0% 50%",
-        end: "100% 50%",
-        // markers: true,
-        toggleClass: { targets: "header", className: "dark" }
-    })
-    // header-dark-area02  menu color change 
-    ScrollTrigger.create({
-        trigger: ".header-dark-area02",
-        start: "0% 50%",
-        end: "100% 50%",
-        // markers: true,
-        toggleClass: { targets: "header", className: "dark" }
-    })
-
-    // prove prove--value
-
-    const proveMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".prove--value",
-            start: "0% 70%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 1, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    proveMotion
-        .addLabel("a")
-        .to(".prove--value .prove__stick", { width: "30%" }, "a")
-        .to(".prove--value .prove__title--text:nth-child(1) span", { xPercent: -172 }, "a")
-        .to(".prove--value .prove__title--text:nth-child(3) span", { xPercent: 134 }, "a")
-
-
-    // dark area
-    ScrollTrigger.create({
-        trigger: ".dark-area",
-        start: "0% 50%",
-        end: "100% 50%",
-        // markers: true,
-        toggleClass: { targets: "body", className: "dark" }
-    })
-
-    // slideMotion
-    const slideMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--possibility",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    slideMotion
-        .addLabel("a")
-        .to(".slide--possibility .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--possibility .slide__slider", {
-            x: () => {
-                return window.innerWidth;
-            }
-        }, "a")
-
-    // colorband
-    gsap.set(".colorband__item:nth-child(1),.colorband__item:nth-child(2)", {
-        xPercent: -50
-    })
-    gsap.set(".colorband__item:nth-child(3)", {
-        xPercent: 50
-    })
-    const colorbandMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".colorband",
-            start: "0% 95%", // 트리거 기준  / 윈도우 기준
-            end: "100% 30%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 1, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    colorbandMotion
-        .to(".colorband__item", { xPercent: 0 })
-        .addLabel("a")
-        .to(".colorband .bg", { opacity: 1 }, "a") // label-=1초 앞서서 들어가게끔 초단위
-        .to(".colorband__text", { opacity: 1 }, "a")
-
-    // everything Motion
-    ScrollTrigger.create({
-        trigger: ".everything",
-        start: "0% 0%",
-        end: "100% 100%",
-        // markers: true,
-        scrub: 0,
-        onEnter: () => {
-            $(".slide--unchange").addClass("hide");
-            $(".everything").addClass("show");
-        },
-        onLeaveBack: () => {
-            // start 지점을 빠져나갔을때
-            $(".slide--unchange").removeClass("hide");
-            $(".everything").removeClass("show");
-        }
-    })
-
-    //  slide--service Motion
-    ScrollTrigger.create({
-        trigger: ".slide--service",
-        start: "0% 0%",
-        end: "100% 100%",
-        // markers: true,
-        scrub: 0,
-        onEnter: () => {
-            $(".slide--service").addClass("show");
-            $(".everything").removeClass("show");
-        },
-        onLeaveBack: () => {
-            // start 지점을 빠져나갔을때
-            $(".slide--service").removeClass("show");
-            $(".everything").addClass("show");
-        }
-    })
-
-
-    // slideMotion
-    const slideUnchangeMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--unchange",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    slideUnchangeMotion
-        .addLabel("a")
-        .to(".slide--unchange .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--unchange .slide__slider", {
-            x: () => {
-                return window.innerWidth / 3 + 23;
-            }
-        }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(1)", { opacity: 0 }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 1 }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 0 })
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child .text-gradient", { opacity: 1 })
-
-    // slideMotion
-    const slideServiceMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--service",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    slideServiceMotion
-        .addLabel("a")
-        .to(".slide--service .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--service .slide__slider", {
-            x: () => {
-                return window.innerWidth / 3;
-            }
-        }, "a")
-
-
-    marqueeMotion = gsap.to(".marquee__join", {
-        duration: 45,
-        xPercent: 100,
-        repeat: -1,
-        ease: "none",
-        paused: true
-    })
-    // marquee
-    ScrollTrigger.create({
-        trigger: ".footer",
-        start: "100% 100%",
-        end: "100% 100%",
-        // markers: true,
-        onEnter: () => {
-            marqueeMotion.play();
-            $(".footer__marquee").addClass("show");
-        },
-        onLeaveBack: () => {
-            // start 지점을 빠져나갔을때
-            marqueeMotion.pause();
-            $(".footer__marquee").removeClass("show");
-        }
-    })
-
-    // prove prove--asset
-
-    const proveAssetMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".prove--asset",
-            start: "0% 70%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 1, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    proveAssetMotion
-        .addLabel("a")
-        .to(".prove--asset .prove__stick", { width: "30%" }, "a")
-        .to(".prove--asset .prove__title--text:nth-child(1) span", { xPercent: -114 }, "a")
-        .to(".prove--asset .prove__title--text:nth-child(3) span", { xPercent: 120 }, "a")
-
-    // slideMotion slide--asset
-    const slideAssetMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--asset",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    slideAssetMotion
-        .addLabel("a")
-        .to(".slide--asset .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--asset .slide__slider", {
-            x: () => {
-                return window.innerWidth;
-            }
-        }, "a")
-
-    // slideAssetMotino - guide_text motion
-    const guideTextMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--asset",
-            start: "30% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    guideTextMotion
-        .addLabel("a")
-        .to(".slide--asset .guide_text--item:nth-child(1)", { opacity: 0 }, "a")
-        .to(".slide--asset .guide_text--item:nth-child(2)", { opacity: 1 }, "a")
-
-    // creator
-    const creatorMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".creator",
-            start: "00% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 1, // 문대기
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    creatorMotion
-        .to(".creator__title", { opacity: 1 })
-        .to(".creator .intro__description--down-arw", { opacity: 1 }, "-=0.7")
-        .to(".creator .intro__description--down-arw", { opacity: 0 })
-
-
-    // slideMotion slide--creator
-    const slideCreatorMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--creator",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
-
-    slideCreatorMotion
-        .addLabel("a")
-        .to(".slide--creator .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--creator .slide__slider", {
-            x: () => {
-                return window.innerWidth;
-            }
-        }, "a")
-
-})
-
-
-// video 로드 확인하여 이미지 opacity 0으로 만들어주기
-function videoLoad() {
-    console.log("video loaded!")
-    document.querySelector(".intro picture").classList.add("loaded")
-}
-
-// lang menu
-let langChangeBtn = document.querySelector(".header__lang");
-let langChangeSubNav = document.querySelector(".header__lang--subnav");
-langChangeBtn.addEventListener("click", function () {
-    langChangeSubNav.classList.toggle("show");
-})
-
-// header 특정 위치 이상부터에서만 보이도록
-window.addEventListener("scroll", function () {
-    if (document.querySelector("html").scrollTop > 500) {
-        document.querySelector("header").classList.add("show")
-    } else {
-        document.querySelector("header").classList.remove("show")
+    // intro picture imgs set
+    for (i = 0; i <= 35; i++) {
+        $(".intro .intro__picture .intro--sticky").append(`<img class='intro__img${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/kv/OVERVIEW_KV_02_PC_${String(i).padStart(5, '0')}.jpg' alt=''>`);
     }
-})
 
-// goTop 버튼 보여주기 제어
-window.addEventListener("scroll", function () {
-    let htmlTop = document.querySelector("html").scrollTop;
-    let showcase = document.querySelector(".showcase").offsetTop;
-
-    // goTop 버튼 제어
-    if (showcase <= htmlTop) {
-        $(window).bind('wheel', function (event) {
-            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                // scroll up
-                document.querySelector(".goTop").classList.add("show")
-            }
-            else {
-                // scroll down
-                document.querySelector(".goTop").classList.remove("show")
-            }
-        });
-    } else {
-        document.querySelector(".goTop").classList.remove("show")
-    }
-})
-
-// goTop 버튼 클릭 제어
-
-document.querySelector(".goTop").addEventListener("click", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    const introPicture = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".intro__picture",
+            start: "0% 0%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 1,
+        }
     })
+    // intro picture imgs motion
+    function introPictureFunction() {
+        introPicture.to('.intro__img1', {
+            'visibility': 'visible',
+            duration: 0.2
+        })
+        introPicture.to('.intro__img0', {
+            'visibility': 'hidden',
+            duration: 0.2
+        })
+        for (i = 2; i < 35; i++) {
+            introPicture.to('.intro__img' + (i), {
+                'visibility': 'visible',
+                duration: 0.2
+            })
+            if (i >= 2) {
+                introPicture.to('.intro__img' + (i - 1), {
+                    'visibility': 'hidden',
+                    duration: 0.2
+                })
+            }
+        }
+
+        introPicture
+            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' }, "-=3")
+            .addLabel("a")
+            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a-=2.5")
+            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' }, "a-=2.5")
+            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' }, "-=1.5")
+    }
+
+    introPictureFunction();
+
+    //intro video motion
+    const introVideo = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".intro__video",
+            start: "0% 0%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 1,
+            onEnter: () => {
+                $(".intro__video video").get(0).play();
+            },
+            onLeaveBack: () => {
+                // start 지점을 빠져나갔을때
+                $(".intro__video video").get(0).stop();
+            }
+        }
+    })
+
+    // video 로드 확인하여 애니메이션 실행
+    function videoLoad() {
+        console.log("loaded!")
+        introVideo
+            .to(".intro__video video", { opacity: 1 })
+            .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' })
+            .addLabel("a")
+            .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a")
+            .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' }, "a")
+            .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
+    }
+
+    videoLoad()
+
+
+    // pixcel imgs set
+    for (i = 1; i < 50; i++) {
+        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='https://www.lg.com/uk/why-lgoled/images/overview/self/OVERVIEW_DISPLAY_PC_${String(2 * i - 1).padStart(5, '0')}.jpg' alt=''>`);
+    }
+    // pixcel picture imgs motion
+
+    const pixcelPicture = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".display__pixcel",
+            start: "0% 0%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 1,
+        }
+    })
+
+    function pixcelPictureFunction() {
+        pixcelPicture.to('.pixcelImg1', {
+            'visibility': 'visible',
+            duration: 0.2
+        })
+        pixcelPicture.to('.pixcelImg0', {
+            'visibility': 'hidden',
+            duration: 0.2
+        })
+        for (i = 2; i < 97; i++) {
+            pixcelPicture.to('.pixcelImg' + (i), {
+                'visibility': 'visible',
+                duration: 0.2
+            })
+            if (i >= 2) {
+                pixcelPicture.to('.pixcelImg' + (i - 1), {
+                    'visibility': 'hidden',
+                    duration: 0.2
+                })
+            }
+        }
+    }
+
+    pixcelPictureFunction()
+
+    // size picture motion
+    // 이해가 전혀 안되는 부분 ,,,
+    const sizePictureMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".display__size",
+            start: "center center",
+            scrub: true,
+            end: "+=2000"
+        }
+    })
+    sizePictureMotion
+        .to('.size2', {
+            opacity: 1,
+            duration: 1
+        })
+        .to('.size2', {
+            'left': '70%',
+            duration: 8
+        })
+        .to('.size1', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size1 .tv--blur', {
+            autoAlpha: 0.8
+        }, '<')
+        .to('.size1', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size2', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size2 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size3', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size3', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+        .to('.size2', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size3', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size3 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size4', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size4', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+        .to('.size3', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size4', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size4 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size5', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size5', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+        .to('.size4', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size5', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size5 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size6', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size6', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+        .to('.size5', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size6', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size6 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size7', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size7', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+        // 0926 st
+        .to('.size6', {
+            'left': '10%',
+            autoAlpha: 0,
+            duration: 8
+        })
+        .to('.size7', {
+            'left': '30%',
+            autoAlpha: 0.5,
+            duration: 8
+        }, '<')
+        .to('.size7 .tv--blur', {
+            autoAlpha: 1,
+            duration: 5
+        }, '<')
+        .to('.size8', {
+            'left': '70%',
+            duration: 8
+        }, '<')
+        .to('.size8', {
+            autoAlpha: 1,
+            duration: 1
+        }, '<')
+
+
+    // movie picture imgs set
+    for (i = 1; i < 14; i++) {
+        $(".movie .movie__img2").append(`<img class='movieImg${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/room_blur${String(i)}.jpg' alt=''>`);
+    }
+    // movie img motion
+    const movieMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".movie",
+            start: "0% 0%",
+            end: "100% 100%",
+            markers: true,
+            scrub: 1,
+        }
+    })
+
+    // intro picture imgs motion
+    function moviePictureFunction() {
+        movieMotion.addLabel("a")
+        movieMotion.to('.movie .movie__img img:nth-child(1)', { 'transform': 'scale(1)' }, "a")
+        movieMotion.to('.movie .movie__img img:nth-child(1)', { 'border-radius': '0px' }, "a")
+        movieMotion.to('.movie .movie__img img:nth-child(2)', { 'clip-path': 'inset(0% 0% 0%)' })
+        for (i = 1; i < 14; i++) {
+            movieMotion.to('.movie .movieImg' + (i), {
+                'visibility': 'visible',
+                duration: 0.2
+            })
+        }
+        // 여기 안에서 onEnter 쓸 수 있는 방법이 있을까요?
+        // movieMotion.to('.movie .movie__video video', { 'display': 'block' })
+        movieMotion.to('.movie .movie__scroll', { bottom: 0 })
+    }
+
+    moviePictureFunction()
 })
