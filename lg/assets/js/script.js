@@ -121,6 +121,29 @@ $(function () {
 
     pixcelPictureFunction()
 
+    // vivid video control
+
+    const vividVideoControl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".display__vivid",
+            start: "100% 100%",
+            end: "200% 200%",
+            // markers: true,
+            scrub: 0,
+            onEnter: () => {
+                $(".display__vivid video").get(0).play();
+            },
+            onLeaveBack: () => {
+                // start 지점을 빠져나갔을때
+                $(".display__vivid video").get(0).stop();
+            },
+            onLeave: () => {
+                // start 지점을 빠져나갔을때
+                $(".display__vivid video").get(0).stop();
+            }
+        }
+    })
+
     // size picture motion
     // 이해가 전혀 안되는 부분 ,,,
     const sizePictureMotion = gsap.timeline({
@@ -298,7 +321,7 @@ $(function () {
             trigger: ".movie",
             start: "0% 0%",
             end: "100% 100%",
-            markers: true,
+            // markers: true,
             scrub: 1,
         }
     })
@@ -321,4 +344,91 @@ $(function () {
     }
 
     moviePictureFunction()
+
+
+    // game video control
+    const gameVideoControl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".game",
+            start: "0% 0%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 1,
+            onEnter: () => {
+                $(".game__video video").get(0).play();
+            },
+            onLeaveBack: () => {
+                // start 지점을 빠져나갔을때
+                $(".game__video video").get(0).stop();
+            }
+        }
+    })
+
+    gameVideoControl
+        .to(".game__title", { opacity: 1 })
+
+
+    // design picture imgs set
+    for (i = 0; i <= 59; i++) {
+        $(".design .design__img--wrap1").append(`<img class='design__img${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/design_sq/OVERVIEW_DESIGN_PC_FHD_${String(i).padStart(5, '0')}.jpg' alt='design discription image'>`);
+    }
+
+    const designPictureMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".design__sticky",
+            start: "0% 0%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 1,
+        }
+    })
+
+    // design picture imgs motion
+    function designPictureFunction() {
+        designPictureMotion.to('.design__img1', {
+            'visibility': 'visible',
+            duration: 0.2
+        })
+        designPictureMotion.to('.design__img0', {
+            'visibility': 'hidden',
+            duration: 0.2
+        })
+        for (i = 2; i <= 59; i++) {
+            designPictureMotion.to('.design__img' + (i), {
+                'visibility': 'visible',
+                duration: 0.2
+            })
+            if (i >= 2) {
+                designPictureMotion.to('.design__img' + (i - 1), {
+                    'visibility': 'hidden',
+                    duration: 0.2
+                })
+            }
+        }
+
+        designPictureMotion
+            .to('.design .design__discription', { opacity: 1, bottom: 70, duration: 4 })
+            .to('.design .design__img--wrap2', { "clip-path": "inset(0% 0% 0% 0%)", duration: 10 })
+    }
+
+    designPictureFunction()
+
+    // smart video control
+    const smartVideoControl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".smart",
+            start: "0% 50%",
+            end: "100% 100%",
+            // markers: true,
+            scrub: 0,
+            onEnter: () => {
+                $(".smart__video video").get(0).play();
+            },
+            onLeaveBack: () => {
+                // start 지점을 빠져나갔을때
+                $(".smart__video video").get(0).stop();
+            }
+        }
+    })
+
 })
