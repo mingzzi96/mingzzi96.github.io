@@ -204,6 +204,13 @@ $(function () {
             $(".slide--service").addClass("show");
             $(".everything").removeClass("show");
         },
+        onLeave: () => {
+            $(".slide--service").removeClass("show");
+        },
+        onEnterBack: () => {
+            // start 지점을 빠져나갔을때
+            $(".slide--service").addClass("show");
+        },
         onLeaveBack: () => {
             // start 지점을 빠져나갔을때
             $(".slide--service").removeClass("show");
@@ -265,12 +272,39 @@ $(function () {
         }, "a")
 
 
+    // glowMotion
+    const gloveMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".glow",
+            start: "0% 0%", // 트리거 기준  / 윈도우 기준
+            end: "100% 100%", // 트리거 기준  / 윈도우 기준
+            // markers: true,
+            scrub: 0, // 문대기
+            onEnter: () => {
+                $(".glow").addClass("show");
+            },
+            onLeaveBack: () => {
+                // start 지점을 빠져나갔을때
+                $(".glow").removeClass("show");
+            }
+        },
+        default: {
+            ease: "none"
+        }
+    })
+
+    gloveMotion
+        .addLabel("a")
+        .to(".glow .everything__card--glow", { opacity: 1, duration: 2 }, "a")
+        .to(".glow .everything__card--right p", { opacity: 1, duration: 3 }, "a")
+
+
     marqueeMotion = gsap.to(".marquee__join", {
         duration: 45,
         xPercent: 100,
         repeat: -1,
         ease: "none",
-        paused: true
+        // paused: true
     })
     // marquee
     ScrollTrigger.create({

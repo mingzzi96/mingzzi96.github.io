@@ -988,6 +988,73 @@ slide--service
 
 /*
 =====================================
+glow
+=====================================
+*/
+.glow {
+    padding: 0 100px;
+    height: 400vh;
+    margin-top: -100vh;
+    opacity: 0;
+}
+.glow.show {
+    opacity: 1;
+}
+.glow__sticky {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.glow .everything__card--sticky {
+    width: 100%;
+}
+
+.glow .everything__card--left {
+    position: relative;
+    width: 303px;
+}
+
+.glow .everything__card--right p {
+    padding-left: 120px;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.28;
+    color: #fff;
+    opacity: 0;
+}
+
+.everything__card--glow {
+    display: block;
+    width: 160%;
+    height: 100%;
+    left: -30%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.everything__card--glow img {
+    height: 100%;
+    width: 100%;
+}
+
+.glow .everything__card--item .everything__card--text {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+=====================================
 challenge--asset
 =====================================
 */
@@ -1042,10 +1109,6 @@ slide--asset
 .slide__card--list .slide__card--item:nth-child(2) {
     background: #0049ff;
 }
-.slide__card--list .slide__card--item:nth-child(3) {
-    background: url(../images/image-sec-3-3.png) no-repeat center;
-    background-size: cover;
-}
 .slide__card--list .slide__card--item:nth-child(3)::before {
     content: "";
     position: absolute;
@@ -1058,6 +1121,13 @@ slide--asset
     background-color: hsla(0,0%,42%,.3);
     height: 100%;
     width: 100%;
+}
+.bg__colorful {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .slide__card--list .card__item--head {
     position: relative;
@@ -1413,12 +1483,13 @@ footer {
     justify-content: flex-end;
     position: relative;
     white-space: nowrap;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     left: 0;
     /* top: 0; */
     top: 60px;
     transition: .4s .4s;
+    overflow: hidden;
 }
 .footer__marquee.show {
     top: 0;
@@ -1434,7 +1505,9 @@ footer {
 }
 .marquee__join {
     display: flex;
+    width: 100%;
     /* animation: marquee 18s infinite linear; */
+    overflow: hidden;
 }
 
 /* @keyframes marquee {
@@ -1448,7 +1521,7 @@ footer {
 
 .marquee__join--item {
     position: relative;
-    padding: 0 72px;
+    width: calc(100% / 6);
     height: 60px;
     display: flex;
     align-items: center;
