@@ -198,7 +198,7 @@ $(function () {
         trigger: ".slide--service",
         start: "0% 0%",
         end: "100% 100%",
-        markers: true,
+        // markers: true,
         scrub: 0,
         onEnter: () => {
             $(".slide--service").addClass("show");

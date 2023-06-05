@@ -431,4 +431,46 @@ $(function () {
         }
     })
 
+    // slide sticky
+
+    const swiperSticky = new Swiper('.stickySwiper', {
+        slidesPerView: 6,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    swiperSticky.on('slideChange', function () {
+        idx = swiperSticky.realIndex;
+        swiperTable.slideToLoop(idx);
+    });
+
+    // slide table
+
+    const swiperTable = new Swiper('.tableSwiper', {
+        slidesPerView: 6,
+    });
+
+    swiperTable.on('slideChange', function () {
+        idx = swiperTable.realIndex;
+        swiperSticky.slideToLoop(idx);
+    });
+
 })
+
+// compare section see more button control
+console.log(seemoreButton)
+function seemoreFunction() {
+    let compareTableHeight = document.querySelector(".compare__table");
+    let seemoreButton = document.querySelector(".compare__button--more button");
+
+    seemoreButton.addEventListener("click", function () {
+        compareTableHeight.style.height = "auto"
+        seemoreButton.style.display = "none"
+        document.querySelector(".compare__button--more").classList.add("hideGradient")
+    })
+}
