@@ -2,7 +2,7 @@ $(function () {
 
     // intro picture imgs set
     for (i = 0; i <= 35; i++) {
-        $(".intro .intro__picture .intro--sticky").append(`<img class='intro__img${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/kv/OVERVIEW_KV_02_PC_${String(i).padStart(5, '0')}.jpg' alt=''>`);
+        $(".intro .intro__picture .intro--sticky").append(`<img class='intro__img${i}' src='../images/OVERVIEW_DESIGN_PC_FHD_${String(i).padStart(5, '0')}.jpg' alt='main scroll images'>`);
     }
 
     const introPicture = gsap.timeline({
@@ -82,7 +82,7 @@ $(function () {
 
     // pixcel imgs set
     for (i = 1; i < 50; i++) {
-        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='https://www.lg.com/uk/why-lgoled/images/overview/self/OVERVIEW_DISPLAY_PC_${String(2 * i - 1).padStart(5, '0')}.jpg' alt=''>`);
+        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='../images/OVERVIEW_DESIGN_PC_FHD_${String(2 * i - 1).padStart(5, '0')}.jpg' alt='pixcel scroll images'>`);
     }
     // pixcel picture imgs motion
 
