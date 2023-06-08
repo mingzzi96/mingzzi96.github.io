@@ -752,6 +752,12 @@
                 max-width: 180px;
                 width: 100%;
             }
+
+            &.long {
+                img {
+                    max-width: 166px;
+                }
+            }
         }
 
         &--item {

@@ -880,6 +880,9 @@
   max-width: 180px;
   width: 100%;
 }
+.compare__sticky--img.long img {
+  max-width: 166px;
+}
 .compare__sticky--item {
   text-align: center;
 }
