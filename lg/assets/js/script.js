@@ -2,7 +2,7 @@ $(function () {
 
     // intro picture imgs set
     for (i = 0; i <= 35; i++) {
-        $(".intro .intro__picture .intro--sticky").append(`<img class='intro__img${i}' src='../images/OVERVIEW_DESIGN_PC_FHD_${String(i).padStart(5, '0')}.jpg' alt='main scroll images'>`);
+        $(".intro .intro__picture .intro--sticky").append(`<img class='intro__img${i}' src='assets/images/OVERVIEW_KV_02_PC_${String(i).padStart(5, '0')}.jpg' alt='main scroll images'>`);
     }
 
     const introPicture = gsap.timeline({
@@ -38,11 +38,11 @@ $(function () {
         }
 
         introPicture
-            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' }, "-=3")
+            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%', duration: 4 })
             .addLabel("a")
-            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a-=2.5")
-            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' }, "a-=2.5")
-            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' }, "-=1.5")
+            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a")
+            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%', duration: 4 }, "a")
+            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
     }
 
     introPictureFunction();
@@ -82,7 +82,7 @@ $(function () {
 
     // pixcel imgs set
     for (i = 1; i < 50; i++) {
-        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='../images/OVERVIEW_DESIGN_PC_FHD_${String(2 * i - 1).padStart(5, '0')}.jpg' alt='pixcel scroll images'>`);
+        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='assets/images/OVERVIEW_DISPLAY_PC_${String(2 * i - 1).padStart(5, '0')}.jpg' alt='pixcel scroll images'>`);
     }
     // pixcel picture imgs motion
 
@@ -117,6 +117,11 @@ $(function () {
                 })
             }
         }
+        // 마지막에 이미지 머물도록이 안되어용
+        pixcelPicture.to('.pixcelImg49', {
+            'visibility': 'visible',
+            duration: 0.2
+        })
     }
 
     pixcelPictureFunction()
@@ -313,7 +318,7 @@ $(function () {
 
     // movie picture imgs set
     for (i = 1; i < 14; i++) {
-        $(".movie .movie__img2").append(`<img class='movieImg${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/room_blur${String(i)}.jpg' alt=''>`);
+        $(".movie .movie__img2").append(`<img class='movieImg${i}' src='assets/images/room_blur${String(i)}.jpg' alt=''>`);
     }
     // movie img motion
     const movieMotion = gsap.timeline({
@@ -370,7 +375,7 @@ $(function () {
 
     // design picture imgs set
     for (i = 0; i <= 59; i++) {
-        $(".design .design__img--wrap1").append(`<img class='design__img${i}' src='https://www.lg.com/uk/why-lgoled/images/overview/design_sq/OVERVIEW_DESIGN_PC_FHD_${String(i).padStart(5, '0')}.jpg' alt='design discription image'>`);
+        $(".design .design__img--wrap1").append(`<img class='design__img${i}' src='assets/images/OVERVIEW_DESIGN_PC_FHD_${String(i).padStart(5, '0')}.jpg' alt='design discription image'>`);
     }
 
     const designPictureMotion = gsap.timeline({
