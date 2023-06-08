@@ -1,0 +1,108 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #000;
+    border-bottom: 1px solid #151515;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+        height: 54px;
+    }
+
+    &__inner {
+        &--left {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &--right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            a {
+                text-align: center;
+                color: #fff;
+                font-weight: 600;
+                background: #ac183c;
+                border-radius: 4px;
+                padding: 0 18px;
+                font-size: 14px;
+                height: 30px;
+                line-height: 30px;
+                display: inline-block;
+            }
+        }
+    }
+
+    &__logo {
+        &--link {
+
+        }
+
+        &--img {
+            width: 100px;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 0 18px;
+        margin-left: 50px;
+        font-size: 15px;
+        height: 100%;
+
+        &--item {
+            position: relative;
+            height: 100%;
+
+            &::after {
+                content: "";
+                display: none;
+                width: 100%;
+                height: 3px;
+                background: #fff;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+            }
+
+            &:hover {
+                a {
+                    color: #fff;
+                }
+                &::after {
+                    display: block;
+                }
+            }
+
+            &.active {
+                &::after {
+                    display: block;
+                }
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+        
+        a {
+            color: #727272;
+            transition: .2s;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
