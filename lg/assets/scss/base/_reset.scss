@@ -1,7 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-/* font-family: 'Archivo', sans-serif;
-font-family: 'Noto Sans KR', sans-serif; */
 /* 알아보기 
 :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4} */
 
@@ -14,11 +11,3 @@ button {background:none;border:0;cursor:pointer;}
 a {text-decoration:none}
 table {border-collapse:collapse;border-spacing:0}
 ul { list-style: none; }
-
-.notosansKR { font-family: "noto Sans KR", sans-serif; }
-
-#wrapper { min-width: 1441px; }
-
-i[class^="ico-"], i[class*="ico-"] { display: inline-block; vertical-align: top; }
-
-.blind {position: absolute;width: 1px;height: 1px;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);}
