@@ -7,7 +7,7 @@ $(function () {
 
     const introPicture = gsap.timeline({
         scrollTrigger: {
-            trigger: ".intro__picture",
+            trigger: ".video-sticky",
             start: "0% 0%",
             end: "100% 100%",
             // markers: true,
@@ -36,95 +36,173 @@ $(function () {
                 })
             }
         }
-
-        introPicture
-            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%', duration: 4 })
-            .addLabel("a")
-            .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a")
-            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%', duration: 4 }, "a")
-            .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
     }
 
     introPictureFunction();
+    // $(".intro__video video").get(0).stop();
 
-    //intro video motion
-    const introVideo = gsap.timeline({
+    const stickyArea = gsap.timeline({
         scrollTrigger: {
-            trigger: ".intro__video",
+            trigger: ".intro .sticky-area2",
             start: "0% 0%",
-            end: "100% 100%",
+            end: "100% 200%",
             // markers: true,
-            scrub: 1,
-            onEnter: () => {
-                $(".intro__video video").get(0).play();
-            },
-            onLeaveBack: () => {
-                // start 지점을 빠져나갔을때
-                $(".intro__video video").get(0).stop();
-            }
+            scrub: 0,
         }
     })
 
-    // video 로드 확인하여 애니메이션 실행
-    function videoLoad() {
-        console.log("loaded!")
-        introVideo
-            .to(".intro__video video", { opacity: 1 })
-            .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' })
-            .addLabel("a")
-            .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a")
-            .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' }, "a")
-            .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
-    }
+    stickyArea
+        .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' })
+        .to('.intro__picture .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' })
 
-    videoLoad()
+        .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' })
+        .to('.intro__picture .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
+
+        .addLabel("a")
+        .to('.intro__picture .intro--discription--text:nth-child(3)', { opacity: 1, 'top': '50%' }, "a")
+        .to('.intro__video', { opacity: 1,
+            onEnter:() => {
+                $(".intro__video video").get(0).play();
+            }
+        }, "a")
+        .to('.intro__picture .intro--discription--text:nth-child(3)', { delay:1, opacity: 0, 'top': '40%' })
+        // .addLabel("b")
+        // .to('.intro__picture .intro--discription--text:nth-child(3)', { opacity: 1, 'top': '40%' }, "b")
+        // .to('.intro__picture .intro__video', {opacity : 1, 
+        //     onEnter: function(){
+        //         $(".intro__video video").get(0).play();
+        //     }
+        // }, "b")
+        // .to('.intro__picture .intro--discription--text:nth-child(3)', { opacity: 0, 'top': '45%' }, "b")
+
+    //intro video motion
+    // const introVideo = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".intro__video",
+    //         start: "0% 0%",
+    //         end: "100% 100%",
+    //         // markers: true,
+    //         scrub: 1,
+    //         onEnter: () => {
+    //             $(".intro__video video").get(0).play();
+    //         },
+    //         onLeaveBack: () => {
+    //             // start 지점을 빠져나갔을때
+    //             $(".intro__video video").get(0).stop();
+    //         }
+    //     }
+    // })
+
+    // video 로드 확인하여 애니메이션 실행
+    // function videoLoad() {
+    //     console.log("loaded!")
+    //     introVideo
+    //         .to(".intro__video video", { opacity: 1 })
+    //         .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 1, 'top': '50%' })
+    //         .addLabel("a")
+    //         .to('.intro__video .intro--discription--text:nth-child(1)', { opacity: 0, 'top': '40%' }, "a")
+    //         .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 1, 'top': '50%' }, "a")
+    //         .to('.intro__video .intro--discription--text:nth-child(2)', { opacity: 0, 'top': '40%' })
+    // }
+
+    // videoLoad()
 
 
     // pixcel imgs set
-    for (i = 1; i < 50; i++) {
-        $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='assets/images/OVERVIEW_DISPLAY_PC_${String(2 * i - 1).padStart(5, '0')}.jpg' alt='pixcel scroll images'>`);
-    }
-    // pixcel picture imgs motion
+    // for (i = 1; i < 50; i++) {
+    //     $(".display .display__pixcel .display__pixcel--sticky").append(`<img class='pixcelImg${i} 'src='assets/images/OVERVIEW_DISPLAY_PC_${String(2 * i - 1).padStart(5, '0')}.jpg' alt='pixcel scroll images'>`);
+    // }
+    // // pixcel picture imgs motion
 
-    const pixcelPicture = gsap.timeline({
+    // const pixcelPicture = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".display__pixcel",
+    //         start: "0% 0%",
+    //         end: "100% 100%",
+    //         // markers: true,
+    //         scrub: 1,
+    //     }
+    // })
+
+    // function pixcelPictureFunction() {
+    //     pixcelPicture.to('.pixcelImg1', {
+    //         'visibility': 'visible',
+    //         duration: 0.2
+    //     })
+    //     pixcelPicture.to('.pixcelImg0', {
+    //         'visibility': 'hidden',
+    //         duration: 0.2
+    //     })
+    //     for (i = 2; i < 97; i++) {
+    //         pixcelPicture.to('.pixcelImg' + (i), {
+    //             'visibility': 'visible',
+    //             duration: 0.2
+    //         })
+    //         if (i >= 2) {
+    //             pixcelPicture.to('.pixcelImg' + (i - 1), {
+    //                 'visibility': 'hidden',
+    //                 duration: 0.2
+    //             })
+    //         }
+    //     }
+    //     // 마지막에 이미지 머물도록이 안되어용
+    //     pixcelPicture.to('.pixcelImg49', {
+    //         'visibility': 'visible',
+    //         duration: 0.2
+    //     })
+    // }
+
+    // pixcelPictureFunction()
+
+    // pixcel NEW SOLUTION
+
+    const canvas = document.querySelector('#canvas1');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = 960;
+    canvas.height = 900;
+
+    const frameCount = 49;
+
+    const currentFrame = (idx) => {
+        return `assets/images/OVERVIEW_DISPLAY_PC_${String(2 * idx - 1).padStart(5, '0')}.jpg`;
+    }; // 리턴 필수
+
+    const images = [];
+    const card = {
+        frame: 0,
+    };
+
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i + 1);
+        images.push(img);
+    }
+
+    gsap.to(card, {
+        frame: frameCount - 1,
+        snap: 'frame',
+        ease: 'none',
         scrollTrigger: {
-            trigger: ".display__pixcel",
-            start: "0% 0%",
-            end: "100% 100%",
-            // markers: true,
-            scrub: 1,
-        }
-    })
+        trigger: '.display__pixcel',
+        scrub: 1,
+        start: '0% 0%',
+        end: '100% 100%',
+        // pin: true,
+        // markers: true
+        },
+        onUpdate: render,
+    });
 
-    function pixcelPictureFunction() {
-        pixcelPicture.to('.pixcelImg1', {
-            'visibility': 'visible',
-            duration: 0.2
-        })
-        pixcelPicture.to('.pixcelImg0', {
-            'visibility': 'hidden',
-            duration: 0.2
-        })
-        for (i = 2; i < 97; i++) {
-            pixcelPicture.to('.pixcelImg' + (i), {
-                'visibility': 'visible',
-                duration: 0.2
-            })
-            if (i >= 2) {
-                pixcelPicture.to('.pixcelImg' + (i - 1), {
-                    'visibility': 'hidden',
-                    duration: 0.2
-                })
-            }
-        }
-        // 마지막에 이미지 머물도록이 안되어용
-        pixcelPicture.to('.pixcelImg49', {
-            'visibility': 'visible',
-            duration: 0.2
-        })
+
+    images[0].onload = render;
+
+    function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(images[card.frame], 0, 0);
     }
 
-    pixcelPictureFunction()
+
 
     // vivid video control
 
@@ -148,6 +226,20 @@ $(function () {
             }
         }
     })
+
+    // ani = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".box1",
+    //         start: "0% 0%",
+    //         end: "100% 0%",
+    //         markers: true
+    //     }
+    // })
+
+    // ani
+    // .to("box1", {x:500})
+    // .to("box2", {x:500})
+    // .to("box3", {x:500})
 
     // size picture motion
     // 이해가 전혀 안되는 부분 ,,,
@@ -473,9 +565,7 @@ function seemoreFunction() {
     let compareTableHeight = document.querySelector(".compare__table");
     let seemoreButton = document.querySelector(".compare__button--more button");
 
-    seemoreButton.addEventListener("click", function () {
-        compareTableHeight.style.height = "auto"
-        seemoreButton.style.display = "none"
-        document.querySelector(".compare__button--more").classList.add("hideGradient")
-    })
+    compareTableHeight.style.height = "auto"
+    seemoreButton.style.display = "none"
+    document.querySelector(".compare__button--more").classList.add("hideGradient")
 }

@@ -800,15 +800,8 @@ everything
 =====================================
 */
 .everything {
-    padding: 0 100px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: none;
-    opacity: 0;
-    margin-top: 100vh;
+
+    background: red;
 }
 
 .everything.show {
@@ -957,15 +950,15 @@ slide--service
 */
 
 .slide--service {
-    margin-top: -100vh;
+    /* margin-top: -100vh;
     opacity: 1;
     padding: 0 100px;
-    opacity: 0;
+    opacity: 0; */
 }
 
-.slide--service.show {
+/* .slide--service.show {
     opacity: 1;
-}
+} */
 
 .slide--service .slide__slider {
     padding-left: 24px;
@@ -994,8 +987,9 @@ glow
 .glow {
     padding: 0 100px;
     height: 400vh;
-    margin-top: -100vh;
+    /* margin-top: -100vh; */
     opacity: 0;
+    background: green;
 }
 .glow.show {
     opacity: 1;
@@ -1477,47 +1471,53 @@ footer {
     padding-top: 60px;
     overflow: hidden;
 }
+.marquee__wrapper {
+    display: flex;
+}
 .footer__marquee {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     position: relative;
     white-space: nowrap;
-    width: 100vw;
-    position: absolute;
-    left: 0;
+    /* width: 100vw; */
+    /* position: absolute;
+    left: 0; */
     /* top: 0; */
-    top: 60px;
-    transition: .4s .4s;
-    overflow: hidden;
+    /* top: 60px; */
+    /* transition: .4s .4s; */
+    /* overflow: hidden; */
 }
 .footer__marquee.show {
+    /* !!!!!!!!!!!!!!!요고 수정하기 */
+    animation: marquee 18s infinite linear;
     top: 0;
 }
-.footer__marquee .marquee__join::after {
+.footer__marquee::before {
     content: '';
     position: absolute;
     top: 0px;
     left: 0;
-    backdrop-filter: blur(36px);
+    backdrop-filter: blur(14px);
     height: 100%;
     width: 100%;
+    z-index: 10;
+    pointer-events: none;
 }
 .marquee__join {
     display: flex;
-    width: 100%;
-    /* animation: marquee 18s infinite linear; */
+    width: 100vw;
     overflow: hidden;
 }
 
-/* @keyframes marquee {
+@keyframes marquee {
     0% {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(-50%);
     }
-} */
+}
 
 .marquee__join--item {
     position: relative;
@@ -1538,7 +1538,8 @@ footer {
     background: #0049ff;
 }
 .marquee__join--item span {
-    z-index: 9;
+    position: relative;
+    z-index: 11;
     font-size: 18px;
     color: #fff;
     font-weight: 600;

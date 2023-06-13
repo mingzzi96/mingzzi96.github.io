@@ -176,22 +176,22 @@ $(function () {
         .to(".colorband__text", { opacity: 1 }, "a")
 
     // everything Motion
-    ScrollTrigger.create({
-        trigger: ".everything",
-        start: "0% 0%",
-        end: "100% 100%",
-        // markers: true,
-        scrub: 0,
-        onEnter: () => {
-            $(".slide--unchange").addClass("hide");
-            $(".everything").addClass("show");
-        },
-        onLeaveBack: () => {
-            // start 지점을 빠져나갔을때
-            $(".slide--unchange").removeClass("hide");
-            $(".everything").removeClass("show");
-        }
-    })
+    // ScrollTrigger.create({
+    //     trigger: ".everything",
+    //     start: "0% 0%",
+    //     end: "100% 100%",
+    //     // markers: true,
+    //     scrub: 0,
+    //     onEnter: () => {
+    //         $(".slide--unchange").addClass("hide");
+    //         $(".everything").addClass("show");
+    //     },
+    //     onLeaveBack: () => {
+    //         // start 지점을 빠져나갔을때
+    //         $(".slide--unchange").removeClass("hide");
+    //         $(".everything").removeClass("show");
+    //     }
+    // })
 
     //  slide--service Motion
     ScrollTrigger.create({
@@ -235,32 +235,36 @@ $(function () {
     })
 
     slideUnchangeMotion
+        // .to(".slide--unchange .slide__slider", { x: -500 })
+        .to(".slide--unchange .slide__slider", { x: ()=> {
+            return -$(".slide__slider--title").outerWidth() - 100 -$(".slide__card--item").outerWidth()
+        } }, "a")
         .addLabel("a")
-        .to(".slide--unchange .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--unchange .slide__slider", {
-            x: () => {
-                return window.innerWidth / 3 + 23;
-            }
-        }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(1)", { opacity: 0 }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 1 }, "a")
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", { opacity: 0 })
-        .to(".slide--unchange .slide__card--list .slide__card--item:last-child .text-gradient", { opacity: 1 })
+        // .to(".slide--unchange .slide__card--item:nth-child(1)", {x:0}, "a")
+        // .to(".slide--unchange .slide__card--item:nth-child(2)", {x:-327}, "a")
+        // .to(".slide--unchange .slide__card--item:nth-child(3)", {x:-327*2}, "a")
+        // .to(".slide--unchange .slide__card--item:nth-child(4)", {x:-327*3}, "a")
+        .to(".slide--unchange .slide__card--item:nth-child(1)", {x:327}, "a")
+        .to(".slide--unchange .slide__card--item:nth-child(2)", {x:0}, "a")
+        .to(".slide--unchange .slide__card--item:nth-child(3)", {x:-327}, "a")
+        .to(".slide--unchange .slide__card--item:nth-child(4)", {x:-327*2}, "a")
+
+        console.log($(".slide__slider--title").outerWidth());
 
     // slideMotion
-    const slideServiceMotion = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".slide--service",
-            start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 100%", // 트리거 기준  / 윈도우 기준
-            // markers: true,
-            scrub: 0, // 문대기
-            invalidateOnRefresh: true, // 반응형 잘 먹히도록
-        },
-        default: {
-            ease: "none"
-        }
-    })
+    // const slideServiceMotion = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".slide--service",
+    //         start: "0% 0%", // 트리거 기준  / 윈도우 기준
+    //         end: "100% 100%", // 트리거 기준  / 윈도우 기준
+    //         // markers: true,
+    //         scrub: 0, // 문대기
+    //         invalidateOnRefresh: true, // 반응형 잘 먹히도록
+    //     },
+    //     default: {
+    //         ease: "none"
+    //     }
+    // })
 
     slideServiceMotion
         .addLabel("a")
@@ -299,29 +303,6 @@ $(function () {
         .to(".glow .everything__card--right p", { opacity: 1, duration: 3 }, "a")
 
 
-    marqueeMotion = gsap.to(".marquee__join", {
-        duration: 45,
-        xPercent: 100,
-        repeat: -1,
-        ease: "none",
-        // paused: true
-    })
-    // marquee
-    ScrollTrigger.create({
-        trigger: ".footer",
-        start: "100% 100%",
-        end: "100% 100%",
-        // markers: true,
-        onEnter: () => {
-            marqueeMotion.play();
-            $(".footer__marquee").addClass("show");
-        },
-        onLeaveBack: () => {
-            // start 지점을 빠져나갔을때
-            marqueeMotion.pause();
-            $(".footer__marquee").removeClass("show");
-        }
-    })
 
     // prove prove--asset
 
