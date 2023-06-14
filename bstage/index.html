@@ -11,6 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
     <header class="header on">
@@ -195,23 +198,385 @@
         </section>
         <section class="owner">
             <div class="blind">비스테이지 오너 소개</div>
+            <div class="owner-title">
+                <h2>b.stage Owners</h2>
+                <p>다양한 업계의 오너가 비스테이지로 만든<br>
+                    맞춤형 플랫폼에서 팬들과 만나고 있어요.<br>
+                    오너의 성공적인 팬덤 비즈니스를 응원합니다</p>
+            </div>
+            <div class="owner-marquee">
+                <div class="owner-marquee__content">
+                    <div class="owner-marquee__item square">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/osaka.png" alt="오사카에 사는 사람들 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>오사카에 사는 사람들</h3>
+                                <p>100만 유튜버의 비하인드 콘텐츠, 굿즈 등<br>팬들을 위한 특별한 경험 제공</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item polygon">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/lawyer.png" alt="이상한 변호사 우영우 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>에이스토리,<br>에이아이엠씨</h3>
+                                <p>드라마 콘텐츠 IP 가치를 높이는<br>글로벌 팬덤 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item circle">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/class.png" alt="약한 영웅 클래스1 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>약한 영웅 Class 1</h3>
+                                <p>콘텐츠 팬덤이 자유롭게 소통하는<br>공식 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item square">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/everlast.png" alt="에버라스트 코리아 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>에버라스트 코리아</h3>
+                                <p>미국의 K-POP 찐팬이 설립한,<br>‘K-콘텐츠 전문 미디어’의 팬덤 플랫폼</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item polygon">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/osaka.png" alt="리베란테 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Entertainment & Talent</h4>
+                                <h3>리베란테</h3>
+                                <p>팬덤과 함께 성장하는<br>'팬텀싱어4' 우승팀의 공식 팬덤 플랫폼</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item circle">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/portena.png" alt="포르테나 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Entertainment & Talent</h4>
+                                <h3>포르테나</h3>
+                                <p>콘텐츠 팬덤이 자유롭게 소통하는<br>공식 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="owner-marquee__content">
+                    <div class="owner-marquee__item square">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/osaka.png" alt="오사카에 사는 사람들 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>오사카에 사는 사람들</h3>
+                                <p>100만 유튜버의 비하인드 콘텐츠, 굿즈 등<br>팬들을 위한 특별한 경험 제공</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item polygon">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/lawyer.png" alt="이상한 변호사 우영우 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>에이스토리,<br>에이아이엠씨</h3>
+                                <p>드라마 콘텐츠 IP 가치를 높이는<br>글로벌 팬덤 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item circle">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/class.png" alt="약한 영웅 클래스1 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>약한 영웅 Class 1</h3>
+                                <p>콘텐츠 팬덤이 자유롭게 소통하는<br>공식 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item square">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/everlast.png" alt="에버라스트 코리아 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Content & Media</h4>
+                                <h3>에버라스트 코리아</h3>
+                                <p>미국의 K-POP 찐팬이 설립한,<br>‘K-콘텐츠 전문 미디어’의 팬덤 플랫폼</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item polygon">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/osaka.png" alt="리베란테 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Entertainment & Talent</h4>
+                                <h3>리베란테</h3>
+                                <p>팬덤과 함께 성장하는<br>'팬텀싱어4' 우승팀의 공식 팬덤 플랫폼</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owner-marquee__item circle">
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="assets/images/portena.png" alt="포르테나 이미지">
+                            <div class="owner-marquee__item__box">
+                                <h4 class="">Entertainment & Talent</h4>
+                                <h3>포르테나</h3>
+                                <p>콘텐츠 팬덤이 자유롭게 소통하는<br>공식 커뮤니티</p>
+                            </div>
+                            <div class="owner-marquee__item__arw">
+                                <img src="assets/images/icon-arrow-owners.svg" alt="새창에서 열기 아이콘">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="everything">
-            <div class="blind">컨텐츠를 하나로 모으기 소개</div>
+        <section class="introduce">
+            <div class="everything">
+                <div class="blind">컨텐츠를 하나로 모으기 소개</div>
+                <div class="introduce-inner">
+                    <div class="introduce-textarea">
+                        <div class="introduce-textarea__box">
+                            <h2>모든 것을 하나로</h2>
+                            <p>여러 플랫폼에 흩어진 팬들을 한 공간에 초대해 깊이 있는 관계를 만들어 보세요.<br>
+                                비즈니스를 위한 콘텐츠, 의사결정을 위한 데이터 모두를<br>
+                                '모든 것을 하나로'에서 소유하세요.</p>
+                            <a href="javascript:void(0)" class="introduce-textarea__box__link">모든 것을 하나로 더 보기</a>
+                        </div>
+                    </div>
+                    <div class="introduce-scrollarea">
+                        <div class="introduce-scrollarea__left">
+                            <img src="assets/images/img-advantage1_1.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage1_2.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage1_3.png" alt="스크롤링 이미지">
+                        </div>
+                        <div class="introduce-scrollarea__right">
+                            <img src="assets/images/img-advantage1_4.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage1_5.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage1_6.png" alt="스크롤링 이미지">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="communication">
+                <div class="blind">팬과 소통하기 소개</div>
+                <div class="introduce-inner">
+                    <div class="introduce-scrollarea">
+                        <div class="introduce-scrollarea__left">
+                            <img src="assets/images/img-advantage2_1.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage2_2.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage2_3.png" alt="스크롤링 이미지">
+                        </div>
+                        <div class="introduce-scrollarea__right">
+                            <img src="assets/images/img-advantage2_4.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage2_5.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage2_6.png" alt="스크롤링 이미지">
+                        </div>
+                    </div>
+                    <div class="introduce-textarea">
+                        <div class="introduce-textarea__box">
+                            <h2>의미있는 팬 소통</h2>
+                            <p>오너와 팬, 팬과 팬의 소통을 위해 비스테이지는 멤버십, 커뮤니티,<br>
+                                서베이, 라이브 스트리밍 등의 기능을 추가했어요.<br>
+                                의미있는 소통으로 관계 기반의 팬덤 비즈니스를 단단하게 만들어 보세요.</p>
+                            <a href="javascript:void(0)" class="introduce-textarea__box__link">팬 소통 더 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="income">
+                <div class="blind">수익 만들기 소개</div>
+                <div class="introduce-inner">
+                    <div class="introduce-textarea">
+                        <div class="introduce-textarea__box">
+                            <h2>쉽고 간편한 수익화</h2>
+                            <p>찐팬들과 함께 하는 공간에서 굿즈나 티켓, 멤버십을 판매할 수 있어요.<br>
+                                비스테이지는 글로벌 이커머스 시스템 완비! 전 세계 팬들에게도<br>
+                                유형 상품을 쉽고 간편하게 배송해 보세요.</p>
+                            <a href="javascript:void(0)" class="introduce-textarea__box__link">수익화 더 보기</a>
+                        </div>
+                    </div>
+                    <div class="introduce-scrollarea">
+                        <div class="introduce-scrollarea__left">
+                            <img src="assets/images/img-advantage3_1.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage3_2.png" alt="스크롤링 이미지">
+                        </div>
+                        <div class="introduce-scrollarea__right">
+                            <img src="assets/images/img-advantage3_4.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage3_5.png" alt="스크롤링 이미지">
+                            <img src="assets/images/img-advantage3_3.png" alt="스크롤링 이미지">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="communication">
-            <div class="blind">팬과 소통하기 소개</div> 
-        </section>
-        <section class="income">
-            <div class="blind">수익 만들기 소개</div>
-        </section>
-        <section class="together">
+        <section class="owner together">
             <div class="blind">함께하는 파트너들 소개</div>
+            <div class="owner-title">
+                <h2>Together +</h2>
+                <p>Together+는 전문 서비스를 위해 구성된 비스테이지의 파트너들을 의미합니다.<br>
+                    오너가 팬덤 비즈니스에만 집중할 수 있도록,<br>
+                    글로벌 파트너와 함께 기능과 사용성을 확대하고 비즈니스를 돕겠습니다.</p>
+            </div>
+            <div class="together-logo">
+                <div class="together-logo__item">
+                    <img src="assets/images/paypal.png" alt="페이팔 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/samsung.png" alt="삼성 sdn 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/eximbay.png" alt="eximbay 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/sendbird.png" alt="sendbird 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/cj.png" alt="cj 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/aws.png" alt="aws 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/atlas.png" alt="atlas 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/cloudflare.png" alt="cloudflare 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/bespin.png" alt="bespin 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/querypie.png" alt="querypie 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/datadog.png" alt="datadog 로고">
+                </div>
+                <div class="together-logo__item">
+                    <img src="assets/images/inka.png" alt="inka 로고">
+                </div>
+            </div>
         </section>
         <section class="business">
             <div class="blind">상담 받아 보기</div>
+            <div class="business-bg">
+                <div class="business-bg__left">
+                    <div class="business-bg__left__circle"></div>
+                </div>
+                <div class="business-bg__right"></div>
+            </div>
+            <div class="business-box">
+                <div class="business-box__text">
+                    <h2 class="strawford">지속 가능한 팬덤 비지니스를 계획하고 계신가요?</h2>
+                    <p>비스테이지 전문가와 함께, 내 팬덤 비즈니스를<br class="mo">성공적으로 운영하세요.</p>
+                </div>
+                <div class="business-box__group">
+                    <div class="business-box__group__button">
+                        <a href="javascript:void(0)">무료로 시작하기</a>
+                    </div>
+                    <div class="business-box__group__button">
+                        <a href="javascript:void(0)">전담팀의 도움 받기</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <svg width="93" height="128" viewBox="0 0 93 128" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M52.7713 35.0724V0H0V87.6157H40.2287L40.2108 128H46.4978C72.139 128 93 107.058 93 81.3179C93 57.9093 75.7713 38.192 52.7713 35.0679V35.0724ZM40.2242 75.0246H13.1211C15.0359 62.9196 24.9731 50.8057 40.2242 47.8256V75.0246ZM40.2242 35.0724C29.713 36.5264 18.1211 42.0589 11.5785 51.5574V11.2721H40.2242V35.0724ZM52.7713 114.828V47.8166C68.6368 50.8102 80.4574 64.9994 80.4574 81.3179C80.4574 97.6364 68.6413 111.83 52.7713 114.824V114.828Z" fill="white"></path></svg>
+            </div>
+            <div class="footer-menu">
+                <div class="footer-menu__item type1">
+                    <a href="javascript:void(0)">
+                        <span>BEMYFRIEND</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>CONTACT US</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>NOTICE</span>
+                    </a>
+                </div>
+                <div class="footer-menu__item type2">
+                    <a href="javascript:void(0)">
+                        <span>b.stage 쿠키정책</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>홈페이지 쿠키정책</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span style="color:#fff">개인정보처리방침</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>이용약관</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>서비스 고지 사항</span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>청소년 보호정책</span>
+                    </a>
+                </div>
+                <div class="footer-menu__item type1">
+                    <a href="javascript:void(0)">
+                        <span>TWITTER</span>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.24277 20C15.7572 20 19.9191 13.8286 19.9191 8.45714C19.9191 8.22857 19.9191 8.11429 19.9191 7.88571C20.7283 7.31429 21.422 6.62857 22 5.82857C21.3064 6.17143 20.4971 6.4 19.6879 6.51429C20.4971 6.05714 21.1908 5.25714 21.5376 4.22857C20.7283 4.68571 19.9191 5.02857 18.9942 5.25714C18.0694 4.45714 16.9133 4 15.7572 4C13.4451 4 11.711 5.82857 11.711 8C11.711 8.34286 11.711 8.57143 11.8266 8.91429C8.35838 8.8 5.3526 7.2 3.38728 4.68571C3.04046 5.37143 2.80925 6.05714 2.80925 6.74286C2.80925 8.11429 3.50289 9.37143 4.65896 10.0571C3.96532 10.0571 3.38728 9.82857 2.80925 9.6C2.80925 11.5429 4.19653 13.1429 6.04624 13.6C5.69942 13.7143 5.3526 13.8286 5.00578 13.8286C4.77457 13.8286 4.54335 13.8286 4.19653 13.7143C4.65896 15.3143 6.27746 16.4571 8.01156 16.5714C6.62428 17.6 4.89017 18.2857 2.92486 18.2857C2.57803 18.2857 2.23121 18.2857 2 18.2857C3.84971 19.3143 5.93064 20 8.24277 20Z" fill="white"></path></svg>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>INSTAGRAM</span>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.63626 12.6816C8.63626 10.8634 10.1817 9.31799 11.9999 9.31799C13.8181 9.31799 15.3635 10.8634 15.3635 12.6816C15.3635 14.4998 13.8181 16.0453 11.9999 16.0453C10.1817 16.0453 8.63626 14.4998 8.63626 12.6816Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.81818 2.5H16.2727C19.4545 2.5 22 5.04545 22 8.22727V16.6818C22 19.9545 19.4545 22.5 16.2727 22.5H7.81818C4.54545 22.5 2 19.9545 2 16.6818V8.22727C2 5.04545 4.54545 2.5 7.81818 2.5ZM6.81818 12.5909C6.81818 15.4091 9.09091 17.7727 12 17.7727C14.9091 17.7727 17.1818 15.3182 17.1818 12.5C17.1818 9.68182 14.9091 7.31818 12 7.31818C9.09091 7.31818 6.81818 9.77273 6.81818 12.5909ZM16.1818 7.22727C16.1818 7.86364 16.7273 8.40909 17.3636 8.40909C18 8.40909 18.5455 7.86364 18.5455 7.22727C18.5455 6.59091 18 6.04545 17.3636 6.04545C16.7273 6.04545 16.1818 6.59091 16.1818 7.22727Z" fill="white"></path></svg>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>YOUTUBE</span>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.8193 5.92074C20.6803 6.14864 21.3578 6.82532 21.5872 7.68783C22.0035 9.24806 22 12.5018 22 12.5018C22 12.5018 22 15.7554 21.5836 17.3157C21.3543 18.1747 20.6768 18.8514 19.8158 19.0828C18.2562 19.5 12 19.5 12 19.5C12 19.5 5.74383 19.5 4.18419 19.0828C3.32322 18.8549 2.64573 18.1782 2.41637 17.3157C2 15.7554 2 12.5018 2 12.5018C2 12.5018 2 9.24806 2.4199 7.68432C2.64926 6.82532 3.32675 6.14864 4.18772 5.91723C5.74735 5.5 12.0035 5.5 12.0035 5.5C12.0035 5.5 18.2562 5.5 19.8193 5.92074ZM15.1864 12.5018L9.95707 9.54611V15.4575L15.1864 12.5018Z" fill="white"></path></svg>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span>LINKEDIN</span>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9841 2.5H4.01594C2.90269 2.5 2 3.39556 2 4.4992V20.5008C2 21.6056 2.90269 22.5 4.01594 22.5H19.9841C21.0985 22.5 22 21.6044 22 20.5008V4.4992C22 3.39441 21.0973 2.5 19.9841 2.5ZM8.41773 18.3246H5.7271V9.76907H8.41773V18.3246ZM7.05438 8.71946C6.2052 8.71946 5.65614 8.12396 5.65614 7.38935C5.65614 6.65474 6.22265 6.05923 7.09044 6.05923C7.95824 6.05923 8.48869 6.63634 8.50614 7.38935C8.50614 8.12396 7.95708 8.71946 7.05438 8.71946ZM18.2427 18.3246H15.552V13.5835C15.552 12.481 15.1623 11.7292 14.1887 11.7292C13.4454 11.7292 13.0033 12.2362 12.8079 12.7259C12.7369 12.9006 12.7195 13.1455 12.7195 13.3904V18.3234H10.0288V12.4971C10.0288 11.4303 9.99395 10.5382 9.95789 9.76792H12.2949L12.4194 10.9578H12.4729C12.8265 10.3979 13.6943 9.57593 15.146 9.57593C16.9165 9.57593 18.2438 10.7485 18.2438 13.2674V18.3234L18.2427 18.3246Z" fill="white"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2023 bemyfriends, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -32,15 +32,15 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
     transition: 0.2s;
     font-weight: 500;
     line-height: 1;
+    display: inline-block;
 
     @if($size == small) {
 
-        padding: 12px 60px;
-        font-size: 16vw;
+        padding: 16px 60px;
 
     } @else if($size == large) {
 
-        padding: 16px 80px;
+        padding: 22px 80px;
         font-size: 21px;
         
         @include desktop {
@@ -68,11 +68,11 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
         
     @if($hover == black){
         &:hover {
-            background: #3067ec;
+            background: #000000;
         }
     } @else if($hover == blue) {
         &:hover {
-            background: #000000;
+            background: #3067ec;
         }
 
     } @else if($hover == line) {

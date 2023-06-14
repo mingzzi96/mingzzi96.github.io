@@ -172,6 +172,370 @@
 
 // owner 
 .owner {
-    background: red;
+    padding: 260px 0;
+    overflow: hidden;
+
+    &-title {
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            font-size: 106px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 32px;
+            margin-top: 48px;
+        }
+    }
+
+    &-marquee {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        &__content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            min-width: 100%;
+            animation: scroll 5s linear infinite;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        &__item {
+            position: relative;
+            width: 420px;
+            height: 420px;
+
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+
+                .owner-marquee__item__box,
+                .owner-marquee__item__arw {
+                    opacity: 1;
+                }
+            }
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity .3s;
+            }
+
+            &.square,
+            &.polygon {
+                &::after {
+                    background: #000;
+                }
+            }
+
+            &.polygon {
+                clip-path: polygon(50% 0,93% 23%,93% 77%,50% 100%,7% 77%,7% 23%);
+
+                &::after {
+                    background: #FFDAFF;
+                }
+            }
+
+            &.circle {
+                clip-path: circle(50% at 50% 50%);
+
+                &::after {
+                    background: #3067EC;
+                }
+            }
+
+            &__box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                width: 100%;
+                color: #fff;
+                z-index: 9;
+                opacity: 0;
+                transition: opacity .3s;
+
+                h4 {
+                    border: 1px solid #fff;
+                    height: 46px;
+                    line-height: 46px;
+                    padding: 0 20px;
+                    border-radius: 99px;
+                    display: inline-block;
+                }
+
+                h3 {
+                    font-weight: 700;
+                    letter-spacing: -.02em;
+                    margin-top: 24px;
+                    font-size: 30px;
+                }
+
+                p {
+                    max-width: 320px;
+                    width: 100%;
+                    margin: 0 auto;
+                    font-size: 14px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    margin-top: 8px;
+                }
+            }
+
+            &__arw {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                width: 12px;
+                height: 12px;
+                z-index: 9;
+                opacity: 0;
+                transition: opacity .3s;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateZ(0)
+        }
+    
+        to {
+            transform: translate3d(calc(-100% - 30px),0,0)
+        }
+    }    
+}
+
+// everything
+.introduce {
+
+    .everything,
+    .communication,
+    .income {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .everything {
+        background: #c4e5ae;
+    }
+
+    .communication {
+        background: #ffdaff;
+    }
+
+    .income {
+        background: #a6c5e6;
+    }
+
+    &-inner {
+        @include maxInner(1700px);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-textarea {
+        width: 45%;
+        padding-left: 153px;
+
+        &__box {
+            h2 {
+                font-size: 72px;
+                font-weight: 700;
+                line-height: 1.33;
+                letter-spacing: -.02em;
+            }
+
+            p {
+                margin-top: 24px;
+                font-size: 20px;
+                line-height: 1.57;
+                letter-spacing: 0;
+                font-weight: 700;
+            }
+
+            &__link {
+                @include roundButton($hover:blue, $size:small, $bg-color:#000);
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &-scrollarea {
+        width: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 24px;
+
+        &__left {
+            width: 375px;
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+        }
+
+        &__right {
+            width: 375px;
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+        }
+    }
+}
+
+// together
+
+.together {
+    @include maxInner(1738px,100%);
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+        margin-top: 100px;
+        
+        &__item {
+            width: calc(100% / 6 - 12px);
+            height: 158px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+    }
+}
+
+// business
+.business {
+    position: relative;
     height: 100vh;
+
+    // &.on {
+    //     &-bg {
+    //         &__left {
+    //             border-radius: ;
+    //         }
+    //     }
+    // }
+
+    &-bg {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+        
+        &__left {
+            position: relative;
+            width: 50%;
+            height: 100%;
+
+            &.on {
+                .business-bg__left__circle {
+                    top: 20%;
+                }
+            }
+
+            &__circle {
+                position: absolute;
+                top: -20%;
+                left: -5%;
+                width: 100%;
+                height: 100%;
+                background: #c4e5ae;
+                border-radius: 100% 100% 0 0;
+                transform: scale(1.4);
+                transition: .4s;
+
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 50%;
+                    position: absolute;
+                    bottom: -30%;
+                    left: 0;
+                    background: #c4e5ae;
+                }
+            }
+        }
+
+        &__right {
+            width: 50%;
+            background: #c4e5ae;
+            height: 100%;
+        }
+    }
+
+    &-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        &__text {
+            text-align: center;
+
+            h2 {
+                font-size: 52px;
+                line-height: 1.38;
+                font-weight: 700;
+                letter-spacing: -.02em;
+            }
+
+            p {
+                font-size: 20px;
+                margin-top: 24px;
+                line-height: 1.57;
+                font-weight: 700;
+            }
+        }
+
+        &__group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 48px;
+
+            a {
+                @include roundButton($hover:black, $size:large,$bg-color:#3067ec)
+            }
+
+        }
+    }
 }
