@@ -25,7 +25,7 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
     }
 }
 
-@mixin roundButton($hover:false, $size:large, $bg-color:#fff, $border-radius:99px, $font-size:21px) {
+@mixin roundButton($hover:none, $size:large, $bg-color:#fff, $border-radius:99px, $font-size:21px) {
     background-color: $bg-color;
     border-radius: $border-radius;
     font-size: $font-size;
@@ -52,6 +52,10 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
             font-size: 12px;
         }
 
+    } @else if($size == xsmall) {
+
+        padding: 16px 24px;
+
     } @else if($size == none) {
 
         padding: 0;
@@ -60,12 +64,24 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
 
     @if($bg-color != #fff) {
         color: #fff;
+    }
         
-        @if($hover == true){
-            &:hover {
-                background: #3067ec;
-            }
+    @if($hover == black){
+        &:hover {
+            background: #3067ec;
         }
+    } @else if($hover == blue) {
+        &:hover {
+            background: #000000;
+        }
+
+    } @else if($hover == line) {
+        &:hover {
+            background: #fff;
+            border: 2px solid #000;
+            color: #000;
+        }
+
     }
 }
 

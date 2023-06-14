@@ -133,7 +133,7 @@ i[class^=ico-], i[class*=ico-] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 40px);
   height: 100%;
 }
 .header-nav {
@@ -216,6 +216,23 @@ i[class^=ico-], i[class*=ico-] {
 }
 .header-nav__subitem:hover > a {
   background: #f4f4f4;
+}
+.header-group__link {
+  background-color: #000;
+  border-radius: 99px;
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-weight: 500;
+  line-height: 1;
+  padding: 16px 24px;
+  color: #fff;
+  display: block;
+}
+.header-group__link:hover {
+  background: #fff;
+  border: 2px solid #000;
+  color: #000;
 }
 
 .footer__main {

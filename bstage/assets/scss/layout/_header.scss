@@ -30,7 +30,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: calc(100% - 40px);
         height: 100%;
     }
 
@@ -122,6 +122,13 @@
                     background: #f4f4f4;
                 }
             }
+        }
+    }
+
+    &-group {
+        &__link {
+            @include roundButton($hover:line,$size:xsmall,$bg-color:#000,$font-size:18px);
+            display: block;
         }
     }
 }
