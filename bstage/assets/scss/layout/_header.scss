@@ -1,10 +1,15 @@
 .header {
     position: fixed;
-    top: 20px;
+    top: -104px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     z-index: 99;
+    transition: top .3s;
+
+    &.on {
+        top: 20px;
+    }
 
     &-inner {
         @include maxInner(1783px,100%);

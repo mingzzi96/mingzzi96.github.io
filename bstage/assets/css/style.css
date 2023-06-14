@@ -92,12 +92,17 @@ i[class^=ico-], i[class*=ico-] {
 
 .header {
   position: fixed;
-  top: 20px;
+  top: -104px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
   z-index: 99;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+.header.on {
+  top: 20px;
 }
 .header-inner {
   max-width: 1783px;
@@ -514,4 +519,9 @@ i[class^=ico-], i[class*=ico-] {
   width: 285px;
   height: 82px;
   font-size: 0;
+}
+
+.owner {
+  background: red;
+  height: 100vh;
 }
