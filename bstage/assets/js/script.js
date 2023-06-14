@@ -3,7 +3,12 @@ $(function () {
         pagination: {
           el: ".swiper-pagination",
         },
-        loop: true
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        speed: 1100
     });
     // 스크롤 감지
     $(window).on('mousewheel',function(e){
