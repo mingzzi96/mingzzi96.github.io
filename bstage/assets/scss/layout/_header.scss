@@ -1,0 +1,122 @@
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 99;
+
+    &-inner {
+        @include maxInner(1783px,100%);
+        background: #fff;
+        border-radius: 99px;
+        display: flex;
+        align-items: center;
+        padding: 0 40px;
+        height: 84px;
+    }
+
+    &-logo {
+        width: 30px;
+    }
+    
+    &-wrap {
+        padding-left: 113px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-nav {
+        width: 80%;
+        height: 100%;
+
+        &__list {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__item {
+            position: relative;
+            font-size: 18px;
+            font-weight: 500;
+            color: #000;
+            transition: .15s;
+
+            & > a {
+                display: flex;
+                align-items: center;
+            }
+            
+            img {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin-top: 2px;
+                margin-left: 4px;
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+
+            &:hover {
+
+                &>a {
+                    color: #3067ec;
+                }
+            
+                img {
+                    &:nth-child(1) {
+                        display: none;
+                    }
+    
+                    &:nth-child(2) {
+                        display: inline-block;
+                    }
+                }
+                .header-nav__sublist {
+                    display: block;
+                }
+            }
+        }
+
+        &__sublist {
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-27%);
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 288px;
+            background: #fff;
+            display: none;
+        }
+
+        &__subitem {
+            &~.header-nav__subitem {
+                margin-top: 12px;
+            }
+            &>a {
+                display: block;
+                padding: 6px 20px;
+                border-radius: 8px;
+                white-space: nowrap;
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: -.03em;
+            }
+            &:hover {
+                &>a {
+                    background: #f4f4f4;
+                }
+            }
+        }
+    }
+}

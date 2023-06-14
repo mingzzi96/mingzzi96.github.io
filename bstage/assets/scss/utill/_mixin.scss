@@ -1,0 +1,76 @@
+
+
+$desktop:1400px; //1025 까지 보고 잡기
+$tablet:1024px; //768 까지 보고 잡기
+$mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
+
+
+
+@mixin desktop{
+    @media (max-width:$desktop) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (max-width:$tablet) {
+        @content;
+    }
+}
+
+
+@mixin mobile{
+    @media (max-width:$mobile) {
+        @content;
+    }
+}
+
+@mixin roundButton($hover:false, $size:large, $bg-color:#fff, $border-radius:99px, $font-size:21px) {
+    background-color: $bg-color;
+    border-radius: $border-radius;
+    font-size: $font-size;
+    transition: 0.2s;
+    font-weight: 500;
+    line-height: 1;
+
+    @if($size == small) {
+
+        padding: 12px 60px;
+        font-size: 16vw;
+
+    } @else if($size == large) {
+
+        padding: 16px 80px;
+        font-size: 21px;
+        
+        @include desktop {
+            padding: 14px 70px;
+            font-size: 1.3vw;
+        }
+        
+        @include tablet() {
+            font-size: 12px;
+        }
+
+    } @else if($size == none) {
+
+        padding: 0;
+
+    }
+
+    @if($bg-color != #fff) {
+        color: #fff;
+        
+        @if($hover == true){
+            &:hover {
+                background: #3067ec;
+            }
+        }
+    }
+}
+
+@mixin maxInner($max-width:1695px, $width:90%) {
+    max-width: $max-width;
+    width: $width;
+    margin: 0 auto;
+}
