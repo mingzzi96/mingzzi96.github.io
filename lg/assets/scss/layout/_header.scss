@@ -7,16 +7,6 @@
     background: #000;
     border-bottom: 1px solid #151515;
 
-    // mixin 예시
-    // 반응형의 include 경우는 아래에 쓰고 엔터 한번 써야됨
-    // 그 외에는 위에다 include
-    // @include desktop {
-    //     display: none;
-    // }
-    // @include tablet {
-    //     display: block;
-    // }
-
     &__nav {
         display: flex;
         align-items: center;
@@ -53,9 +43,6 @@
     }
 
     &__logo {
-        &--link {
-
-        }
 
         &--img {
             width: 100px;
