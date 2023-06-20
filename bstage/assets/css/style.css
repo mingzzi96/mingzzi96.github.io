@@ -491,7 +491,7 @@ br.mo {
 }
 @media (max-width: 1024px) {
   .slider .swiper-wrapper {
-    height: 60vw;
+    height: 100vh;
     min-height: 480px;
   }
 }
@@ -599,6 +599,11 @@ br.mo {
 @media (max-width: 1400px) {
   .slider-content__title {
     font-size: 5vw;
+  }
+}
+@media (max-width: 1024px) {
+  .slider-content__title {
+    font-size: 50px;
   }
 }
 .slider-content__title--white {
