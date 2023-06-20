@@ -42,15 +42,6 @@ $mobile:767px; //320 까지니까 320 최소를 보고 디자인 잡기
 
         padding: 22px 80px;
         font-size: 21px;
-        
-        @include desktop {
-            padding: 14px 70px;
-            font-size: 1.3vw;
-        }
-        
-        @include tablet() {
-            font-size: 12px;
-        }
 
     } @else if($size == xsmall) {
 
