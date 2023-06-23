@@ -310,6 +310,11 @@ br.mo {
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+@media (max-width: 1024px) {
+  .header-nav__subitem > a {
+    font-size: 14px;
+  }
+}
 .header-nav__subitem:hover > a {
   background: #f4f4f4;
 }
@@ -515,12 +520,13 @@ br.mo {
 }
 .header.mobile .header-wrap {
   display: block;
-  padding: 80px 20px 0;
+  padding: 80px 20px;
 }
 .header.mobile .header-nav {
   display: block;
   width: 100%;
   padding-top: 50px;
+  overflow-y: auto;
 }
 .header.mobile .header-nav__list {
   -webkit-box-orient: vertical;
@@ -556,6 +562,7 @@ br.mo {
   position: relative;
   background: #fff;
   width: 100%;
+  margin-top: 20px;
 }
 .header.mobile .header-group {
   position: absolute;
@@ -568,7 +575,6 @@ br.mo {
   font-size: 14px;
 }
 .header.mobile .header-group__info__sub {
-  display: block;
   top: -100px;
   padding: 10px 14px;
 }

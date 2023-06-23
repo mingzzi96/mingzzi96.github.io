@@ -127,4 +127,42 @@ $(function () {
         $(".header-group__link").removeClass("on")
     })
 
+
+    // 주메뉴 영역 li 를 저장한다.
+    var mbMenuLis = $('.header.mobile .header-nav__list .header-nav__item');
+    // 주메뉴(a) 클릭시 해당 .mb_submenu 보여주기
+    $.each(mbMenuLis, function(index, item) {
+        // 주메뉴 span
+        var tempMenu = $(this).find('> a');
+        // 각 주메뉴에 따른 서브 메뉴 ul
+        var tempSub = $(this).find('.header-nav__sublist');
+        // 클릭 처리
+        tempMenu.click(function() {
+            // 메뉴 토글 기능
+            tempSub.slideToggle();
+            // 이전에 클릭되었던 mb_submenu 닫기
+            // this 의 숫자값을 전달해준다.
+            allClose(index);
+        });
+    });
+
+    // 전달 되는 번호 이외에는 모두 닫기 기능
+    function allClose(num) {
+        $.each(mbMenuLis, function(index, item) {
+
+            if (num == index) {
+                // 숫자값이 서로 같다면 slideup 제외
+                return;
+            }
+            var tempSub = $(this).find('.header-nav__sublist');
+            tempSub.slideUp();
+        });
+    }
+
+
+    // mobile language menu open and close function
+    $(".header.mobile .header-group__info__item").click(function() {
+        $(".header.mobile .header-group__info__sub").toggle();
+    });
+
 })
