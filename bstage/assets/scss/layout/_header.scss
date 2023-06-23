@@ -213,6 +213,18 @@
             @include desktop {
                 @include roundButton($hover:line,$size:xsmall,$bg-color:#000,$font-size:16px);
             }
+
+            @include tablet {
+                @include roundButton($hover:line,$size:xsmall,$bg-color:#000,$font-size:14px);
+                padding: 12px;
+                display: none;
+                position: absolute;
+                right: 60px;
+
+                &.on {
+                    display: inline-block;
+                }
+            }
         }
 
         &__info {
@@ -245,6 +257,10 @@
 
                     @include desktop {
                         font-size: 16px;
+                    }
+
+                    @include tablet {
+                        font-size: 14px;
                     }
                 }
 
@@ -323,6 +339,11 @@
             bottom: 0;
             overflow-y: auto;
             background: #fff;
+
+            .header-group__info,
+            .header-nav {
+                display: block;
+            }
         }
 
         &-menu {
@@ -379,6 +400,28 @@
                 position: relative;
                 background: #fff;
                 width: 100%;
+            }
+        }
+
+        .header-group {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display: inline-block;
+            width: auto;
+
+            &__info {
+                font-size: 14px;
+
+                &__sub {
+                    display: block;
+                    top: -100px;
+                    padding: 10px 14px;
+                }
+
+                &__subitem {
+                    font-size: 14px;
+                }
             }
         }
     }

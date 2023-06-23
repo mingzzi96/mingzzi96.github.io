@@ -82,6 +82,7 @@ $(function () {
     })
     
     function setDeviceSize(){
+        document.querySelector("header").classList.add("transparent")
         window.addEventListener("scroll", function () {
             wScrollTop = document.querySelector("html").scrollTop;
         })
@@ -116,10 +117,14 @@ $(function () {
     $(".header-button__mob-open").click(function(){
         $(".header-button__mob").addClass("on")
         $(".header.mobile").addClass("active")
+        $("body").addClass("scroll-hidden")
+        $(".header-group__link").addClass("on")
     })
     $(".header-button__mob-close").click(function(){
         $(".header-button__mob").removeClass("on")
         $(".header.mobile").removeClass("active")
+        $("body").removeClass("scroll-hidden")
+        $(".header-group__link").removeClass("on")
     })
 
 })
