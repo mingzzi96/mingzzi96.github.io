@@ -114,6 +114,24 @@ br.mo {
 .header.on {
   top: 20px;
 }
+@media (max-width: 1024px) {
+  .header.on {
+    top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .header.transparent .header-inner {
+    background: transparent;
+  }
+}
+.header-mobile__button {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .header-mobile__button {
+    display: block;
+  }
+}
 .header-inner {
   max-width: 100%;
   width: 95%;
@@ -126,11 +144,33 @@ br.mo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 40px;
   height: 84px;
 }
+@media (max-width: 1400px) {
+  .header-inner {
+    height: 75px;
+  }
+}
+@media (max-width: 1024px) {
+  .header-inner {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 0;
+  }
+}
 .header-logo {
   width: 30px;
+}
+@media (max-width: 1400px) {
+  .header-logo {
+    width: 25px;
+  }
 }
 .header-wrap {
   padding-left: 113px;
@@ -143,12 +183,27 @@ br.mo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: calc(100% - 60px);
+  width: calc(100% - 70px);
   height: 100%;
 }
+@media (max-width: 1400px) {
+  .header-wrap {
+    padding-left: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .header-wrap {
+    width: auto;
+  }
+}
 .header-nav {
-  width: calc(80% - 113px);
+  width: 70%;
   height: 100%;
+}
+@media (max-width: 1024px) {
+  .header-nav {
+    display: none;
+  }
 }
 .header-nav__list {
   display: -webkit-box;
@@ -166,8 +221,20 @@ br.mo {
   font-size: 18px;
   font-weight: 500;
   color: #000;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: 0.15s;
   transition: 0.15s;
+}
+@media (max-width: 1400px) {
+  .header-nav__item {
+    font-size: 16px;
+  }
 }
 .header-nav__item > a {
   display: -webkit-box;
@@ -201,7 +268,7 @@ br.mo {
 }
 .header-nav__sublist {
   position: absolute;
-  top: 45px;
+  top: 69px;
   left: 50%;
   -webkit-transform: translateX(-27%);
           transform: translateX(-27%);
@@ -234,6 +301,15 @@ br.mo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 30%;
+}
+@media (max-width: 1024px) {
+  .header-group {
+    display: none;
+  }
 }
 .header-group__link {
   background-color: #000;
@@ -252,6 +328,25 @@ br.mo {
   background: #fff;
   border: 2px solid #000;
   color: #000;
+}
+@media (max-width: 1400px) {
+  .header-group__link {
+    background-color: #000;
+    border-radius: 99px;
+    font-size: 16px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-block;
+    padding: 16px 24px;
+    color: #fff;
+  }
+  .header-group__link:hover {
+    background: #fff;
+    border: 2px solid #000;
+    color: #000;
+  }
 }
 .header-group__info {
   display: -webkit-box;
@@ -282,6 +377,11 @@ br.mo {
   font-weight: 500;
   padding: 10px 8px;
 }
+@media (max-width: 1400px) {
+  .header-group__info__item > a {
+    font-size: 16px;
+  }
+}
 .header-group__info__item > a:hover {
   background-color: #f4f4f4;
 }
@@ -308,7 +408,7 @@ br.mo {
   padding: 20px 24px;
   border-radius: 12px;
   position: absolute;
-  top: 50px;
+  top: 40px;
   left: 0;
   display: none;
 }
@@ -514,6 +614,9 @@ br.mo {
 .slider .swiper-slide-active .slider-content__group {
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
+}
+.slider .swiper-slide picture {
+  height: 100%;
 }
 .slider .swiper-pagination {
   bottom: 80px;
@@ -1185,9 +1288,11 @@ br.mo {
     gap: 20px 0;
   }
 }
-.business-box__group__button {
-  min-width: 70%;
-  text-align: center;
+@media (max-width: 767px) {
+  .business-box__group__button {
+    min-width: 70%;
+    text-align: center;
+  }
 }
 .business-box__group a {
   background-color: #3067ec;

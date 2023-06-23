@@ -41,6 +41,10 @@
                 transform: translateX(0px);
             }
         }
+
+        picture {
+            height: 100%;
+        }
     }
 
     .swiper-pagination {
@@ -616,8 +620,10 @@
             }
 
             &__button {
-                min-width: 70%;
-                text-align: center;
+                @include mobile {
+                    min-width: 70%;
+                    text-align: center;
+                }
             }
 
             a {

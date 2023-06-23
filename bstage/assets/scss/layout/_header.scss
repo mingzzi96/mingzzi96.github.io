@@ -9,6 +9,29 @@
 
     &.on {
         top: 20px;
+            
+        @include tablet{
+            top: 0;
+        }
+    }
+
+    &.transparent {
+            
+        @include tablet{
+            .header-inner {
+                background: transparent;
+            }
+        }
+    }
+
+    &-mobile {
+        &__button {
+            display: none;
+
+            @include tablet{
+                display: block;
+            }
+        }
     }
 
     &-inner {
@@ -17,12 +40,27 @@
         border-radius: 99px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding: 0 40px;
         height: 84px;
+
+        @include desktop {
+            height: 75px;
+        }
+            
+        @include tablet{
+            @include maxInner(100%,100%);
+            padding: 0 20px;
+            border-radius: 0;
+        }
     }
 
     &-logo {
         width: 30px;
+
+        @include desktop {
+            width: 25px;
+        }
     }
     
     &-wrap {
@@ -30,20 +68,24 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: calc(100% - 60px);
+        width: calc(100% - 70px);
         height: 100%;
 
-        @mixin desktop{
-            padding-left: 90px;
+        @include desktop{
+            padding-left: 60px;
+        }
+            
+        @include tablet{
+            width: auto;
         }
     }
 
     &-nav {
-        width: calc(80% - 113px);
+        width: 70%;
         height: 100%;
 
-        @mixin desktop{
-            width: calc(80% - 90px);
+        @include tablet{
+            display: none;
         }
 
         &__list {
@@ -59,7 +101,14 @@
             font-size: 18px;
             font-weight: 500;
             color: #000;
+            height: 100%;
+            display: flex;
+            align-items: center;
             transition: .15s;
+
+            @include desktop {
+                font-size: 16px;
+            }
 
             & > a {
                 display: flex;
@@ -101,7 +150,7 @@
 
         &__sublist {
             position: absolute;
-            top: 45px;
+            top: 69px;
             left: 50%;
             transform: translateX(-27%);
             border: 2px solid #000;
@@ -136,10 +185,20 @@
     &-group {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
+        width: 30%;
+
+        @include tablet{
+            display: none;
+        }
 
         &__link {
             @include roundButton($hover:line,$size:xsmall,$bg-color:#000,$font-size:18px);
             display: block;
+
+            @include desktop {
+                @include roundButton($hover:line,$size:xsmall,$bg-color:#000,$font-size:16px);
+            }
         }
 
         &__info {
@@ -161,6 +220,10 @@
                     padding: 0 10px;
                     font-weight: 500;
                     padding: 10px 8px;
+
+                    @include desktop {
+                        font-size: 16px;
+                    }
 
                     &:hover {
                         background-color: #f4f4f4;
@@ -195,7 +258,7 @@
                 padding: 20px 24px;
                 border-radius: 12px;
                 position: absolute;
-                top: 50px;
+                top: 40px;
                 left: 0;
                 display: none;
             }

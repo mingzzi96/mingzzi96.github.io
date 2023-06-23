@@ -80,5 +80,36 @@ $(function () {
             $(".business-bg__left").addClass("on");
         }
     })
+    
+    function setDeviceSize(){
+        window.addEventListener("scroll", function () {
+            wScrollTop = document.querySelector("html").scrollTop;
+        })
+    }
+
+    setDeviceSize();
+    window.addEventListener('resize', function(){
+        setDeviceSize();
+    });
+
+    // header 특정 위치 이상부터에서만 보이도록
+    window.addEventListener("scroll", function () {
+        $(window).bind('wheel', function (event) {
+            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                // scroll up
+                document.querySelector("header").classList.add("on")
+                if(wScrollTop == 0){
+                    document.querySelector("header").classList.add("transparent")
+                }else {
+                    document.querySelector("header").classList.remove("transparent")
+                }
+            }
+            else {
+                // scroll down
+                document.querySelector("header").classList.remove("on")
+                document.querySelector("header").classList.remove("transparent")
+            }
+        });
+    })
 
 })
