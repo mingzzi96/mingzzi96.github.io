@@ -112,4 +112,14 @@ $(function () {
         });
     })
 
+    // mobile menu open and close
+    $(".header-button__mob-open").click(function(){
+        $(".header-button__mob").addClass("on")
+        $(".header.mobile").addClass("active")
+    })
+    $(".header-button__mob-close").click(function(){
+        $(".header-button__mob").removeClass("on")
+        $(".header.mobile").removeClass("active")
+    })
+
 })
