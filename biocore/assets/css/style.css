@@ -81,3 +81,80 @@ br.mo {
   -ms-touch-action: none;
       touch-action: none;
 }
+
+.slider .swiper-slide {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+}
+.slider .swiper-slide-active .swiper-slide__textbox h2 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.slider .swiper-slide-active .swiper-slide__textbox p {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.slider .swiper-slide__bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slider .swiper-slide__bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider .swiper-slide__textbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  width: 100%;
+  color: #fff;
+}
+.slider .swiper-slide__textbox__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.slider .swiper-slide__textbox__title .animaton-box {
+  overflow: hidden;
+}
+.slider .swiper-slide__textbox__subtext {
+  margin-top: 15px;
+  overflow: hidden;
+}
+.slider .swiper-slide__textbox__subtext .animation-box {
+  overflow: hidden;
+}
+.slider .swiper-slide__textbox h2 {
+  font-size: 80px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-weight: 700;
+}
+.slider .swiper-slide__textbox p {
+  font-size: 20px;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: 0.5s 0.6s;
+  transition: 0.5s 0.6s;
+  line-height: 1.5;
+}
+
+.about {
+  position: relative;
+  background: url(../../images/main_about_bg.jpg) no-repeat bottom left;
+  background-size: contain;
+  height: 100vh;
+}
