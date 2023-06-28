@@ -413,6 +413,18 @@
     .income {
         height: 100vh;
         overflow: hidden;
+
+        @include desktop {
+            height: 90vh;
+        }
+
+        @include tablet {
+            height: 70vh;
+        }
+
+        @include w836 {
+            height: auto;
+        }
     }
 
     .everything {
@@ -433,6 +445,29 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        &.reverse {
+            .introduce-scrollarea {
+                justify-content: start;
+            }
+
+            .introduce-textarea {
+                padding-left: 0;
+                padding-right: 80px;
+            }
+
+            @include w836 {
+                flex-direction: column;
+
+                .introduce-scrollarea {
+                    justify-content: center;
+                }
+            }
+        }
+
+        @include w836 {
+            flex-direction: column-reverse;
+        }
     }
 
     &-textarea {
@@ -440,7 +475,19 @@
         padding-left: 153px;
 
         @include desktop {
-            padding-left: 100px;
+            padding-left: 70px;
+        }
+
+        @include desktop {
+            padding-left: 40px;
+        }
+
+        @include w836 {
+            padding-left: 0;
+            padding-top: 70px;
+            padding-bottom: 70px;
+            width: 100%;
+            text-align: center;
         }
 
         &__box {
@@ -491,6 +538,13 @@
         justify-content: end;
         gap: 24px;
 
+        @include w836 {
+            overflow: hidden;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+        }
+
         &__left {
             width: 375px;
             display: flex;
@@ -498,7 +552,11 @@
             flex-direction: column;
 
             @include desktop {
-                width: 300px;
+                width: 250px;
+            }
+
+            @include tablet {
+                width: 200px;
             }
         }
 
@@ -509,7 +567,11 @@
             flex-direction: column;
 
             @include desktop {
-                width: 300px;
+                width: 250px;
+            }
+
+            @include tablet {
+                width: 200px;
             }
         }
     }

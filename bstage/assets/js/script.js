@@ -35,8 +35,9 @@ $(function () {
     })
 
     imageControll1
-        .to(".everything .introduce-scrollarea__left", { translateY : 120 })
-        .to(".everything .introduce-scrollarea__right", { translateY : -120 })
+        .addLabel("a")
+        .to(".everything .introduce-scrollarea__left", { translateY : 120 }, "a")
+        .to(".everything .introduce-scrollarea__right", { translateY : -120 }, "a")
 
     const imageControll2 = gsap.timeline({
         scrollTrigger: {
@@ -49,8 +50,8 @@ $(function () {
     })
 
     imageControll2
-        .to(".communication .introduce-scrollarea__left", { translateY : 120 })
-        .to(".communication .introduce-scrollarea__right", { translateY : -120 })
+        .to(".communication .introduce-scrollarea__left", { translateY : 120 }, "a")
+        .to(".communication .introduce-scrollarea__right", { translateY : -120 }, "a")
 
     
 
@@ -65,8 +66,8 @@ $(function () {
     })
 
     imageControll3
-        .to(".income .introduce-scrollarea__left", { translateY : 120 })
-        .to(".income .introduce-scrollarea__right", { translateY : -120 })
+        .to(".income .introduce-scrollarea__left", { translateY : 120 }, "a")
+        .to(".income .introduce-scrollarea__right", { translateY : -120 }, "a")
 
 
 
