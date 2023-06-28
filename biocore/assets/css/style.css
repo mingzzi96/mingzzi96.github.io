@@ -154,7 +154,7 @@ br.mo {
 
 .about {
   position: relative;
-  background: url(../../images/main_about_bg.jpg) no-repeat bottom left;
-  background-size: contain;
+  background: url(../images/main_about_bg.jpg) no-repeat bottom left;
+  background-size: 40%;
   height: 100vh;
 }
