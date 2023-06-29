@@ -158,3 +158,96 @@ br.mo {
   background-size: 40%;
   height: 100vh;
 }
+.about-inner {
+  position: relative;
+  max-width: 1300px;
+  width: 100%;
+  height: 100%;
+  margin: -30px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.about-inner::before {
+  content: "";
+  display: inline-block;
+  width: 35%;
+  height: 100%;
+  position: absolute;
+  right: -10%;
+  top: 0;
+  background: #f1f1f1;
+  z-index: -1;
+}
+.about-imgarea {
+  position: relative;
+  width: 50%;
+}
+.about-imgarea__inner {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  max-width: 642px;
+  max-height: 390px;
+  overflow: hidden;
+  border-radius: 80px 0 80px 0;
+}
+.about-imgarea img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .anime-textarea__textbox__subtext {
+  margin-top: 30px;
+}
+.about .anime-textarea p {
+  line-height: 1.5;
+}
+.about .animation-box.highlight h2 {
+  position: relative;
+  line-height: 1;
+}
+.about .animation-box.highlight h2:before {
+  content: "";
+  display: inline-block;
+  width: 90%;
+  height: 20px;
+  background: #2ee5d9;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.about a {
+  display: inline-block;
+  margin-top: 45px;
+  border: 1px solid #000;
+  padding: 12px 18px;
+  background: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.about a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.anime-textarea h2 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.anime-textarea p {
+  font-size: 18px;
+}
+.anime-textarea .animation-box {
+  overflow: hidden;
+}
