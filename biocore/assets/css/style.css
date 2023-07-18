@@ -378,6 +378,7 @@ br.mo {
   position: absolute;
   right: -20%;
   bottom: -2%;
+  z-index: -1;
 }
 .notice-inner {
   max-width: 1300px;
@@ -418,6 +419,7 @@ br.mo {
 }
 .notice-list__item {
   width: calc(25% - 20px);
+  background: #fff;
 }
 .notice-list__item a {
   display: block;

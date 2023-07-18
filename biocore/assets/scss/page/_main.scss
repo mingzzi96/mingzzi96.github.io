@@ -319,6 +319,7 @@
         position: absolute;
         right: -20%;
         bottom: -2%;
+        z-index: -1;
     }
 
     &-inner {
@@ -353,6 +354,7 @@
 
         &__item {
             width: calc(100% / 4 - 20px);
+            background: #fff;
 
             a {
                 display: block;
