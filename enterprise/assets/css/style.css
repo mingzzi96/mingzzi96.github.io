@@ -801,7 +801,6 @@ everything
 */
 .everything {
 
-    background: red;
 }
 
 .everything.show {
@@ -843,8 +842,8 @@ everything
 }
 
 .everything__main {
-    padding-top: 120vh;
-    padding-left: 9vh;
+    /* padding-top: 120vh; */
+    padding-left: 500px;
 }
 
 .everything__main .everything__main--title {
@@ -913,7 +912,7 @@ everything
 .everything__main--service {
     padding-top: 80px;
     /* padding-left: 9vh; */
-    padding-bottom: 80vh;
+    padding-bottom: 40px;
 }
 
 .everything__main--service .service__list {
@@ -954,6 +953,8 @@ slide--service
     opacity: 1;
     padding: 0 100px;
     opacity: 0; */
+    z-index: -1;
+    position: relative;
 }
 
 /* .slide--service.show {
@@ -961,7 +962,7 @@ slide--service
 } */
 
 .slide--service .slide__slider {
-    padding-left: 24px;
+    padding-left: 412px;
 }
 
 .slide--service .slide__card--list .slide__card--item {
@@ -986,10 +987,7 @@ glow
 */
 .glow {
     padding: 0 100px;
-    height: 400vh;
-    /* margin-top: -100vh; */
-    opacity: 0;
-    background: green;
+    height: 200vh;
 }
 .glow.show {
     opacity: 1;
@@ -1012,7 +1010,7 @@ glow
 }
 
 .glow .everything__card--right p {
-    padding-left: 120px;
+    padding-left: 500px;
     font-size: 54px;
     font-weight: 700;
     line-height: 1.28;

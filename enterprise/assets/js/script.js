@@ -237,43 +237,47 @@ $(function () {
     slideUnchangeMotion
         // .to(".slide--unchange .slide__slider", { x: -500 })
         .to(".slide--unchange .slide__slider", { x: ()=> {
-            return -$(".slide__slider--title").outerWidth() - 100 -$(".slide__card--item").outerWidth()
+            return -$(".slide__slider--title").outerWidth() - 100 -$(".slide--unchange .slide__card--item").outerWidth()
         } }, "a")
         .addLabel("a")
-        // .to(".slide--unchange .slide__card--item:nth-child(1)", {x:0}, "a")
-        // .to(".slide--unchange .slide__card--item:nth-child(2)", {x:-327}, "a")
-        // .to(".slide--unchange .slide__card--item:nth-child(3)", {x:-327*2}, "a")
-        // .to(".slide--unchange .slide__card--item:nth-child(4)", {x:-327*3}, "a")
         .to(".slide--unchange .slide__card--item:nth-child(1)", {x:327}, "a")
         .to(".slide--unchange .slide__card--item:nth-child(2)", {x:0}, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:first-child", {opacity:0}, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", {opacity:1}, "a")
         .to(".slide--unchange .slide__card--item:nth-child(3)", {x:-327}, "a")
         .to(".slide--unchange .slide__card--item:nth-child(4)", {x:-327*2}, "a")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child img:nth-child(2)", {opacity:0}, "a+=1")
+        .to(".slide--unchange .slide__card--list .slide__card--item:last-child .text-gradient", {opacity:1}, "a+=2")
 
         console.log($(".slide__slider--title").outerWidth());
 
     // slideMotion
-    // const slideServiceMotion = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".slide--service",
-    //         start: "0% 0%", // 트리거 기준  / 윈도우 기준
-    //         end: "100% 100%", // 트리거 기준  / 윈도우 기준
-    //         // markers: true,
-    //         scrub: 0, // 문대기
-    //         invalidateOnRefresh: true, // 반응형 잘 먹히도록
-    //     },
-    //     default: {
-    //         ease: "none"
-    //     }
-    // })
+    const slideServiceMotion = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".slide--service",
+            start: "0% 0%", // 트리거 기준  / 윈도우 기준
+            end: "100% 100%", // 트리거 기준  / 윈도우 기준
+            // markers: true,
+            scrub: 0, // 문대기
+            invalidateOnRefresh: true, // 반응형 잘 먹히도록
+        },
+        default: {
+            ease: "none"
+        }
+    })
 
     slideServiceMotion
+        // .to(".slide--service .slide__slider", {paddingLeft:200}, "a")
+        // .to(".slide__card--list .slide__card--item.gradient-line", {marginLeft:-80}, "a")
+
+        .to(".slide--service .slide__slider", { x: ()=> {
+            return -30 -$(".slide--service .slide__card--item").outerWidth()
+        } }, "a")
         .addLabel("a")
-        .to(".slide--service .slide__slider", { xPercent: -100 }, "a")
-        .to(".slide--service .slide__slider", {
-            x: () => {
-                return window.innerWidth / 3;
-            }
-        }, "a")
+        // .to(".slide--service .slide__card--item:nth-child(1)", {x:327}, "a")
+        .to(".slide--service .slide__card--item:nth-child(2)", {x:-327}, "a")
+        .to(".slide--service .slide__card--item:nth-child(3)", {x:-327*2}, "a")
+        .to(".slide--service .slide__card--item", {opacity:0})
 
 
     // glowMotion
@@ -284,13 +288,13 @@ $(function () {
             end: "100% 100%", // 트리거 기준  / 윈도우 기준
             // markers: true,
             scrub: 0, // 문대기
-            onEnter: () => {
-                $(".glow").addClass("show");
-            },
-            onLeaveBack: () => {
-                // start 지점을 빠져나갔을때
-                $(".glow").removeClass("show");
-            }
+            // onEnter: () => {
+            //     $(".glow").addClass("show");
+            // },
+            // onLeaveBack: () => {
+            //     // start 지점을 빠져나갔을때
+            //     $(".glow").removeClass("show");
+            // }
         },
         default: {
             ease: "none"
