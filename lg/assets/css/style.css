@@ -181,6 +181,53 @@ i[class^=ico-], i[class*=ico-] {
           justify-content: center;
 }
 
+.footer {
+  background: #333333;
+  padding: 40px 100px;
+  font-size: 14px;
+  color: #fff;
+}
+.footer__main {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer__info__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 14px;
+}
+.footer__info--copyright {
+  color: #bababa;
+  margin-bottom: 10px;
+}
+.footer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 10px;
+  gap: 10px;
+}
+.footer__buttons a {
+  color: #242424;
+  text-decoration: underline;
+}
+
 .main_tag {
   font-size: 15px;
   border: 2px solid #fff;
