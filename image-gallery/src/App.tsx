@@ -11,9 +11,24 @@ function App() {
 
     const onDrop = useCallback((acceptedFiles:any) => {
         // Do something with the files
-            console.log(acceptedFiles)
+            if(acceptedFiles.length){
+                for(const file of acceptedFiles){
+                    console.log(file);
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = (event) => {
+                        setImageList(prev => [...prev, event.target?.result as string]);
+                    }
+                }
+            }
       }, [])
-      const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+      const {getRootProps, getInputProps, isDragActive} = useDropzone({
+                    onDrop,  accept: {
+                    'image/png': ['.png'],
+                    'image/jpeg': ['.jpeg'],
+                    'image/gif': ['.gif'],
+                }
+            })
 
     return (
         <div className='container'>
@@ -25,23 +40,12 @@ function App() {
                     이미지를 추가해 주세요.
                     </div>
                 }
-                <input type="file" ref={inputRef} 
-                onChange={(event)=>{
-                    if(event.currentTarget.files?.[0]){
-                        const file = event.currentTarget.files[0];
-                        console.log(file.name);
-                        const reader = new FileReader();
-                        reader.readAsDataURL(file);
-                        reader.onloadend = (event) => {
-                            setImageList(prev => [...prev, event.target?.result as string]);
-                        }
-                    }
-                }}/>
                 <div className='plus-box'
-                onClick={()=>{
-                        inputRef.current?.click()
-                    }
-                }>+</div>
+                    {...getRootProps()} >
+                <input
+                    {...getRootProps()}
+                /> 
+                    +</div>
             </div>
             <div className="imgbox-wrap">
                 {
