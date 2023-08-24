@@ -1,19 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import logo from './logo.svg';
 import './App.css';
 import ImageBox from './components/ImageBox';
 
 function App() {
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const [imageList, setImageList] = useState<string[]>([])
-    console.log(imageList)
+
+    const onDrop = useCallback((acceptedFiles) => {
+        console.log(acceptedFiles);
+    }, [])
+    const {getRootProps, getInputProps} = useDropzone({onDrop})
 
     return (
         <div className='container'>
             <div className={'gallary-box '+ (imageList.length > 0 && 'row')}>
                 {
-                    imageList.length === 0 && 
+                    imageList.length === 0 &&
                     <div className='text-center'>
                     이미지가 없습니다.<br/>
                     이미지를 추가해 주세요.
