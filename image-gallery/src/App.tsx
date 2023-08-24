@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import {useDropzone} from 'react-dropzone'
 import logo from './logo.svg';
 import './App.css';
 import ImageBox from './components/ImageBox';
@@ -7,6 +8,12 @@ function App() {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const [imageList, setImageList] = useState<string[]>([])
+
+    const onDrop = useCallback((acceptedFiles:any) => {
+        // Do something with the files
+            console.log(acceptedFiles)
+      }, [])
+      const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
     return (
         <div className='container'>
