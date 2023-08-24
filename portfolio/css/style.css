@@ -76,6 +76,12 @@ br.mo {
       touch-action: none;
 }
 
+.mw {
+  max-width: 1100px;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .intro {
   position: relative;
   width: 100vw;
@@ -154,7 +160,7 @@ br.mo {
   font-size: 20px;
   font-weight: 700;
 }
-.profile__container {
+.profile__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,17 +171,17 @@ br.mo {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 80px;
-  padding: 120px 30px;
+  padding: 120px 0px;
 }
-.profile__container--imagebox {
+.profile__content--imagebox {
   position: relative;
   display: block;
-  width: 30%;
+  width: 40%;
   height: 500px;
   overflow: hidden;
   border-radius: 20px;
 }
-.profile__container--imagebox img {
+.profile__content--imagebox img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -187,10 +193,74 @@ br.mo {
      object-fit: cover;
   width: 100%;
 }
-.profile__container--textbox {
-  width: 40%;
+.profile__content--textbox {
+  width: 60%;
   font-size: 20px;
 }
-.profile__container--textbox p {
+.profile__content--textbox p {
   line-height: 1.8;
+}
+
+.pre {
+  background: #f3ebe0;
+  padding: 120px 0px;
+}
+.pre__title h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+.pre__title p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+.pre__content {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pre__content--item {
+  border: 2px solid #E36181;
+  display: inline-block;
+  width: 40%;
+  background: #f3ebe0;
+  padding: 20px;
+  color: #E36181;
+}
+.pre__content--imgbox {
+  width: 100%;
+  height: 200px;
+  background: #000;
+}
+.pre__content--subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.pre__content--subtitle span {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.pre__content--disc {
+  margin-top: 20px;
+  text-align: center;
+}
+.pre__content--disc h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 12px;
+}
+.pre__content--disc p {
+  line-height: 1.6;
 }
