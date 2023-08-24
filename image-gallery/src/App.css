@@ -1,9 +1,14 @@
+* {
+    box-sizing: border-box;
+}
 .container {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 30px;
 }
 .gallary-box {
     display: flex;
@@ -17,7 +22,6 @@
     gap: 100px;
     overflow-x: scroll;
     width: 100%;
-    justify-content: flex-start;
     padding: 0 140px;
 }
 .text-center {
@@ -34,6 +38,15 @@
     justify-content: center;
     line-height: 24px;
     cursor: pointer;
+}
+
+.imgbox-wrap {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .image-box {

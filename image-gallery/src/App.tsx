@@ -36,6 +36,8 @@ function App() {
                         inputRef.current?.click()
                     }
                 }>+</div>
+            </div>
+            <div className="imgbox-wrap">
                 {
                     imageList.map((el, index) => <ImageBox key={el+index} src={el} />)
                 }
