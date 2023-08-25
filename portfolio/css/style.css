@@ -179,7 +179,6 @@ br.mo {
   width: 40%;
   height: 500px;
   overflow: hidden;
-  border-radius: 20px;
 }
 .profile__content--imagebox img {
   position: absolute;
@@ -196,6 +195,12 @@ br.mo {
 .profile__content--textbox {
   width: 60%;
   font-size: 20px;
+}
+.profile__content--textbox a.work-diary {
+  position: relative;
+}
+.profile__content--textbox a.work-diary:hover::after {
+  opacity: 1;
 }
 .profile__content--textbox p {
   line-height: 1.8;
@@ -223,19 +228,30 @@ br.mo {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 40px;
 }
 .pre__content--item {
+  position: relative;
   border: 2px solid #E36181;
   display: inline-block;
   width: 40%;
   background: #f3ebe0;
   padding: 20px;
   color: #E36181;
+  cursor: pointer;
 }
 .pre__content--imgbox {
   width: 100%;
-  height: 200px;
-  background: #000;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .pre__content--subtitle {
   display: -webkit-box;
@@ -247,10 +263,10 @@ br.mo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 30px;
 }
 .pre__content--subtitle span {
   font-weight: 500;
-  margin-bottom: 20px;
 }
 .pre__content--disc {
   margin-top: 20px;
@@ -259,8 +275,56 @@ br.mo {
 .pre__content--disc h3 {
   font-weight: 700;
   font-size: 24px;
-  margin-top: 12px;
+  margin-top: 18px;
 }
 .pre__content--disc p {
   line-height: 1.6;
+}
+
+.more_btn {
+  font-size: 18px;
+  color: #000;
+}
+.more_btn:hover .left-arw {
+  opacity: 1;
+  -webkit-transform: translateX(4px);
+          transform: translateX(4px);
+}
+.more_btn .left-arw {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.left-arw {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: url(../assets/images/black_arrow.png) no-repeat center;
+  background-size: contain;
+  vertical-align: -1px;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: url(../assets/images/hover-eye.png) no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  z-index: 9999999999;
+  pointer-events: none;
+}
+.cursor.show {
+  opacity: 1;
+}
+
+.cursor-none {
+  cursor: none;
 }

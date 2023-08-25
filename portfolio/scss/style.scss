@@ -95,7 +95,6 @@
             width: 40%;
             height: 500px;
             overflow: hidden;
-            border-radius: 20px;
 
             img {
                 position: absolute;
@@ -112,7 +111,35 @@
         &--textbox {
             width: 60%;
             font-size: 20px;
-            
+            a.work-diary {
+                position: relative;
+                // color: $color-primary;
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
+                // &::after {
+                //     content: "궁금해요!";
+                //     font-size: 12px;
+                //     color: #fff;
+                //     position: absolute;
+                //     top: 0;
+                //     left: 0;
+                //     width: 100%;
+                //     height: 100%;
+                //     display: inline-block;
+                //     background: $color-primary;
+                //     display: flex;
+                //     align-items: center;
+                //     justify-content: center;
+                //     opacity: 0;
+                //     transition: .3s;
+                // }
+            }
+
             p {
                 line-height: 1.8;
             }
@@ -141,30 +168,35 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        gap: 40px;
 
         &--item {
+            position: relative;
             border: 2px solid $color-primary;
             display: inline-block;
             width: 40%;
             background: $color-yellow;
             padding: 20px;
             color: $color-primary;
+            cursor: pointer;
         }
 
         &--imgbox {
             width: 100%;
-            height: 200px;
-            background: #000;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &--subtitle {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 30px;
 
             span {
                 font-weight: 500;
-                margin-bottom: 20px;
             }
         }
 
@@ -175,7 +207,7 @@
             h3 {
                 font-weight: 700;
                 font-size: 24px;
-                margin-top: 12px;
+                margin-top: 18px;
             }
             
             p {
@@ -183,4 +215,53 @@
             }
         }
     }
+}
+
+.more_btn {
+    font-size: 18px;
+    color: #000;
+
+    &:hover {
+        .left-arw {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+    }
+
+    .left-arw {
+        transition: .2s;
+        opacity: 0;
+        transform: translateX(0px);
+    }
+}
+
+.left-arw {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url(../assets/images/black_arrow.png) no-repeat center;
+    background-size: contain;
+    vertical-align: -1px;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: url(../assets/images/hover-eye.png) no-repeat center;
+    background-size: contain;
+    opacity: 0;
+    z-index: 9999999999;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+.cursor-none {
+    cursor: none;
 }
