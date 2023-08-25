@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* 알아보기 
 :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4} */
 * {
@@ -16,7 +16,7 @@
 
 html, body {
   height: 100%;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 400;
   word-break: keep-all;
 }
@@ -287,11 +287,10 @@ br.mo {
 }
 .intro__textbox {
   gap: 80px;
-  text-align: center;
 }
 .intro__textbox h1 {
   font-weight: 700;
-  font-size: 10vw;
+  font-size: 8vw;
   line-height: 1.2;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -342,7 +341,7 @@ br.mo {
 }
 .profile__marquee--item {
   position: relative;
-  width: 25%;
+  width: 100%;
   text-align: center;
   background: url(../assets/images/filled_heart_white.png) no-repeat center;
   background-size: 40%;
@@ -393,6 +392,22 @@ br.mo {
 .profile__content--textbox {
   width: 60%;
   font-size: 20px;
+}
+.profile__content--textbox--sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+.profile__content--textbox--sub span:last-child {
+  font-size: 18px;
+  border: 2px solid #FF3901;
+  border-radius: 20px;
+  padding: 4px 12px;
 }
 .profile__content--textbox a.work-diary {
   position: relative;

@@ -1,3 +1,8 @@
+
+var s = skrollr.init({
+    smoothScrolling: true
+});
+
 const customedCursor = document.querySelector(".cursor");
 const customedCursorRed = document.querySelector(".cursor-red");
 const hoverEye = document.querySelectorAll(".hover-eye");
