@@ -82,6 +82,12 @@ br.mo {
   margin: 0 auto;
 }
 
+.lw {
+  max-width: 1280px;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .intro {
   position: relative;
   width: 100vw;
@@ -132,15 +138,27 @@ br.mo {
   width: 100vw;
   border-top: 2.5px solid #E898A9;
   border-bottom: 2.5px solid #E898A9;
-}
-.profile__marquee--line {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.profile__marquee--line {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: marquee 13s infinite linear;
+          animation: marquee 13s infinite linear;
 }
 .profile__marquee--item {
   position: relative;
@@ -206,54 +224,43 @@ br.mo {
   line-height: 1.8;
 }
 
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
 .pre {
   background: #f3ebe0;
   padding: 120px 0px;
 }
-.pre__title h2 {
-  font-size: 60px;
-  margin-bottom: 40px;
-}
-.pre__title p {
-  font-size: 20px;
-  line-height: 1.8;
-}
-.pre__content {
-  margin-top: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 40px;
-}
-.pre__content--item {
-  position: relative;
-  border: 2px solid #E36181;
-  display: inline-block;
-  width: 40%;
-  background: #f3ebe0;
-  padding: 20px;
-  color: #E36181;
-  cursor: pointer;
-}
-.pre__content--imgbox {
+.pre__listwrap {
   width: 100%;
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
-.pre__content--subtitle {
+.pre__listwrap--item {
+  border-bottom: 3px solid #000;
+}
+.pre__listwrap--item--link {
+  position: relative;
+  padding: 2.5vw 3vw;
+  font-size: 2vw;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,22 +270,31 @@ br.mo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 30px;
 }
-.pre__content--subtitle span {
-  font-weight: 500;
+.pre__listwrap--item--link:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: #000;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
-.pre__content--disc {
-  margin-top: 20px;
-  text-align: center;
+.pre__listwrap--item--link p {
+  z-index: 9;
 }
-.pre__content--disc h3 {
-  font-weight: 700;
-  font-size: 24px;
-  margin-top: 18px;
+.pre__listwrap--item--link:hover {
+  padding: 2.5vw 3.5vw;
+  color: #fff;
 }
-.pre__content--disc p {
-  line-height: 1.6;
+.pre__listwrap--item--link:hover::before {
+  width: 100%;
+}
+.pre__listwrap--item:first-child {
+  border-top: 3px solid #000;
 }
 
 .more_btn {
@@ -296,6 +312,27 @@ br.mo {
   opacity: 0;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
+}
+
+.hover-eye {
+  position: relative;
+}
+.hover-eye:after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: inline-block;
+  background: #000;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.hover-eye:hover:after {
+  width: 70%;
 }
 
 .left-arw {
