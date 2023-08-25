@@ -21,7 +21,6 @@ html, body {
   word-break: keep-all;
 }
 
-/* body {padding-top: 54px;} */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -44,6 +43,16 @@ table {
 
 ul {
   list-style: none;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
 }
 
 #wrapper {
