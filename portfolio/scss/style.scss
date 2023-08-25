@@ -4,8 +4,10 @@
 @import "./utill/var";
 @import "./utill/mixin";
 
-// @import "./layout/header";
-// @import "./layout/footer";
+@import "./subpage";
+
+@import "./layout/header";
+@import "./layout/footer";
 
 
 .intro {
@@ -15,25 +17,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(232,152,169);
-    background: linear-gradient(180deg, rgba(232,152,169,1) 33%, rgba(243,235,224,1) 100%);
+    // background: rgb(232,152,169);
+    // background: linear-gradient(180deg, rgba(232,152,169,1) 33%, rgba(243,235,224,1) 100%);
 
     &__textbox {
-        color: #fff;
+        // color: #fff;
         gap: 80px;
         text-align: center;
         
         h1 {
             font-weight: 700;
-            font-size: 130px;
+            font-size: 10vw;
             line-height: 1.2;
+            transition: .2s;
         }
 
         h2 {
             position: relative;
-            font-size: 24px;
+            font-size: 1.5vw;
             display: inline-block;
             margin-top: 60px;
+            transition: .2s;
 
             &:after {
                 content: "";
@@ -49,7 +53,7 @@
 }
 
 .profile {
-    background: $color-yellow;
+    // background: $color-yellow;
 
     &__marquee {
         width: 100vw;
@@ -117,6 +121,8 @@
         &--textbox {
             width: 60%;
             font-size: 20px;
+            // font-weight: 300;
+
             a.work-diary {
                 position: relative;
                 // color: $color-primary;
@@ -126,24 +132,6 @@
                         opacity: 1;
                     }
                 }
-
-                // &::after {
-                //     content: "궁금해요!";
-                //     font-size: 12px;
-                //     color: #fff;
-                //     position: absolute;
-                //     top: 0;
-                //     left: 0;
-                //     width: 100%;
-                //     height: 100%;
-                //     display: inline-block;
-                //     background: $color-primary;
-                //     display: flex;
-                //     align-items: center;
-                //     justify-content: center;
-                //     opacity: 0;
-                //     transition: .3s;
-                // }
             }
 
             p {
@@ -163,7 +151,7 @@
 }
 
 .pre {
-    background: $color-yellow;
+    // background: $color-yellow;
     padding: 120px 0px;
     
     &__listwrap {
@@ -214,6 +202,41 @@
     }
 }
 
+.contact {
+    padding: 120px 0;
+
+    &__title {
+        margin-bottom: 90px;
+
+        h2 {
+            font-size: 2.5vw;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            transition: .2s;
+
+            img {
+                width: 3vw;
+                margin-left: 12px;
+                min-width: 12px;
+                transition: .2s;
+            }
+        }
+
+        a {
+            font-size: 5.5vw;
+            font-weight: 700;
+            transition: .2s;
+        }
+    }
+
+    p {
+        line-height: 1.8em;
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
 .more_btn {
     font-size: 18px;
     color: #000;
@@ -240,13 +263,14 @@
         width: 0%;
         height: 2px;
         display: inline-block;
-        background: #000;
+        background: $color-primary;
         position: absolute;
         bottom: -4px;
         left: 50%;
         transform: translateX(-50%);
         transition: 0.3s;
     }
+
     &:hover {
         &:after {
             width: 70%;
@@ -275,6 +299,24 @@
     opacity: 0;
     z-index: 9999999999;
     pointer-events: none;
+
+    &-red {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background: url(../assets/images/hover-eye-red.png) no-repeat center;
+        background-size: contain;
+        opacity: 0;
+        z-index: 9999999999;
+        pointer-events: none;
+
+        &.show {
+            opacity: 1;
+        }
+    }
 
     &.show {
         opacity: 1;

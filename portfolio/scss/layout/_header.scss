@@ -1,0 +1,33 @@
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    z-index: 999999;
+
+    &__container {
+        width: 100%;
+        border-top: 2px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 20px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+
+        h1, h2, h3 {
+            display: block;
+            width: 33.33333%;
+            font-weight: 700;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: right;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 const customedCursor = document.querySelector(".cursor");
+const customedCursorRed = document.querySelector(".cursor-red");
 const hoverEye = document.querySelectorAll(".hover-eye");
+const hoverEyeRed = document.querySelectorAll(".hover-eye-red");
 
 
 
@@ -17,6 +19,10 @@ document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용�
 
     customedCursor.style.top = mouseY + 'px';
 
+    customedCursorRed.style.left = mouseX + 'px';
+
+    customedCursorRed.style.top = mouseY + 'px';
+
 });
 
 hoverEye.forEach( (e) => {
@@ -27,6 +33,19 @@ hoverEye.forEach( (e) => {
 
     e.addEventListener("mouseleave", (event) => {
         customedCursor.classList.remove("show");
+        e.classList.remove("cursor-none");
+    })
+
+} )
+
+hoverEyeRed.forEach( (e) => {
+    e.addEventListener("mouseenter", (event) => {
+        customedCursorRed.classList.add("show");
+        e.classList.add("cursor-none");
+    })
+
+    e.addEventListener("mouseleave", (event) => {
+        customedCursorRed.classList.remove("show");
         e.classList.remove("cursor-none");
     })
 
