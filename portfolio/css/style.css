@@ -207,9 +207,6 @@ br.mo {
   border: 1px solid #000;
   border-radius: 20px;
 }
-.goback a:hover {
-  background: #fff;
-}
 .goback a:last-child {
   background: #000;
   color: #fff;
@@ -300,6 +297,15 @@ br.mo {
   line-height: 1.2;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+.intro__textbox h1:nth-child(1), .intro__textbox h1:nth-child(3) {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+.intro__textbox h1:nth-child(2), .intro__textbox h1:nth-child(4) {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+  text-align: right;
 }
 .intro__textbox h2 {
   position: relative;
