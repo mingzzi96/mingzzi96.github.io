@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 955px;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  top: 100px;
+  position: relative;
+}
+.container .canvas {
+  border: 2px solid black;
+}
+.container .toolbar {
+  width: 50px;
+  height: 605px;
+  background: #535353;
+}
+.container .toolbar .tool {
+  height: 45px;
+  width: 50px;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  background: #535353;
+  color: #dcdcdc;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.container .toolbar .tool:hover {
+  border-radius: 5px;
+  background-color: #383838;
+  border-color: #636363;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.container .toolbar .tool.active {
+  background-color: #383838;
+  border-color: #636363;
+}
+.container .toolbar .tool .fas {
+  font-size: 25px;
+}
+.container .brushpannel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #535353;
+  left: 50px;
+  height: 100px;
+  width: 350px;
+  position: relative;
+}
+.container .imgNav {
+  height: 180px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #535353;
+  top: 15px;
+  right: 15px;
+  margin-left: auto;
+  border-radius: 3px;
+}
+
+.brushpannel.hide,
+.imgNav.hide {
+  display: none;
+}
+
+.container .toolbar .dl a#download {
+  color: #dcdcdc;
+}
+.container .brushpannel label {
+  color: #dcdcdc;
+  font-size: 11px;
+  font-weight: 700;
+}
+.container .brushpannel .brushSizeLabel {
+  position: relative;
+  left: -40px;
+}
+.container .toolbar input.tool[type=color] {
+  height: 45px;
+  width: 50px;
+  margin: auto;
+}
+.container .brushpannel input.brushSize[type=range] {
+  width: 200px;
+  position: relative;
+  left: -40px;
+}
+.container .brushpannel .brushSizePreviewContainer {
+  position: absolute;
+  right: 0;
+  background: inherit;
+  width: 100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .brushpannel .brushSizePreviewContainer label.brushSizePreview {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e53935;
+}
+.container .imgNav .navImg {
+  width: 180px;
+  height: 160px;
+  background-color: white;
+}
