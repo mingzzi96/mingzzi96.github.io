@@ -257,7 +257,7 @@
 
                 &:hover {
                     img {
-                        transform: scale(1.1);
+                        transform: scale(1);
                     }
                 }
 
@@ -267,6 +267,7 @@
                     overflow: hidden;
 
                     img {
+                        transform: scale(1.1);
                         transition: .4s;
                     }
                 }
@@ -288,7 +289,7 @@
 
 .pre {
     // background: $color-yellow;
-    padding: 0 0 8vw;
+    padding: 8vw 0;
     
     &__listwrap {
         width: 100%;

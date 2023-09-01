@@ -28,8 +28,8 @@ $(function () {
         scrollTrigger: {
             trigger: ".move.ex",
             start: "-40% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 0%",
-            // markers: true,
+            end: "50% 0%",
+            markers: true,
             scrub: 0, // 문대기 없애줌
         },
         default: {
