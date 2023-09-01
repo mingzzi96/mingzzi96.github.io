@@ -106,6 +106,10 @@ br.mo {
   background: #122649;
 }
 
+#lexcloud .introduction {
+  background: #735aff;
+}
+
 .introduction {
   width: 100vw;
   padding: 80px 10vw;

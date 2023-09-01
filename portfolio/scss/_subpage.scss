@@ -5,7 +5,13 @@
 
 #journallab {
     .introduction {
-        background: #122649;
+        background: $journallab-primary;
+    }
+}
+
+#lexcloud {
+    .introduction {
+        background: $lexcloud-primary;
     }
 }
 
