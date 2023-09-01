@@ -106,7 +106,11 @@
         align-items: center;
         justify-content: center;
         gap: 80px;
-        padding: 120px 0px;
+        padding: 8vw 0px;
+
+        @include tablet {
+            flex-direction: column;
+        }
 
         &--imagebox {
             position: relative;
@@ -130,13 +134,25 @@
         &--textbox {
             width: 60%;
             font-size: 20px;
-            // font-weight: 300;
+            
+            @include tablet {
+                width: 100%;
+                font-size: 18px;
+                text-align: center;
+            }
 
             &--sub {
                 display: flex;
                 align-items: center;
                 margin-bottom: 12px;
                 gap: 8px;
+            
+                @include tablet {
+                    width: 100%;
+                    font-size: 18px;
+                    text-align: center;
+                    justify-content: center;
+                }
 
                 span {
                     &:last-child {
@@ -144,6 +160,10 @@
                         border: 2px solid $color-primary;
                         border-radius: 20px;
                         padding: 4px 12px;
+            
+                        @include tablet {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -215,18 +235,18 @@
 
 .experience {
     &__container {
-        padding: 120px 0;
+        padding: 8vw 0 0;
     }
 
     &__list {
-        height: 100vh;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 100px;
+        flex-wrap: wrap;
+        gap: 8vw 2vw;
         
         &--item {
-            width: 50%;
+            width: calc(50% - 2vw);
 
             &--link {
                 position: relative;
@@ -268,7 +288,7 @@
 
 .pre {
     // background: $color-yellow;
-    padding: 120px 0px;
+    padding: 0 0 8vw;
     
     &__listwrap {
         width: 100%;

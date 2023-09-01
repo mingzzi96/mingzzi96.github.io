@@ -231,12 +231,17 @@ br.mo {
 
 .header {
   position: fixed;
-  top: 20px;
+  top: -60px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100vw;
   z-index: 999999;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.header.show {
+  top: 20px;
 }
 .header__container {
   width: 100%;
@@ -388,7 +393,15 @@ br.mo {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 80px;
-  padding: 120px 0px;
+  padding: 8vw 0px;
+}
+@media (max-width: 1024px) {
+  .profile__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .profile__content--imagebox {
   position: relative;
@@ -413,6 +426,13 @@ br.mo {
   width: 60%;
   font-size: 20px;
 }
+@media (max-width: 1024px) {
+  .profile__content--textbox {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+}
 .profile__content--textbox--sub {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -423,11 +443,26 @@ br.mo {
   margin-bottom: 12px;
   gap: 8px;
 }
+@media (max-width: 1024px) {
+  .profile__content--textbox--sub {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .profile__content--textbox--sub span:last-child {
   font-size: 18px;
   border: 2px solid #FF3901;
   border-radius: 20px;
   padding: 4px 12px;
+}
+@media (max-width: 1024px) {
+  .profile__content--textbox--sub span:last-child {
+    font-size: 14px;
+  }
 }
 .profile__content--textbox a.work-diary {
   position: relative;
@@ -500,10 +535,9 @@ br.mo {
 }
 
 .experience__container {
-  padding: 120px 0;
+  padding: 8vw 0 0;
 }
 .experience__list {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,10 +547,12 @@ br.mo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8vw 2vw;
 }
 .experience__list--item {
-  width: 50%;
+  width: calc(50% - 2vw);
 }
 .experience__list--item--link {
   position: relative;
@@ -548,7 +584,7 @@ br.mo {
 }
 
 .pre {
-  padding: 120px 0px;
+  padding: 0 0 8vw;
 }
 .pre__listwrap {
   width: 100%;
