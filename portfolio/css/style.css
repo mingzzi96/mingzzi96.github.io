@@ -236,9 +236,7 @@ br.mo {
 .header {
   position: fixed;
   top: -60px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 0;
   width: 100vw;
   z-index: 999999;
   -webkit-transition: 0.3s;
@@ -264,6 +262,11 @@ br.mo {
   position: relative;
   display: inline-block;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .header__container h1, .header__container h2 {
+    font-size: 14px;
+  }
 }
 .header__container h1::before, .header__container h2::before {
   content: "";
