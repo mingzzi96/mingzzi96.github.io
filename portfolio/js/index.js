@@ -63,5 +63,5 @@ window.addEventListener('wheel',(event) => {
 	else { // (wheel < 0)
         document.querySelector(".header").classList.remove("show");
     }
-	preScrollTop = nextScrollTop;
+	// preScrollTop = nextScrollTop;
 });

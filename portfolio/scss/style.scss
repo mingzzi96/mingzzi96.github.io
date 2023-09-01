@@ -119,6 +119,10 @@
             height: 500px;
             overflow: hidden;
 
+            @include tablet {
+                width: 95%;
+            }
+
             img {
                 position: absolute;
                 top: 50%;
@@ -248,6 +252,10 @@
         &--item {
             width: calc(50% - 2vw);
 
+            @include mobile {
+                width: 100%;
+            }
+
             &--link {
                 position: relative;
                 width: 100%;
@@ -276,10 +284,19 @@
                         font-size: 30px;
                         font-weight: 700;
                         margin-bottom: 40px;
+
+                        @include tablet {
+                            font-size: 24px;
+                            margin-bottom: 24px;
+                        }
                     }
 
                     span {
                         font-size: 18px;
+
+                        @include tablet {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -289,7 +306,7 @@
 
 .pre {
     // background: $color-yellow;
-    padding: 8vw 0;
+    padding: 12vw 0 8vw;
     
     &__listwrap {
         width: 100%;
@@ -305,6 +322,14 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                @include mobile {
+                    font-size: 20px;
+                }
+
+                @include smobile {
+                    font-size: 18px;
+                }
 
                 &:before {
                     content: "";
@@ -345,6 +370,10 @@
     &__title {
         margin-bottom: 90px;
 
+        @include mobile {
+            margin-bottom: 50px;
+        }
+
         h2 {
             font-size: 2.5vw;
             margin-bottom: 12px;
@@ -352,11 +381,19 @@
             align-items: center;
             transition: .2s;
 
+            @include mobile {
+                font-size: 20px;
+            }
+
             img {
                 width: 3vw;
                 margin-left: 12px;
                 min-width: 12px;
                 transition: .2s;
+
+                @include mobile {
+                    display: none;
+                }
             }
         }
 
@@ -364,6 +401,14 @@
             font-size: 5.5vw;
             font-weight: 700;
             transition: .2s;
+
+            @include tablet {
+                font-size: 42px;
+            }
+
+            @include mobile {
+                font-size: 30px;
+            }
 
             &:hover {
                 color: $color-primary;
@@ -375,6 +420,10 @@
         line-height: 1.8em;
         font-size: 20px;
         font-weight: 300;
+
+        @include mobile {
+            font-size: 18px;
+        }
     }
 }
 

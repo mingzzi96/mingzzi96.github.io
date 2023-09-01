@@ -414,6 +414,11 @@ br.mo {
   height: 500px;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .profile__content--imagebox {
+    width: 95%;
+  }
+}
 .profile__content--imagebox img {
   position: absolute;
   top: 50%;
@@ -558,6 +563,11 @@ br.mo {
 .experience__list--item {
   width: calc(50% - 2vw);
 }
+@media (max-width: 767px) {
+  .experience__list--item {
+    width: 100%;
+  }
+}
 .experience__list--item--link {
   position: relative;
   width: 100%;
@@ -585,12 +595,23 @@ br.mo {
   font-weight: 700;
   margin-bottom: 40px;
 }
+@media (max-width: 1024px) {
+  .experience__list--item--link--textbox h4 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
 .experience__list--item--link--textbox span {
   font-size: 18px;
 }
+@media (max-width: 1024px) {
+  .experience__list--item--link--textbox span {
+    font-size: 16px;
+  }
+}
 
 .pre {
-  padding: 8vw 0;
+  padding: 12vw 0 8vw;
 }
 .pre__listwrap {
   width: 100%;
@@ -613,6 +634,16 @@ br.mo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .pre__listwrap--item--link {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .pre__listwrap--item--link {
+    font-size: 18px;
+  }
 }
 .pre__listwrap--item--link:before {
   content: "";
@@ -646,6 +677,11 @@ br.mo {
 .contact__title {
   margin-bottom: 90px;
 }
+@media (max-width: 767px) {
+  .contact__title {
+    margin-bottom: 50px;
+  }
+}
 .contact__title h2 {
   font-size: 2.5vw;
   margin-bottom: 12px;
@@ -658,6 +694,11 @@ br.mo {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+@media (max-width: 767px) {
+  .contact__title h2 {
+    font-size: 20px;
+  }
+}
 .contact__title h2 img {
   width: 3vw;
   margin-left: 12px;
@@ -665,11 +706,26 @@ br.mo {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+@media (max-width: 767px) {
+  .contact__title h2 img {
+    display: none;
+  }
+}
 .contact__title a {
   font-size: 5.5vw;
   font-weight: 700;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+@media (max-width: 1024px) {
+  .contact__title a {
+    font-size: 42px;
+  }
+}
+@media (max-width: 767px) {
+  .contact__title a {
+    font-size: 30px;
+  }
 }
 .contact__title a:hover {
   color: #FF3901;
@@ -678,6 +734,11 @@ br.mo {
   line-height: 1.8em;
   font-size: 20px;
   font-weight: 300;
+}
+@media (max-width: 767px) {
+  .contact p {
+    font-size: 18px;
+  }
 }
 
 .more_btn {
