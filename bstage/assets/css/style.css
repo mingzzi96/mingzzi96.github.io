@@ -1140,11 +1140,36 @@ br.mo {
   border-radius: 99px;
   display: inline-block;
 }
+@media (max-width: 1400px) {
+  .owner-marquee__item__box h4 {
+    font-size: 14px;
+    padding: 0 12px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .owner-marquee__item__box h4 {
+    font-size: 12px;
+  }
+}
 .owner-marquee__item__box h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-top: 24px;
   font-size: 30px;
+}
+@media (max-width: 1400px) {
+  .owner-marquee__item__box h3 {
+    margin-top: 20px;
+    font-size: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .owner-marquee__item__box h3 {
+    margin-top: 16px;
+    font-size: 14px;
+  }
 }
 .owner-marquee__item__box p {
   max-width: 320px;
@@ -1157,6 +1182,11 @@ br.mo {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin-top: 8px;
+}
+@media (max-width: 1400px) {
+  .owner-marquee__item__box p {
+    font-size: 12px;
+  }
 }
 .owner-marquee__item__arw {
   position: absolute;

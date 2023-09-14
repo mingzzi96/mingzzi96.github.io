@@ -357,6 +357,17 @@
                     padding: 0 20px;
                     border-radius: 99px;
                     display: inline-block;
+
+                    @include desktop {
+                        font-size: 14px;
+                        padding: 0 12px;
+                        height: 36px;
+                        line-height: 36px;
+                    }
+
+                    @include mobile {
+                        font-size: 12px;
+                    }
                 }
 
                 h3 {
@@ -364,6 +375,16 @@
                     letter-spacing: -.02em;
                     margin-top: 24px;
                     font-size: 30px;
+
+                    @include desktop {
+                        margin-top: 20px;
+                        font-size: 28px;
+                    }
+
+                    @include mobile {
+                        margin-top: 16px;
+                        font-size: 14px;
+                    }
                 }
 
                 p {
@@ -377,6 +398,10 @@
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
                     margin-top: 8px;
+
+                    @include desktop {
+                        font-size: 12px;
+                    }
                 }
             }
 
