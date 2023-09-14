@@ -44,6 +44,8 @@ hoverEyeRed.forEach( (e) => {
     e.addEventListener("mouseenter", (event) => {
         customedCursorRed.classList.add("show");
         e.classList.add("cursor-none");
+        console.log("e :"+e);
+        // console.log("e :"+e.target);
     })
 
     e.addEventListener("mouseleave", (event) => {
