@@ -1254,7 +1254,13 @@ br.mo {
 }
 .introduce-inner.reverse .introduce-textarea {
   padding-left: 0;
-  padding-right: 80px;
+  padding-right: 0px;
+  padding-left: 40px;
+}
+@media (max-width: 767px) {
+  .introduce-inner.reverse .introduce-textarea {
+    padding-left: 0;
+  }
 }
 @media (max-width: 836px) {
   .introduce-inner.reverse {
@@ -1279,16 +1285,18 @@ br.mo {
 }
 .introduce-textarea {
   width: 45%;
-  padding-left: 153px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 @media (max-width: 1400px) {
   .introduce-textarea {
     padding-left: 70px;
+    padding-right: 0px;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 767px) {
   .introduce-textarea {
-    padding-left: 40px;
+    padding: 0;
   }
 }
 @media (max-width: 836px) {
@@ -1314,6 +1322,11 @@ br.mo {
 @media (max-width: 1024px) {
   .introduce-textarea__box h2 {
     font-size: 42px;
+  }
+}
+@media (max-width: 767px) {
+  .introduce-textarea__box h2 {
+    font-size: 38px;
   }
 }
 .introduce-textarea__box p {
@@ -1386,6 +1399,12 @@ br.mo {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
+    height: 500px;
+  }
+}
+@media (max-width: 767px) {
+  .introduce-scrollarea {
+    height: 400px;
   }
 }
 .introduce-scrollarea__left {
