@@ -1055,8 +1055,8 @@ br.mo {
   gap: 30px;
   min-width: 100%;
   will-change: transform;
-  -webkit-animation: scroll 3s linear infinite;
-          animation: scroll 3s linear infinite;
+  -webkit-animation: scroll 20s linear infinite;
+          animation: scroll 20s linear infinite;
 }
 .owner-marquee__wrap {
   display: -webkit-box;
