@@ -4,10 +4,10 @@ $(function () {
           el: ".swiper-pagination",
         },
         loop: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         speed: 1100
     });
     // 스크롤 감지
