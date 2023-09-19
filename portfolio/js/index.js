@@ -6,7 +6,7 @@ const hoverEye = document.querySelectorAll(".hover-eye");
 const hoverEyeRed = document.querySelectorAll(".hover-eye-red");
 
 
-if(isMobile){
+if(!isMobile){
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
     
         // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
