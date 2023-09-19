@@ -435,7 +435,6 @@ $(function () {
                 duration: 0.2
             })
         }
-        // 여기 안에서 onEnter 쓸 수 있는 방법이 있을까요?
         // movieMotion.to('.movie .movie__video video', { 'display': 'block' })
         movieMotion.to('.movie .movie__scroll', { bottom: 0 })
     }
@@ -560,7 +559,6 @@ $(function () {
 })
 
 // compare section see more button control
-console.log(seemoreButton)
 function seemoreFunction() {
     let compareTableHeight = document.querySelector(".compare__table");
     let seemoreButton = document.querySelector(".compare__button--more button");
