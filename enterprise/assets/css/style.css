@@ -512,6 +512,7 @@ slide
 
 .slide__inner {
     display: flex;
+    overflow: hidden;
 }
 
 .slide__subtext {
@@ -657,6 +658,7 @@ colorband
     position: relative;
     height: 175px;
     width: 100%;
+    overflow: hidden;
 }
 
 .colorband__inner {
