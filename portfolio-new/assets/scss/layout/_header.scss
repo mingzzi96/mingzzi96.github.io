@@ -1,0 +1,27 @@
+.header {
+    background: $main-gray;
+
+    &__wrap {
+        max-width: $max-width;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    &__available {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        p {
+            font-size: 20px;
+        }
+    }
+}
