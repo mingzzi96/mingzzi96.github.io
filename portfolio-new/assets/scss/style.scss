@@ -9,6 +9,7 @@
 
 .intro {
     background: $main-gray;
+    overflow: hidden;
 
     &__title {
         max-width: $max-width;
@@ -38,6 +39,11 @@
             border-radius: 10px;
             padding: 8px 12px;
             margin-top: 18px;
+            transition: 0.3s ease-out;
+
+            &:hover {
+                border-radius: 50px;
+            }
         }
     }
 
