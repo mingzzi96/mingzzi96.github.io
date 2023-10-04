@@ -1,5 +1,16 @@
 .header {
     background: $main-gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: .4s;
+    z-index: 999999999;
+
+    &.show {
+        transform: translateY(0);
+    }
 
     &__wrap {
         max-width: $max-width;

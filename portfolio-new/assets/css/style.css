@@ -36,6 +36,10 @@ html, body {
   word-break: keep-all;
 }
 
+body {
+  padding-top: 67px;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -106,6 +110,19 @@ i[class^=ico-], i[class*=ico-] {
 
 .header {
   background: #E4E4E4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 999999999;
+}
+.header.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .header__wrap {
   max-width: 1480px;
