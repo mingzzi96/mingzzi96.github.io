@@ -10,6 +10,7 @@
 .intro {
     background: $main-gray;
     overflow: hidden;
+    padding-bottom: 14vw;
 
     &__title {
         max-width: $max-width;
@@ -73,6 +74,15 @@
     }
 
     &__desc {
+
+        &.show {
+            .intro__desc--textbox {
+                p {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
         &--wrap {
             max-width: $max-width;
             margin: 0 auto;
@@ -80,9 +90,39 @@
         }
 
         &--textbox {
+            overflow: hidden;
+
+            &:nth-child(1) {
+                p {
+                    transition: .2s .2s ease-out;
+                }
+            }
+            &:nth-child(2) {
+                p {
+                    transition: .25s .4s ease-out;
+                }
+            }
+            &:nth-child(3) {
+                p {
+                    transition: .3s .6s ease-out;
+                }
+            }
+            &:nth-child(4) {
+                p {
+                    transition: .35s .8s ease-out;
+                }
+            }
+            &:nth-child(5) {
+                p {
+                    transition: .4s 1s ease-out;
+                }
+            }
+            
             p {
                 font-size: 20px;
                 line-height: 1.7;
+                transform: translateY(100%);
+                opacity: 0;
             }
         }
 
@@ -104,4 +144,8 @@
             }
         }
     }
+}
+
+.experience {
+    height: 500vh;
 }

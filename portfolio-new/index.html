@@ -1,94 +1,109 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <title>mingming | 포트폴리오</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-</head>
-<body>
-    <header class="header">
-        <div class="header__wrap">
-            <h1 class="breeSerif">
-                <a href="">
-                    MINGMING's Portfolio
-                </a>
-            </h1>
-            <div class="header__available">
-                <span class="header__available--state"></span>
-                <p class="breeSerif">Available Now</p>
-            </div>
-        </div>
-    </header>
-    <main class="wrapper">
-        <section class="intro">
-            <div class="intro__title">
-                <h2 class="breeSerif">
-                    MINGMING<br>
-                    DEVELOPER<br>
-                    PORTFOLIO<br>
-                    CREATIVE<br>
-                </h2>
-                <div class="intro__textbox">
-                    <p>노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요.</p>
-                    <a href="" class="intro__textbox--link">밍밍이 노션</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+        <title>mingming | 포트폴리오</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__wrap">
+                <h1 class="breeSerif">
+                    <a href="">
+                        MINGMING's Portfolio
+                    </a>
+                </h1>
+                <div class="header__available">
+                    <span class="header__available--state"></span>
+                    <p class="breeSerif">Available Now</p>
                 </div>
             </div>
-            <div class="intro__move">
-                <ul class="intro__move--list">
-                    <li class="intro__move--list--item">
-                        <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64b164fa9716bc66dcf4137e_ADEKWAAD_BrandBox-min.webp" alt="" class="intro__move--list--item--img">
-                    </li>
-                    <li class="intro__move--list--item">
-                        <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbdd62241c685d9999607_DM_Ashtray-min-p-1600.webp" alt="" class="intro__move--list--item--img">
-                    </li>
-                    <li class="intro__move--list--item">
-                        <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0eccc99b0aed7676e414_FL_Werkboek-cover_Nan-min-p-1600.webp" alt="" class="intro__move--list--item--img">
-                    </li>
-                    <li class="intro__move--list--item">
-                        <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0f2f8c562d5ec23fe20e_VANMOOK_HEADER-p-1600.webp" alt="" class="intro__move--list--item--img">
-                    </li>
-                    <li class="intro__move--list--item">
-                        <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbe5150f5f7884b492573_GAAF_Header-p-1600.webp" alt="" class="intro__move--list--item--img">
-                    </li>
-                </ul>
-            </div>
-            <div class="intro__desc">
-                <div class="intro__desc--wrap">
-                    <div class="intro__desc--textbox">
-                        <p>안녕하세요 웹퍼블리셔로 일하고 있는 권지민입니다.</p>
-                    </div>
-                    <div class="intro__desc--textbox">
-                        <p>웹접근성을 고려한 웹페이지를 구현해 냅니다.</p>
-                    </div>
-                    <div class="intro__desc--textbox">
-                        <p>Vue/php 등의 환경에서 마크업 작업을 능숙하게 할 수 있어요. 어느 기기에서도 잘 보일 수 있는 반응형도 자신있어요.</p>
-                    </div>
-                    <div class="intro__desc--textbox">
-                        <p>업무에 대한 책임감을 우선으로 생각합니다. 저는 번역 회사에서 개발자로 일했고, 당시 매일 매일 업무일지를 기록했어요!</p>
-                    </div>
-                    <div class="intro__desc--textbox">
-                        <p>번역 플랫폼 PM/웹퍼블리셔/기획자로 일하면서 다양한 업무를 경험하고 실력을 쌓을 수 있었답니다.</p>
-                    </div>
-                    <div class="intro__desc--buttonbox">
-                        <a href="https://zippy-headphones-1a3.notion.site/d21a838d02e5400fb0fff627c48642d5?pvs=4" target="_blank">업무일지 보러가기</a>
-                        <a href="https://zippy-headphones-1a3.notion.site/21-11-23-06-a95736748e58455ba0073b4712b4971e?pvs=4" target="_blank">경력기술서 보러가기</a>
+        </header>
+        <main class="wrapper">
+            <section class="intro">
+                <div class="intro__title">
+                    <h2 class="breeSerif">
+                        MINGMING<br>
+                        DEVELOPER<br>
+                        PORTFOLIO<br>
+                        CREATIVE<br>
+                    </h2>
+                    <div class="intro__textbox">
+                        <p>노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요. 노션도 구경오세요.</p>
+                        <a href="" class="intro__textbox--link">밍밍이 노션</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="experience">
-            
-        </section>
-    </main>
-    <footer class="footer">
-    </footer>
-    <script src="./assets/js/script.js"></script>
-</body>
+                <div class="intro__move">
+                    <ul class="intro__move--list">
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64b164fa9716bc66dcf4137e_ADEKWAAD_BrandBox-min.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbdd62241c685d9999607_DM_Ashtray-min-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0eccc99b0aed7676e414_FL_Werkboek-cover_Nan-min-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0f2f8c562d5ec23fe20e_VANMOOK_HEADER-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbe5150f5f7884b492573_GAAF_Header-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64b164fa9716bc66dcf4137e_ADEKWAAD_BrandBox-min.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbdd62241c685d9999607_DM_Ashtray-min-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0eccc99b0aed7676e414_FL_Werkboek-cover_Nan-min-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64cc0f2f8c562d5ec23fe20e_VANMOOK_HEADER-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                        <li class="intro__move--list--item">
+                            <img src="https://uploads-ssl.webflow.com/6454cbf2dcc426c6ec47ef06/64bfbe5150f5f7884b492573_GAAF_Header-p-1600.webp" alt="" class="intro__move--list--item--img">
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro__desc">
+                    <div class="intro__desc--wrap">
+                        <div class="intro__desc--textbox">
+                            <p>안녕하세요 웹퍼블리셔로 일하고 있는 권지민입니다.</p>
+                        </div>
+                        <div class="intro__desc--textbox">
+                            <p>웹접근성을 고려한 웹페이지를 구현해 냅니다.</p>
+                        </div>
+                        <div class="intro__desc--textbox">
+                            <p>Vue/php 등의 환경에서 마크업 작업을 능숙하게 할 수 있어요. 어느 기기에서도 잘 보일 수 있는 반응형도 자신있어요.</p>
+                        </div>
+                        <div class="intro__desc--textbox">
+                            <p>업무에 대한 책임감을 우선으로 생각합니다. 저는 번역 회사에서 개발자로 일했고, 당시 매일 매일 업무일지를 기록했어요!</p>
+                        </div>
+                        <div class="intro__desc--textbox">
+                            <p>번역 플랫폼 PM/웹퍼블리셔/기획자로 일하면서 다양한 업무를 경험하고 실력을 쌓을 수 있었답니다.</p>
+                        </div>
+                        <div class="intro__desc--buttonbox">
+                            <a href="https://zippy-headphones-1a3.notion.site/d21a838d02e5400fb0fff627c48642d5?pvs=4" target="_blank">업무일지 보러가기</a>
+                            <a href="https://zippy-headphones-1a3.notion.site/21-11-23-06-a95736748e58455ba0073b4712b4971e?pvs=4" target="_blank">경력기술서 보러가기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="experience">
+                
+            </section>
+        </main>
+        <footer class="footer">
+        </footer>
+    </body>
 </html>
+<script src="./assets/js/script.js"></script>
