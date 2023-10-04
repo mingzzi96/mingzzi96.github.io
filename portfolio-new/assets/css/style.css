@@ -36,10 +36,6 @@ html, body {
   word-break: keep-all;
 }
 
-body {
-  padding-top: 67px;
-}
-
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -155,7 +151,42 @@ i[class^=ico-], i[class*=ico-] {
   font-size: 20px;
 }
 
+.footer {
+  position: relative;
+  padding: 10vw 0;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.footer__wrap {
+  max-width: 1480px;
+  width: 90%;
+  margin: 0 auto;
+}
+.footer__title h4 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.footer__title a {
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  display: inline-block;
+}
+.footer__title a:hover {
+  border-radius: 50px;
+}
+.footer__title p {
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
 .intro {
+  padding-top: 67px;
   background: #E4E4E4;
   overflow: hidden;
   padding-bottom: 14vw;
@@ -454,6 +485,15 @@ i[class^=ico-], i[class*=ico-] {
 }
 .list__item--textbox p {
   font-size: 14px;
+}
+.list__item--textbox span {
+  margin-bottom: 14px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #fff;
+  display: inline-block;
 }
 
 .clone {

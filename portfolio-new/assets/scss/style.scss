@@ -8,6 +8,7 @@
 @import "./layout/footer";
 
 .intro {
+    padding-top: 67px;
     background: $main-gray;
     overflow: hidden;
     padding-bottom: 14vw;
@@ -313,6 +314,16 @@
 
             p {
                 font-size: 14px;
+            }
+
+            span {
+                margin-bottom: 14px;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+                color: #fff;
+                display: inline-block;
             }
         }
     }

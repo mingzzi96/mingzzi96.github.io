@@ -23,9 +23,6 @@
 *, :after, :before {box-sizing:border-box;}
 // flex-shrink:0;
 html, body {height:100%;font-family: 'Noto Sans KR', sans-serif;font-weight: 400;word-break: keep-all;}
-body {
-    padding-top: 67px;
-}
 // html, body {height:100%;font-family: "Lora","noto Serif KR", sans-serif;font-weight: 400;word-break: keep-all;}
 img, picture, video, canvas, svg {display: block;max-width:100%;}
 button {background:none;border:0;cursor:pointer;}
