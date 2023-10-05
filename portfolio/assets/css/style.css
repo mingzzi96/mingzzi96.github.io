@@ -346,6 +346,10 @@ i[class^=ico-], i[class*=ico-] {
   -webkit-transition: 0.4s 1s ease-out;
   transition: 0.4s 1s ease-out;
 }
+.intro__desc--textbox:nth-child(6) p {
+  -webkit-transition: 0.45s 1.2s ease-out;
+  transition: 0.45s 1.2s ease-out;
+}
 .intro__desc--textbox p {
   font-size: 20px;
   line-height: 1.7;

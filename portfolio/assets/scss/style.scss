@@ -155,6 +155,11 @@
                     transition: .4s 1s ease-out;
                 }
             }
+            &:nth-child(6) {
+                p {
+                    transition: .45s 1.2s ease-out;
+                }
+            }
             
             p {
                 font-size: 20px;
