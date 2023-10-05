@@ -1,0 +1,210 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+/* 알아보기 
+:root {
+    //모바일에서 a태그 클릭시 하이라이트 효과 색상
+    -webkit-tap-highlight-color:transparent; 
+    // 웹 반응형 작업을 하면서 크롬 모바일 모드나 다른 디바이스에는 문제 없이 보이던 텍스트 들이
+    // 몇몇 아이폰 모바일 웹으로 화면을 볼때 어떤font들은 이상하게 크게 보이는 경우가 있다.
+    // IOS의 경우 뷰포트가 변경되면 자동으로 폰트 크기를 조절하기 때문이라고 한다.
+    // text-size-adjust는 비표준 속성이므로 벤더 프리픽스를 사용해야 한다.
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+    cursor:default;l
+    ine-height:1.5;
+    overflow-wrap:break-word;
+    // tab 간격을 지정해줄 수 있다. 
+    -moz-tab-size:4;
+    tab-size:4
+} */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  word-break: keep-all;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+#wrapper {
+  min-width: 1441px;
+}
+
+i[class^=ico-], i[class*=ico-] {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.scroll-hidden {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.openSans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.breeSerif {
+  font-family: "Bree Serif", serif;
+}
+
+#subpage .submain {
+  width: 100%;
+  height: 100vh;
+}
+#subpage .submain__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+#subpage .submain__imgbox {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+#subpage .submain__imgbox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#subpage .submain__textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+}
+#subpage .submain__textbox h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#subpage .submain__textbox h1 {
+  font-size: 46px;
+  font-weight: 700;
+}
+#subpage .subdesc__wrap {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10vw 0;
+}
+#subpage .subdesc__wrap h2 {
+  font-size: 47px;
+  font-weight: 700;
+}
+#subpage .subdesc__lang {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 8px;
+}
+#subpage .subdesc__textbox {
+  margin-top: 40px;
+}
+#subpage .subdesc__textbox p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+#subpage .subdesc__textbox p ~ p {
+  margin-top: 20px;
+}
+#subpage .submain__btnbox {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+#subpage .submain__btnbox a {
+  display: inline-block;
+  border-radius: 20px;
+  border: 1px solid #000;
+  padding: 12px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-weight: 400;
+}
+#subpage .submain__btnbox a:hover {
+  border: 1px solid #735aff;
+  color: #735aff;
+}
+#subpage .submain__btnbox a.lexcloud {
+  background: #735aff;
+  color: #fff;
+  border: 1px solid #735aff;
+}
+#subpage .submain__btnbox a.lexcloud:hover {
+  color: #fff;
+}
