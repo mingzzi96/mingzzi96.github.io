@@ -1,3 +1,5 @@
+AOS.init();
+
 // 스크롤 감지
 window.addEventListener('wheel',(event) => {
 	let wheel = event.wheelDeltaY;
