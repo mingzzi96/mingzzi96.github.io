@@ -1,330 +1,272 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-        <meta property="og:title" content="mingming | 포트폴리오">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://mingzzi96.github.io/portfolio/index.html">
-        <meta property="og:site_name" content="mingming | 포트폴리오">
-        <meta property="og:locale" content="ko_KR">
-        <meta property="og:description" content="프론트엔드 개발자 MINGMING 포트폴리오입니다.">
-        <title>mingming | 포트폴리오</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    </head>
-    <body>
-        <header class="header">
-            <div class="header__wrap">
-                <h1 class="breeSerif">
-                    <a href="">
-                        MINGMING's Portfolio
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <title>mingming | 포트폴리오</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-red"></div>
+    <header class="header show">
+        <div class="header__container lw">
+            <h2>
+                <a href="./index.html">MINGMING's Portfolio</a>
+            </h2>
+            <h1>
+                <a href="https://github.com/mingzzi96/mingzzi96.github.io" target="_blank">mingzzi96.github.io</a>
+            </h1>
+        </div>
+    </header>
+    <div class="wrapper">
+        <section class="intro">
+            <div class="intro__textbox">
+                <h1>MINGMING</h1>
+                <h1>DEVELOPER</h1>
+                <h1>PORTFOLIO</h1>
+                <h1>CREATIVE</h1>
+            </div>
+        </section>
+        <section class="profile">
+            <!-- <div class="profile__marquee">
+                <div class="profile__marquee--line">
+                    <div class="profile__marquee--item">
+                        <p class="profile__marquee--item--text">어떤 일이라도 노력하고 즐기면  그 결과는 빛을 바란다고 생각합니다. 배움에 있어 겸손함을 유지하며 세부적인 곳까지 파고드는 개발자가 되겠습니다.</p>
+                    </div>
+                </div>
+                <div class="profile__marquee--line">
+                    <div class="profile__marquee--item">
+                        <p class="profile__marquee--item--text">어떤 일이라도 노력하고 즐기면  그 결과는 빛을 바란다고 생각합니다. 배움에 있어 겸손함을 유지하며 세부적인 곳까지 파고드는 개발자가 되겠습니다.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="profile__container mw">
+                <div class="profile__content">
+                    <div class="profile__content--imagebox">
+                        <img src="./assets/images/mingpic.jpeg" alt="권지민 프로필 사진">
+                    </div>
+                    <div class="profile__content--textbox">
+                        <div class="profile__content--textbox--sub">
+                            <span>권지민</span>
+                            <span>a.k.a MINGMING</span>
+                        </div>
+                        <p>안녕하세요 웹퍼블리셔로 일하고 있는 권지민입니다.</p>
+                        <p>웹접근성을 고려한 웹페이지를 능숙하게 구현해 냅니다.</p>
+                        <br>
+                        <p>Vue/php 등의 환경에서 마크업 작업을 능숙하게 할 수 있어요. 어느 기기에서도 잘 보일 수 있는 반응형도 자신있어요.</p>
+                        <br>
+                        <p>업무에 대한 책임감을 우선으로 생각합니다. 저는 번역 회사에서 개발자로 일했고, 당시 매일 매일 <a href="https://zippy-headphones-1a3.notion.site/d21a838d02e5400fb0fff627c48642d5?pvs=4" target="_blank" class="work-diary hover-eye">( 업무일지 )</a>를 기록했어요!</p>
+                        <br>
+                        <p>번역 플랫폼 PM/웹퍼블리셔/기획자로 일하면서 <a href="https://zippy-headphones-1a3.notion.site/21-11-23-06-a95736748e58455ba0073b4712b4971e?pvs=4" target="_blank" class="hover-eye">( 다양한 업무 )</a>를 경험하고 실력을 쌓을 수 있었답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="move ex">
+            <div class="move__container">
+                <div class="move__title">
+                    <div class="move__title--text">
+                        <h2>WANT TO SEE</h2>
+                        <h2>HOW I WORK</h2>
+                        <h2>BEFORE?</h2>
+                        <!-- <h3>JUST IN CASE!</h3> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="experience">
+            <div class="experience__container lw">
+                <ul class="experience__list">
+                    <li class="experience__list--item">
+                        <a href="./subpage/journallab.html" class="experience__list--item--link hover-eye-red">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/journalcap.png" alt="저널랩 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>저널랩</h4>
+                                <span>[실무]웹 퍼블리싱/프론트앤드 개발/개발 PM</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="experience__list--item">
+                        <a href="./subpage/lexcloud.html" class="experience__list--item--link hover-eye-red">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/lexcloudcapture.png" alt="렉스클라우드 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>렉스클라우드</h4>
+                                <span>[실무]웹 퍼블리싱/프론트앤드 개발/개발 PM</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="experience__list--item">
+                        <a href="https://bavl.lexcode.com/slog/?url=%2F" class="experience__list--item--link hover-eye-red" target="_blank">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/bavl.png" alt="배블 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>BAVL</h4>
+                                <span>[실무]웹 퍼블리싱</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="experience__list--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/Enterprise-Block-Chain-8ee7d0af631d4d7da78a8d9a1c56d9e1?pvs=4" target="_blank" class="experience__list--item--link hover-eye-red">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/enterprise.png" alt="엔터프라이즈 블럭체인 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>엔터프라이즈 블럭체인</h4>
+                                <span>CLONE CODING(PC)</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="experience__list--item">
+                        <a href="https://mingzzi96.github.io/lg/index.html" target="_blank" class="experience__list--item--link hover-eye-red">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/oled.png" alt="LG OLED 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>LG OLED</h4>
+                                <span>CLONE CODING(PC)</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="experience__list--item">
+                        <a href="https://mingzzi96.github.io/bstage/index.html" target="_blank" class="experience__list--item--link hover-eye-red">
+                            <div class="experience__list--item--link--imgbox">
+                                <img src="./assets/images/bstage.png" alt="Bstage 웹페이지">
+                            </div>
+                            <div class="experience__list--item--link--textbox">
+                                <h4>BSTAGE</h4>
+                                <span>CLONE CODING(Res)</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <div class="available">
+                    <a href="#contact">
+                        Available Now
                     </a>
-                </h1>
-                <div class="header__available">
-                    <span class="header__available--state"></span>
-                    <p class="breeSerif">Available Now</p>
-                </div>
+                </div> -->
             </div>
-        </header>
-        <main class="wrapper">
-            <section class="intro">
-                <div class="intro__title">
-                    <h2 class="" data-aos="fade-up"
-                    data-aos-duration="1000">
-                        MINGMING<br>
-                        DEVELOPER<br>
-                        PORTFOLIO<br>
-                        CREATIVE<br>
-                    </h2>
-                    <div class="intro__textbox">
-                        <p>노션에 꾸준히 저의 모든것을 기록하고 있습니다!<br>많이 보러 와주세요 🎀</p>
-                        <a href="https://zippy-headphones-1a3.notion.site/b2d8820f8ab0475ebb5ff1a28c25ec3e?pvs=4" class="intro__textbox--link" target="_blank">밍밍이 노션 바로가기</a>
+        </section>
+        <section class="pre">
+            <div class="pre__container lw">
+                <div class="experience__title">
+                    <div class="experience__title--text">
+                        <!-- <h2>I PREPARED</h2>
+                        <h2>MY STUDY</h2>
+                        <h2>RECORDS TOO</h2> -->
+                        <!-- <h3>JUST IN CASE!</h3> -->
                     </div>
                 </div>
-                <div class="intro__move">
-                    <ul class="intro__move--list">
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me04.jpeg" alt="밍밍이사진4" class="intro__move--list--item--img">
-                        </li>
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me02.jpeg" alt="밍밍이사진2" class="intro__move--list--item--img">
-                        </li>
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me03.jpeg" alt="밍밍이사진3" class="intro__move--list--item--img">
-                        </li>
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me06.png" alt="밍밍이사진6" class="intro__move--list--item--img">
-                        </li>
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me05.jpeg" alt="밍밍이사진5" class="intro__move--list--item--img">
-                        </li>
-                        <li class="intro__move--list--item">
-                            <img src="./assets/images/me01.jpeg" alt="밍밍이사진1" class="intro__move--list--item--img">
-                        </li>
-                    </ul>
-                </div>
-                <div class="intro__desc">
-                    <div class="intro__desc--wrap">
-                        <div class="intro__desc--textbox">
-                            <p>안녕하세요 웹퍼블리셔로 일하고 있는 권지민입니다.</p>
-                        </div>
-                        <div class="intro__desc--textbox">
-                            <p>웹접근성을 고려한 웹페이지를 구현해 냅니다.</p>
-                        </div>
-                        <div class="intro__desc--textbox">
-                            <p>Vue/php/React 등의 환경에서 마크업 작업을 능숙하게 할 수 있어요. 어느 기기에서도 잘 보일 수 있는 반응형도 자신있어요.</p>
-                        </div>
-                        <div class="intro__desc--textbox">
-                            <p>업무에 대한 책임감을 우선으로 생각합니다. 저는 번역 회사에서 개발자로 일했고, 당시 매일 매일 업무일지를 기록했어요!</p>
-                        </div>
-                        <div class="intro__desc--textbox">
-                            <p>번역 플랫폼 PM/웹퍼블리셔/기획자로 일하면서 다양한 업무를 경험하고 실력을 쌓을 수 있었답니다.</p>
-                        </div>
-                        <div class="intro__desc--buttonbox">
-                            <a href="https://zippy-headphones-1a3.notion.site/d21a838d02e5400fb0fff627c48642d5?pvs=4" target="_blank">업무일지 보러가기</a>
-                            <a href="https://zippy-headphones-1a3.notion.site/21-11-23-06-a95736748e58455ba0073b4712b4971e?pvs=4" target="_blank">경력기술서 보러가기</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="experience">
-                <div class="title">
-                    <span data-aos="fade-up"
-                    data-aos-duration="1000">experience</span>
-                    <h3 data-aos="fade-up"
-                    data-aos-duration="1000">HOW I WORK BEFORE</h3>
-                </div>
-                <ul class="collection">
-                    <li class="collection__item large" data-aos="fade-up"
-                    data-aos-duration="1000">
-                        <a href="./subpage/journallab.html" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/journallab1.png" alt="저널랩 배경">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/journallab2.png" alt="저널랩 홈페이지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>JOURNALLB</h4>
-                            <p>초거대 인공지능 모델과 자연어 처리 기술이 접목된 논문 분석 서비스를 제공합니다.<br>퍼블리싱/프론트개발/플랫폼 PM등의 업무담당</p>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    PHP
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    Vue.js
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    JavaScript
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="collection__item" data-aos="fade-up"
-                    data-aos-duration="1000">
-                        <a href="./subpage/lexcloud.html" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/lexcloud1.png" alt="렉스클라우드 배경">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/lexcloud2.png" alt="렉스클라우드 홈페이지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>LEXCLOUD</h4>
-                            <p>전문적인 번역이 필요하다면, 렉스클라우드.<br>퍼블리싱/프론트개발/고객관리/플랫폼 PM등의 업무담당</p>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    php
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    Vue.js
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    JavaScript
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="collection__item" data-aos="fade-up"
-                    data-aos-duration="1000">
-                        <a href="https://bavl.lexcode.com/slog/?url=%2F" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/bavl1.png" alt="배블 배경">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/bavl2.png" alt="배블 홈페이지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>BAVL</h4>
-                            <p>BAVL은 언어 데이터를 수집하는 크라우드 소싱 언어 데이터 플랫폼입니다.<br>퍼블리싱/플랫폼 PM등의 업무담당</p>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    HTML
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    jQuery
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-            <section class="clone">
-                <div class="title">
-                    <span data-aos="fade-up"
-                    data-aos-duration="1000">practice</span>
-                    <h3 data-aos="fade-up"
-                    data-aos-duration="1000">CLONE CODING WORKS</h3>
-                </div>
-                <ul class="collection">
-                    <li class="collection__item large" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/Enterprise-Block-Chain-8ee7d0af631d4d7da78a8d9a1c56d9e1?pvs=4" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/blockchain2.jpeg" alt="엔터프라이즈 블럭체인 소개 이미지">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/enterprise2.png" alt="엔터프라이즈 블럭체인 홈페이지 이미지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>엔터프라이즈 블럭체인</h4>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    CLONE CODING
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    PC
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="collection__item" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/LG-OLED-71b8ced118034ed093dc63600826a475?pvs=4" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/oled1.jpeg" alt="lg oled 소개 이미지">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/oled2.jpg" alt="lg oled 홈페이지 이미지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>LG OLED</h4>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    CLONE CODING
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    PC
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="collection__item" data-aos="fade-up">
-                        <a href="https://mingzzi96.github.io/bstage/index.html" target="_blank" class="collection__item--link">
-                            <div class="collection__item--link--imgbox">
-                                <img src="./assets/images/bstage1.png" alt="비스테이지 소개 이미지">
-                            </div>
-                            <div class="collection__item--link--hidden">
-                                <img src="./assets/images/bstage2.png" alt="비스테이지 홈페이지 이미지">
-                            </div>
-                        </a>
-                        <div class="collection__item--desc">
-                            <h4>Bstage</h4>
-                            <ul class="collection__item--desc--list">
-                                <li class="collection__item--desc--list--item">
-                                    CLONE CODING
-                                </li>
-                                <li class="collection__item--desc--list--item">
-                                    RESPONSIVE
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-            <section class="study">
-                <div class="title small" data-aos="fade-up">
-                    <div class="title__main">
-                        <span>study</span>
-                        <h3>STUDY RECORDS ARE HERE</h3>
-                    </div>
-                    <div class="title__btnbox">
-                        <a href="https://zippy-headphones-1a3.notion.site/38deaadd04224f51932e3cdc578a804e?pvs=4" target="_blank">공부기록 더보러 가기</a>
-                    </div>
-                </div>
-                <ul class="list">
-                    <li class="list__item" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/GSAP-a3e08d21aecd4a34accdc227bda6f816?pvs=4" target="_blank" class="list__item--link">
-                            <div class="list__item--imgbox">
-                                <img src="./assets/images/gsap.png" alt="gsap 이미지">
-                            </div>
-                            <div class="list__item--textbox">
-                                <!-- <span>JavaScript</span> -->
-                                <h5>Scroll Trigger</h5>
-                                <p>GSAP Scroll Trigger를 활용하는 법을 공부하고 정리해 보았다.</p>
-                            </div>
+                <ul class="pre__listwrap">
+                    <!-- <li class="pre__listwrap--item">
+                        <a href="./subpage/journallab.html"class="pre__listwrap--item--link hover-eye-red">
+                            <p>WORK EXPERIENCE</p>
+                            <p>저널랩</p>
                         </a>
                     </li>
-                    <li class="list__item" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/Swiper-js-02ff653713a14e8aa90639000b210ea0?pvs=4" target="_blank" class="list__item--link">
-                            <div class="list__item--imgbox">
-                                <img src="./assets/images/swiper.png" alt="swiper 이미지">
-                            </div>
-                            <div class="list__item--textbox">
-                                <!-- <span>JavaScript</span> -->
-                                <h5>Swiper 두개 연동하기</h5>
-                                <p>실무에서 필요했던 Swiper 두개 동시에 작동시키는 방법을 배워보자.</p>
-                            </div>
+                    <li class="pre__listwrap--item">
+                        <a href="" class="pre__listwrap--item--link hover-eye-red">
+                            <p>WORK EXPERIENCE</p>
+                            <p>렉스클라우드</p>
+                        </a>
+                    </li> -->
+                    <!-- <li class="pre__listwrap--item">
+                        <a href="https://mingzzi96.github.io/bstage/index.html" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>CLONE CODING</p>
+                            <p>B Stage</p>
+                        </a>
+                    </li> -->
+                    <li class="pre__listwrap--item">
+                        <a href="https://github.com/study-team2023/todo-study/tree/main/todo-list" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>REACT 진행중</p>
+                            <p>LOGIN/JOIN/TODO</p>
                         </a>
                     </li>
-                    <li class="list__item" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/ToDo-List-9ca110c0c19e4a3a92865f627c2fe583?pvs=4" target="_blank" class="list__item--link">
-                            <div class="list__item--imgbox">
-                                <img src="./assets/images/todolist.jpeg" alt="todolist 이미지">
-                            </div>
-                            <div class="list__item--textbox">
-                                <!-- <span>JavaScript</span> -->
-                                <h5>Todo List</h5>
-                                <p>바닐라 JS를 활용하여 Todo list를 만들어 보았다.</p>
-                            </div>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/Swiper-js-02ff653713a14e8aa90639000b210ea0?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>swiper 두개 연결</p>
                         </a>
                     </li>
-                    <li class="list__item" data-aos="fade-up">
-                        <a href="https://zippy-headphones-1a3.notion.site/WAI-ARIA-cfdc03f72174429788034a4d2eeca99a?pvs=4" target="_blank" class="list__item--link">
-                            <div class="list__item--imgbox">
-                                <img src="./assets/images/html5.jpg" alt="html5 이미지">
-                            </div>
-                            <div class="list__item--textbox">
-                                <!-- <span>JavaScript</span> -->
-                                <h5>WAI-ARIA</h5>
-                                <p>웹 접근성의 꽃 WAI-ARIA를 공부하며 정리해 보았다.</p>
-                            </div>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/GSAP-a3e08d21aecd4a34accdc227bda6f816?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>ScrollTrigger</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/ToDo-List-9ca110c0c19e4a3a92865f627c2fe583?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>Todo List</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/7d0af6dcc8784f53934164822d079921?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>그림판 구현</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://mingzzi96.github.io/fireworks/index.html" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>불꽃놀이</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://mingzzi96.github.io/datepicker/index.html" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>JS</p>
+                            <p>DATE PICKER</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/SVG-gooey-4c884adff46e4af0b98cb32761e1b4ae?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>CSS</p>
+                            <p>GOOEY EFFECT</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/WAI-ARIA-cfdc03f72174429788034a4d2eeca99a?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>HTML</p>
+                            <p>WAI-ARIA</p>
+                        </a>
+                    </li>
+                    <li class="pre__listwrap--item">
+                        <a href="https://zippy-headphones-1a3.notion.site/38deaadd04224f51932e3cdc578a804e?pvs=4" target="_blank" class="pre__listwrap--item--link hover-eye-red">
+                            <p>STUDY</p>
+                            <p>공부 기록 모아보기</p>
                         </a>
                     </li>
                 </ul>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__wrap">
-                <div class="footer__title" data-aos="fade-up">
-                    <h4>I might be the perfect one for your team!</h4>
-                    <p>혹시 저와같은 사람을 찾고계신다면? 협업 및 합류 제안 언제나 대환영입니다 🤓<br>개발과 관련된 이야기가 아니더라도, 언제든지 연락주세요!<br>빠르게 답변해 드립니다.</p>
-                    <a href="mailto:ooo3289@naver.com">Contact</a>
-                </div>
             </div>
-        </footer>
-    </body>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact__container lw">
+                <div class="contact__title">
+                    <h2>혹시, 저와 같은 사람을 찾고있진 않으신가요? <img src="./assets/images/emoji.png" alt="학생 이모티콘"></h2>
+                    <a href="mailto:ooo3289@naver.com">ooo3289@naver.com</a>
+                </div>
+                <p>합류나 협업에 대해 이야기 나누고 싶으신가요?</p>
+                <p>메일로 연락주시면 빠르게 확인하고 답장을 드릴게요.</p>
+                <p>개발 이야기가 아니어도 좋아요! 궁금한것 있으면 언제든 연락 주세요!</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>made by Mingming</p>
+        <span>(C) 2023 Jimin Kwon</span>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/scrollTrigger.js"></script>
+</body>
 </html>
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/scrollTrigger.js"></script>
