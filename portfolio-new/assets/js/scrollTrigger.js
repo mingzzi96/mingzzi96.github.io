@@ -5,7 +5,7 @@ $(function () {
             trigger: ".intro",
             start: "0% 0%", // 트리거 기준  / 윈도우 기준
             end: "80% 0%",
-            markers: true,
+            // markers: true,
             scrub: 1, 
         },
         default: {

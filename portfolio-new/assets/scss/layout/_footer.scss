@@ -28,6 +28,10 @@
             &:hover {
                 border-radius: 50px;
             }
+
+            @include desktop {
+                padding: 8px 12px;
+            }
         }
 
         p {
