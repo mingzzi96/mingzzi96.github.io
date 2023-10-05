@@ -4,8 +4,8 @@ $(function () {
         scrollTrigger: {
             trigger: ".intro",
             start: "0% 0%", // 트리거 기준  / 윈도우 기준
-            end: "100% 0%",
-            // markers: true,
+            end: "80% 0%",
+            markers: true,
             scrub: 1, 
         },
         default: {
@@ -14,7 +14,7 @@ $(function () {
     })
 
     mainCardsMove
-        .to(".intro .intro__move--list", { x: -100 + "%" })
+        .to(".intro .intro__move--list", { x: -80 + "%" })
 
 
     const mainDescTextShow = gsap.timeline({
