@@ -1,0 +1,741 @@
+<?php # nav ?>
+<?php include "../inc/journal.top.nx"; # 저널랩 헤더 ?>
+<style>
+	.width_default { opacity: 0;transition: .5s .3s; }
+    .after_list .after_item .color_box { width:170px;height:170px; }
+    .sec_cheap .info_item { width:calc(100%/3);padding:16px 0; }
+    table th, table td { vertical-align:top; }
+    .basic_list li ~ li { margin-top: 16px; }
+    .topic_list.no_border li:first-child .cnt_box { padding-top: 0; }
+    .topic_list.no_border li:first-child .num { padding-top : 2px; }
+    .topic_list.mob .num { font-size:20px;padding: 17px 0 0; }
+    .journal_list li:first-child { border-top:1px solid #E8E9ED; }
+    .journal_list li { border-bottom:1px solid #E8E9ED; }
+    .journal_list a:hover .icon_new_window { opacity:1; }
+    .icon_new_window {opacity:0;transition:.2s;}
+    .select_box_wrap .select_list_pop {border-top:none;}
+    .loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+    }
+    .keyword_tag_wrap::-webkit-scrollbar {
+        display:none;
+    }
+</style>
+<?php
+    if (F_SESS('language') == '') {
+        S_SESS('language', explode(",", strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))[0]);
+    }
+
+    $_lang = F_SESS('language');
+?>
+
+<div id="journal" class="trend_page">
+
+    <?php include "../inc/journal.nav.nx" # 저널랩 네비게이션 ?>
+    <section class="sec_main_banner sec_l_grey " :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'pb80' : 'pb24' ">
+        <div class="width_default" :class=" sizeMode == 'pc' ? 'pt180' : 'pt100' ">
+            <h2 class="bold_text main_text" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'cnt_42 mb25' : 'cnt_24 mb16' "><?php echo __trans("tyolj6") // 연구 트렌드 ?></h2>
+            <template v-if=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ">
+                <p class="jl_secondary_text mb28" class="cnt_20 mb28 wbK"><?php echo __trans("8fcdrk"); // 저널랩이 수집한  ?> <em class="bold_text ml8 mr8" :class=" sizeMode == 'pc' ? 'cnt_26' : 'cnt_20' ">{{ totalPaper }}</em> <?php echo __trans("vuf3s8"); // 개의 학술 문서로<br>게재의 첫걸음을 더 높은 곳에서, 더 신속하게 시작하세요.  ?></p>
+            </template>
+            <template v-else >
+                <p class="jl_secondary_text cnt_14 mb20 wbK">
+                    <?php echo __trans("8fcdrk"); // 저널랩이 수집한  ?> <em class="bold_text ml4 mr4" :class=" sizeMode == 'pc' ? 'cnt_26' : 'cnt_20' ">{{ totalPaper }}</em> <?php echo __trans("vuf3s8"); // 개의 학술 문서로<br>게재의 첫걸음을 더 높은 곳에서, 더 신속하게 시작하세요.  ?>
+                </p>
+            </template>
+            <div class="main_data_wrap flex_ alC" :class=" sizeMode == 'pc' ? 'mb80' : 'mb24' " style="">
+                <div class="data_item flex_ alC">
+                    <p class="bold_text main_text mr8" :class=" sizeMode == 'pc' ? 'cnt_18' : 'cnt_16' "><?php echo __trans("a8e5kh"); // 키워드  ?></p>
+                    <span class="jl_sub_text01" :class=" sizeMode == 'pc' ? '' : 'cnt_14' ">{{ totalKeyword }}</span>
+                </div>
+                <i class="bar ml24 mr24" style="height:24px;"></i>
+                <div class="data_item flex_ alC">
+                    <p class="bold_text main_text mr8" :class=" sizeMode == 'pc' ? 'cnt_18' : 'cnt_16' "><?php echo __trans("71crlq"); // 발행기관  ?></p>
+                    <span class="jl_sub_text01" :class=" sizeMode == 'pc' ? '' : 'cnt_14' ">{{ totalPublish }}</span>
+                </div>
+            </div>
+            <div class="search_bx_full" :class=" ((sizeMode == 'pc') ? '' : 'mob') ">
+                <select id="search" name="search" v-model="search" class="slt1 border_none" :class=" sizeMode == 'pc' ? '' : 'cnt_14' " :style=" sizeMode == 'pc' ? 'max-width:140px;' : 'max-width:120px;' ">
+                    <option value="논문명"><?php echo __trans("91gg57"); // 논문명  ?></option>
+                    <option value="키워드"><?php echo __trans("a8e5kh"); // 키워드  ?></option>
+                    <option value="저자명"><?php echo __trans("gvdgve"); // 저자명  ?></option>
+                </select>
+                <i class="bar long" style="width:1.5px;"></i>
+                <div class="flex_ alC psR" style="width:100%;">
+                    <input type="text" id="input_str" name="input_str" v-model="input_str" value="" @keypress="keyPress" class="int" :class=" sizeMode == 'pc' ? '' : 'cnt_14' " placeholder="<?php echo(__trans('d2kqmg')); // 연구 키워드를 검색하세요 ?>" />
+                    <template v-if=" input_str != '' ">
+                        <img src="../imgs/journal/icon_close.png" alt="clear" width="18" @click="clear()" class="csP" style="position:absolute;top:50%;right:15px;transform: translateY(-50%);">
+                    </template>
+                </div>
+                <a href="javascript:void(0);" @click="getSearch" class="btn search"></a>
+            </div>
+            <template v-if="sizeMode == 'pc' || sizeMode == 'vertical-tablet' ">
+                <div class="flex_ alS mt28">
+                    <p class="bold_text jl_secondary_text mr24" style="min-width:112px;"><?php echo __trans("zc0wnn") // 인기 검색 키워드 ?></p>
+                    <ul class="keyword_tag_wrap flex_ alC wrap gap0812">
+                        <li :id=" 'tag_item'+index " class="tag_item" v-for=" (tag, index) in keywordItems " @click=" searchKeyword(index, 'tag_item') ">
+                            <a href=" javascript:void(0) " class="state_btn grey_opa h_32 rad_8 jl_secondary_text">{{ tag[0] }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+            <template v-else>
+                <div class="flex_ alC mt20">
+                    <p class="bold_text jl_secondary_text mr24 cnt_14" style="min-width:112px;"><?php echo __trans("zc0wnn") // 인기 검색 키워드 ?></p>
+                    <ul class="keyword_tag_wrap flex_ alC gap0812" style="white-space:nowrap;overflow-x:auto;">
+                        <li :id=" 'tag_item'+index " class="tag_item" v-for=" (tag, index) in keywordItems " @click=" searchKeyword(index, 'tag_item') ">
+                            <a href=" javascript:void(0) " class="state_btn grey_opa h_32 rad_8 jl_secondary_text cnt_12">{{ tag[0] }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </section>
+    <section class="sec_white sec_search" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'pt80 pb80' : 'pt24 pb40' ">
+        <div class="width_default" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'flex_ alS sb gap40' : '' ">
+            <div class="main_category_wrap" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? '' : 'mb28' " :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'width:25%;' : 'width:100%;' "> <?php # 대분류 메뉴 ?>
+                <?php # 검색전 ?>
+                <template v-if=" searBo == 0 ">
+                    <h4 class="bold_text" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'cnt_24 mb28' : 'mb12' "><?php echo __trans("ffe1cl"); // 분야 ?></h4>
+                    <ul class="shadow_box p0 main_category_list" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? '' : 'mob' ">
+                        <li :id=" 'list_item_' + index " class="list_item bold_text csP" v-for=" (item, index) in MainCategory " @click=" MainCateDefault(index) "> <?php # li 태그에 active 클래스 주면 활성화 ?>
+                            <div class="category_item">
+                                {{ item.category }}
+                            </div>
+                        </li>
+                    </ul>
+                </template>
+                <?php # 검색후 ?>
+                <template v-else>
+                    <h4 class="bold_text" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'cnt_24 mb28' : 'mb12' "><?php echo __trans("ffe1cl"); // 분야 ?></h4>
+                    <ul class="shadow_box p0 main_category_list" :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? '' : 'mob' ">
+                        <li :id=" 'list_item_' + index " class="list_item bold_text csP" v-for=" (item, index) in MainCategory " @click=" MainCate(index) "> <?php # li 태그에 active 클래스 주면 활성화 ?>
+                            <div class="category_item">
+                                {{ item.category }}
+                            </div>
+                        </li>
+                    </ul>
+                </template>
+            </div>
+
+            <div class="main_list_wrap" :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'width:75%;' : 'width:100%;'"> 
+                <?php # 검색후 ?>
+                <template v-if=" searBo != 0 "> 
+                    <div class="flex_ alC mb40">
+                        <h4 class="bold_text jl_sub_text02 cnt_16 mr16"><?php echo __trans("ffe1cl"); // 분야 ?></h4>
+                        <p class="blue_text cnt_16">{{ mainCate }}</p>
+                    </div>
+                </template>
+
+                <div class=" mb20" :class=" sizeMode == 'pc' ? 'flex_ alC sb' : '' ">
+                    <?php # 검색전 ?>
+                    <template v-if=" searBo == 0 ">
+                        <h3 class="bold_text cnt_20 mb28 wbK"><?php echo __trans("os6kuj"); // 최근 가장 많이 인용된 레퍼런스 ?></h3>
+                    </template>
+                    <?php # 검색후 ?>
+                    <template v-else >
+                        <div class="flex_ alC wrap">
+                            <div class="flex_ alC wrap">
+                                <h3 class="bold_text main_text wbK" :class=" sizeMode == 'pc' ? 'cnt_24' : 'cnt_18' ">{{ '”' + input_str_result + '”' }}</h3>
+                                <h3 class="bold_text jl_secondary_text ml4 wbK" :class=" sizeMode == 'pc' ? 'cnt_24' : 'cnt_18' "> {{ searchResult }} <?php echo __trans("zwdh4r"); // 검색결과 ?></h3>
+                            </div>
+                            <template v-if=" popularListArr.length > 0 ">
+                                <h3 class="bold_text jl_sub_text02 wbK" :class=" sizeMode == 'pc' ? 'cnt_18 ml20' : 'cnt_14 ml16' ">{{ popularArrTotal }}<?php echo __trans("6i8g2z"); // 개의 레퍼런스 ?></h3>
+                            </template>
+                        </div>
+                        <div class="flex_ alC end">
+                            <div class="select_box_wrap sort taC" style="max-width: 160px;">
+                                <div id="select_tit" class="select_tit" @click="selectOpen">
+                                    <span :class=" sizeMode == 'pc' ? '' : 'cnt_14' ">{{ sortResult }}</span>
+                                </div>
+                                <div id="select_list_pop" class="select_list_pop mt10">
+                                    <ul id="select_list" class="select_list">
+                                        <li class="select_item select_item1 on">
+                                            <input type="radio" name="select_option" id="select01" @click=" slt_f_order('인기순', '<?php echo __trans("87up47"); // 인기순  ?>') ">
+                                            <label for="select01"><?php echo __trans("87up47"); // 인기순  ?></label>
+                                        </li>
+                                        <li class="select_item select_item2">
+                                            <input type="radio" name="select_option" id="select02" @click=" slt_f_order('연도순', '<?php echo __trans("9yahuz"); // 연도순  ?>') ">
+                                            <label for="select03"><?php echo __trans("9yahuz"); // 연도순  ?></label>
+                                        </li>
+                                        <li class="select_item select_item3">
+                                            <input type="radio" name="select_option" id="select03" @click=" slt_f_order('제목순', '<?php echo __trans("unkfhs"); // 제목순  ?>') ">
+                                            <label for="select04"><?php echo __trans("unkfhs"); // 제목순  ?></label>
+                                        </li>
+                                        <li class="select_item select_item4">
+                                            <input type="radio" name="select_option" id="select03" @click=" slt_f_order('저자순', '<?php echo __trans("ksf9ux"); // 저자순  ?>') ">
+                                            <label for="select04"><?php echo __trans("ksf9ux"); // 저자순  ?></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <?php # 로딩전 ?>
+                <template v-if="isLoading">
+                    <div class="taC">
+                        <img src="../imgs/journal/j_loader.gif" alt="" width="100%" style="height:300px;object-fit:cover;">
+                        <p class="mt12 bold_text jl_not_text wbK" :class=" sizeMode == 'pc' ? 'cnt_20' : '' "><?php echo __trans("cm3tuu"); // 자료를 가져오고 있어요. 잠시만 기다려주세요! ?></p>
+                    </div>
+                </template>
+                <?php # 로딩후 ?>
+                <template v-else>
+                    <?php # 검색전 ?>
+                    <template v-if=" searBo == 0 ">
+                        <?php # 리스트 없을때 ?>
+                        <template v-if=" popularListArrDefault.length == 0 ">
+                            <div class="color_box rad_8 l_grey flex_ alC center column " :class=" sizeMode == 'pc' ? 'pt100 pb100' : 'pt60 pb60' " >
+                                <img src="../imgs/journal/no_data.png" alt="" :width=" sizeMode == 'pc' ? '122' : '80' " :class=" sizeMode == 'pc' ? 'mb34' : 'mb28' ">
+                                <p class="bold_text jl_not_text wbK" :class=" sizeMode == 'pc' ? 'cnt_20 mb10' : 'cnt_18 mb8' ">“{{ field }}” <?php echo __trans("xb1l95"); // 에 가장 많이 인용되는 레퍼런스가 없습니다. ?></p>
+                            </div>
+                        </template>
+                        <?php # 리스트 있을때 ?>
+                        <template v-else>
+                            <ul class="journal_list mb80">
+                                <li class="flex_ alS pt24 pb24" v-for=" (item, index) in popularListArrDefault " style="cursor:default;">
+                                    <div class="num w_grey_text bold_text cnt_20" :class=" numSizeClass " style="min-width:45px;">{{ index + 1 }}</div>
+                                    <div class="cnt_box" style="width: calc(100% - 50px);">
+                                        <a :href=" item.link " target="_blank" class="flex_ alC mb8">
+                                            <h4 class="csP hover_underline_text jl_secondary_text ellipsis_text bold_text cnt_16" :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'max-width:630px;' : 'max-width:80%;' ">{{ item.title }}</h4>
+                                            <div class="icon_new_window ml8" :class=" sizeMode == 'pc' ? 'size_20' : '' "></div>
+                                        </a>
+                                        <div class="flex_ alC mb8 jl_secondary_text cnt_14">
+                                            <p class="ellipsis_text" :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'max-width:280px;' : 'max-width:100px;'">{{ item.author }}</p>
+                                            <i class="bar"></i>
+                                            <div class="flex_ alC blue_text">
+                                                {{ item.main_category }} <em class="arw grey size_12"></em> {{ item.sub_category }}
+                                            </div>
+                                        </div>
+                                        <div class="flex_ alC mb8 jl_secondary_text cnt_14">
+                                            <p class="">{{ item.publisher }}</p>
+                                            <i class="bar"></i>
+                                            <p class="">{{ item.date }}</p>
+                                            <i class="bar"></i>
+                                            <p class=""><?php echo __trans("qhxiw7"); // KCI 피인용지수  ?> {{ item.cited }}</p>
+                                        </div>
+                                        <div class="flex_ alC wrap jl_secondary_text cnt_14" style=" gap:8px; ">
+                                            <div class="flex_ alC center state_btn rad_8 grey_opa p008 cnt_12" style="gap: 8px;min-height:28px;" v-for=" (tagItem, index) in item.keyword ">{{ tagItem }}</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <?php # 검색/대메뉴 선택 후 사라져야하는 영역 ?>
+                            <div class="main_keyword_list_wrap">
+                                <div class="flex_ alC " :class=" sizeMode == 'pc' ? 'mb28' : 'mb20' ">
+                                    <select name="keywordYears" @change=" selectYear() " id="keywordYears" class="slt1 border_none csP bold_text jl_secondary_text " :class=" sizeMode == 'pc' ? 'cnt_20' : 'cnt_18' " style="width:inherit;">
+                                        <option value="1980">1980</option>
+                                        <option value="1990">1990</option>
+                                        <option value="2000">2000</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023" selected>2023</option>
+                                    </select>
+                                    <h5 class="bold_text jl_secondary_text  ml10" :class=" sizeMode == 'pc' ? 'cnt_20' : 'cnt_18' " style="min-width:168px;"><?php echo __trans("uej8mv") // 주요 키워드  ?></h5>
+                                </div>
+                                <div class="divide_line"></div>
+                                <template v-if=" keywordYearItems.length == 0 ">
+                                    <div class="color_box rad_8 l_grey flex_ alC center column " :class=" sizeMode == 'pc' ? 'pt100 pb100' : 'pt60 pb60' " >
+                                        <img src="../imgs/journal/no_data.png" alt="" :width=" sizeMode == 'pc' ? '122' : '80' " :class=" sizeMode == 'pc' ? 'mb34' : 'mb28' ">
+                                        <p class="bold_text jl_not_text wbK" :class=" sizeMode == 'pc' ? 'cnt_20 mb10' : 'cnt_18 mb8' ">“{{ year }}” <?php echo __trans("gr0ac8"); // 년 주요 키워드가 없습니다. ?></p>
+                                    </div>
+                                </template>
+                                <template v-else >
+                                    <ul class="main_keyword_list mb80">
+                                        <li class="list_item flex_ alC psR ofH mt24" v-for=" (item, index) in keywordYearItems ">
+                                            <div class="num w_grey_text cnt_20" style="min-width:34px;">{{ index + 1 }}</div>
+                                            <div class="cnt_box flex_ alC sb" style="gap: 10px;width:calc(100% - 50px)">
+                                                <a href=" javascript:void(0) " :id=" 'list_tag_item'+index " @click="searchKeyword(index, 'list_item')" class="flex_ alC center state_btn grey_opa rad_8 jl_secondary_text" :class=" sizeMode == 'pc' ? '' : 'p008 cnt_12' " style="min-height:32px;">{{ item.keyword }}</a>
+                                                <a href=" javascript:void(0) " :class=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'cnt_14' : 'cnt_12' "><?php echo __trans("7fz1u8") // 관련논문  ?> {{ item.paper_cnt }}<?php echo __trans("vphvbv") // 개  ?></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                    <?php # 검색후 ?>
+                    <template v-else >
+                        <template v-if=" popularListArr.length == 0 ">
+                            <div class="color_box rad_8 l_grey flex_ alC center column " :class=" sizeMode == 'pc' ? 'pt100 pb100' : 'pt60 pb60' " >
+                                <img src="../imgs/journal/no_data.png" alt="" :width=" sizeMode == 'pc' ? '122' : '80' " :class=" sizeMode == 'pc' ? 'mb34' : 'mb28' ">
+                                <p class="bold_text jl_not_text wbK" :class=" sizeMode == 'pc' ? 'cnt_20 mb10' : 'cnt_18 mb8' ">“{{ input_str }}” <?php echo __trans("d0zxtd"); // 에 해당되는 검색결과가 없습니다. ?></p>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <ul class="journal_list mb80">
+                                <li class="flex_ alS pt24 pb24" v-for=" (item, index) in popularListArr " style="cursor:default;">
+                                    <div class="num w_grey_text bold_text cnt_20" :class=" numSizeClass " style="min-width:45px;">{{ item.num }}</div>
+                                    <div class="cnt_box" style="width: calc(100% - 50px);">
+                                        <a :href=" item.link " target="_blank" class="flex_ alC mb8">
+                                            <h4 class="csP hover_underline_text jl_secondary_text ellipsis_text bold_text cnt_16" :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'max-width:630px;' : 'max-width:80%;' ">{{ item.title }}</h4>
+                                            <div class="icon_new_window ml8" :class=" sizeMode == 'pc' ? 'size_20' : '' "></div>
+                                        </a>
+                                        <div class="flex_ alC mb8 jl_secondary_text cnt_14">
+                                            <p class="ellipsis_text" :style=" sizeMode == 'pc' || sizeMode == 'vertical-tablet' ? 'max-width:280px;' : 'max-width:100px;'">{{ item.author }}</p>
+                                            <i class="bar"></i>
+                                            <div class="flex_ alC blue_text">
+                                                {{ item.main_category }} <em class="arw grey size_12"></em> {{ item.sub_category }}
+                                            </div>
+                                        </div>
+                                        <div class="flex_ alC mb8 jl_secondary_text cnt_14">
+                                            <p class="">{{ item.publisher }}</p>
+                                            <i class="bar"></i>
+                                            <p class="">{{ item.date }}</p>
+                                            <i class="bar"></i>
+                                            <p class=""><?php echo __trans("qhxiw7"); // KCI 피인용지수  ?> {{ item.cited }}</p>
+                                        </div>
+                                        <div class="flex_ alC wrap jl_secondary_text cnt_14" style=" gap:8px; ">
+                                            <div class="flex_ alC center state_btn rad_8 grey_opa p008 cnt_12" style="gap: 8px;min-height:28px;" v-for=" (tagItem, index) in item.keyword ">{{ tagItem }}</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <?php # 검색/대메뉴 선택 후 게시글 20개 이상 -> 페이지네이션 생겨야함 ?>
+                            <template v-if=" popularArrTotal > 20 ">
+                                <div class="pagenate_wrap pb90">
+                                    <div class="pagenate">
+                                        <a v-if="page > 1" href="javascript:void(0);" class="ico_btn_p1" @click="paging(1);"></a>
+                                        <a v-if="page > 1" href="javascript:void(0);" class="ico_btn_p2" @click="paging(page-1);"></a>
+                                        <template v-for=" n in topa ">
+                                            <a :class=" (n == page) ? 'aon' : '' " style="cursor: pointer;" @click="paging(n)" v-if=" n >= min && n <= max ">{{ n }}</a>
+                                        </template>
+                                        <a v-if="page < topa" href="javascript:void(0);" class="ico_btn_n2" @click="paging(page+1);"></a>
+                                        <a v-if="page < topa" href="javascript:void(0);" class="ico_btn_n1" @click="paging(topa);"></a>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                    </template>
+                </template>
+            </div>
+        </div>
+    </section>
+    <div class="btn_go_top csP" @click="goTop()" style="display:none;"></div>
+    <?php include "../inc/journal.btm.nx";  ?>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+<script>
+let journal = new Vue({
+	el : '#journal'
+	, name : 'journal'
+	, data : {
+		sizeMode : 'pc'
+        , mainCate : ''
+        , numSizeClass : ''
+        , searchResult : ''
+        , search : '논문명'
+        , field : '<?php echo __trans("6ndmrn"); // 전체  ?>'
+        , sort : '인기순'
+        , sortResult : '<?php echo __trans("87up47"); // 인기순  ?>'
+        , input_str : ''
+        , input_str_result : ''
+        , year : '2022'
+        , searBo : 0
+        , keywordItems : []
+        , keywordYearItems : []
+        , MainCategory : [
+            {
+                category: "<?php echo __trans("6ndmrn"); // 전체  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("35dsru"); // 공학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("0hbuzw"); // 농수해양학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("d9l85z"); // 복합학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("tf0ml1"); // 사회과학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("fz5o6q"); // 예술체육학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("v3m9mf"); // 의약학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("h7ribi"); // 인문학  ?>",
+                link: "javascript:void(0);"
+            }, 
+            {
+                category: "<?php echo __trans("v6xxfh"); // 자연과학  ?>",
+                link: "javascript:void(0);"
+            }
+        ]
+        , popularArrTotal: 0
+        , popularListArr: []
+        , popularListArrDefault: []
+        , totalPaper: 0
+        , totalKeyword: 0
+        , totalPublish: 0
+        , isLoading: false
+        , page: 1
+        , topa : 1
+        , max : 1
+        , min : 1
+        , lang_code : '<?php echo $_lang ?>'
+	}
+	, methods : {
+        dataCounting(){ // 상단 데이터 갯수 보여주는 영역
+            let Z = this;
+
+            axios.get( './json.counting.nx')
+            .then((r) => {
+                let json = r.data.result.result;
+                
+                Z.totalPaper = json.paper_num.toLocaleString();
+                Z.totalKeyword = json.keyword_num.toLocaleString();
+                Z.totalPublish = json.pub_num.toLocaleString();
+            })
+        }
+        , defaultList(){ // 검색전 기본 리스트 5개 가져오기
+            let Z = this;
+            Z.isLoading = true;
+            // Z.loader();
+            this.searBo = 0;
+
+            let frm = new FormData();
+                frm.append('field', Z.field);
+                frm.append('lang_code', Z.lang_code);
+
+            axios.post( './json.trend.default.nx', frm)
+            .then((r) => {
+                let json = r.data.result.result;
+                Z.popularListArrDefault = json;
+                Z.popularListArrDefault.length = 5;
+                Z.isLoading = false;
+                Z.getYearKeyword();
+                this.searBo = 0;
+            }) 
+            .catch((e) => {
+                console.log(e)
+                Z.isLoading = false;
+            })
+        }
+        , getList() { // 검색 후 리스트
+            let Z = this;
+            Z.isLoading = true;
+            this.searBo = 0;
+
+            let frm = new FormData();
+                frm.append('search', Z.search);
+                frm.append('input_str', Z.input_str);
+                frm.append('field', Z.field);
+                frm.append('sort', Z.sort);
+                frm.append('page', Z.page);
+                frm.append('lang_code', Z.lang_code);
+
+            axios.post( './json.trend.nx', frm)
+            .then((res) => {
+                let $json = res.data.result.result;
+                this.searBo = 1;
+                Z.topa = res.data.result.total_page_num; // 전체 페이지네이션 갯수
+                Z.popularListArr = $json;
+                Z.isLoading = false;
+                Z.popularArrTotal = res.data.result.total_paper_num; // 논문 총 갯수
+
+                // 페이지네이션 max 숫자 + min 숫자 계산
+                Z.max = Math.ceil(res.data.result.page / 10) * 10;
+                Z.min = Z.max - 9;
+
+
+                setTimeout(function() { // 바로 디텍 안돼서 delay
+                    Z.selectOn();
+                }, 50)
+
+                
+            })
+            .catch(error => {
+                console.error(error);
+                this.searBo = 0;
+                Z.isLoading = false;
+            });
+        }
+        , getSearch () {
+            let Z = this;
+            let pattern = /[?]/gi;
+
+            if (pattern.test(this.input_str)) {
+                alert("<?php echo(__trans('wi38nr')); // 특수문자는 입력할수 없습니다. ?>");
+                return false;
+            }
+
+            $('.main_category_list li' ).removeClass('active');
+            $('.main_category_list li:nth-child(1)' ).addClass('active');
+            Z.mainCate = '<?php echo __trans("6ndmrn"); // 전체  ?>';
+            Z.field = '<?php echo __trans("6ndmrn"); // 전체  ?>'; // 대메뉴 일단 초기화
+
+            if( this.search == '키워드' ){
+                this.searchResult = '<?php echo __trans("a8e5kh"); // 키워드  ?>';
+            }else if( this.search == '논문명' ){
+                this.searchResult = '<?php echo __trans("91gg57"); // 논문명  ?>';
+            }else if( this.search == '저자명' ){
+                this.searchResult = '<?php echo __trans("gvdgve"); // 저자명  ?>';
+            }
+            Z.input_str_result = this.input_str;
+            this.searBo = 1;
+            this.getList();
+        }
+        , getKeyword () { // 페이지 로드시 검색창 아래 뜨는 키워드
+            let Z = this;
+
+            axios.get( './json.keyword.default.nx') // get 방식
+            .then((r) => {
+                let json = r.data.result.result;
+                Z.keywordItems = json;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
+        , searchKeyword (index, listName) { // 페이지 로드시 검색창 아래 뜨는 키워드 누르면 키워드 검색 되도록
+            let Z = this;
+            let pattern = /[?]/gi;
+
+            if (pattern.test(this.input_str)) {
+                alert("<?php echo(__trans('wi38nr')); // 특수문자는 입력할수 없습니다. ?>");
+                return false;
+            }
+
+            $('.main_category_list li' ).removeClass('active');
+            $('.main_category_list li:nth-child(1)' ).addClass('active');
+            Z.mainCate = '<?php echo __trans("6ndmrn"); // 전체  ?>';
+            Z.field = '<?php echo __trans("6ndmrn"); // 전체  ?>'; // 대메뉴 일단 초기화
+            Z.search = '키워드'
+
+            if( this.search == '키워드' ){
+                this.searchResult = '<?php echo __trans("a8e5kh"); // 키워드  ?>';
+            }
+            if( listName == 'tag_item' ){
+                Z.input_str = $('#tag_item'+index).text();
+            }else if( listName == 'list_item' ){
+                Z.input_str = $('#list_tag_item'+index).text();
+            }
+            Z.input_str_result = this.input_str;
+            this.searBo = 1;
+            this.getList();
+        }
+        , getYearKeyword() { // 연도 검색 / 분야 검색에 따라 변하는 키워드
+            let Z = this;
+            this.loaded = 0;
+
+            let frm = new FormData();
+                frm.append('field', Z.field);
+                frm.append('year', Z.year);
+                frm.append('lang_code', Z.lang_code);
+
+            axios.post( './json.keyword.nx', frm)
+            .then((res) => {
+                let $json = res.data.result.result;
+                Z.keywordYearItems = $json;
+            })
+        }
+        , selectYear() {
+            let Z = this;
+            Z.year = $('#keywordYears').val();
+
+            this.getYearKeyword();
+        }
+        , keyPress (e) {
+            if (e.keyCode == 13) {
+                let pattern = /[?]/gi;
+
+                if ( this.input_str == '' ) {
+                    alert("<?php echo(__trans('sekma7')); // 검색어를 입력해 주세요. ?>");
+                    return false;
+                } else if (pattern.test(this.input_str)) {
+                    alert("<?php echo(__trans('wi38nr')); // 특수문자는 입력할수 없습니다. ?>");
+                    return false;
+                }
+
+                this.getSearch();
+            }
+        }
+        , clear () {
+            this.search = '논문명';
+            this.input_str = '';
+            this.input_str_result = '';
+            this.field = '<?php echo __trans("6ndmrn"); // 전체  ?>';
+            this.searBo = 0;
+            this.sort = '인기순';
+            $('.main_category_list li' ).removeClass('active');
+            $('.main_category_list #list_item_' + 0 ).addClass('active');
+
+            this.defaultList();
+        }
+        , selectOpen () {
+            if( $('#select_list_pop').hasClass('show') ){
+                $('#select_list_pop').removeClass('show');
+                $('#select_tit').removeClass('on');
+            }else {
+                $('#select_list_pop').addClass('show');
+                $('#select_tit').addClass('on');
+            }
+        }
+        , slt_f_order ($desc, $tit) {
+            $('.select_list .select_item').removeClass('on');
+            if( $tit == '<?php echo __trans("87up47"); // 인기순  ?>' ){
+                this.sort = '인기순';
+                this.sortResult = '<?php echo __trans("87up47"); // 인기순  ?>'; // sort title
+                $('.select_list .select_item1').addClass('on');
+            }else if( $tit == '<?php echo __trans("9yahuz"); // 연도순  ?>' ){
+                this.sort = '연도순';
+                this.sortResult = '<?php echo __trans("9yahuz"); // 연도순  ?>';
+                $('.select_list .select_item2').addClass('on');
+            }else if( $tit == '<?php echo __trans("unkfhs"); // 제목순  ?>' ){
+                this.sort = '제목순';
+                this.sortResult = '<?php echo __trans("unkfhs"); // 제목순  ?>';
+                $('.select_list .select_item3').addClass('on');
+            }else if( $tit == '<?php echo __trans("ksf9ux"); // 저자순  ?>' ){
+                this.sort = '저자순';
+                this.sortResult = '<?php echo __trans("ksf9ux"); // 저자순  ?>';
+                $('.select_list .select_item4').addClass('on');
+            }         
+
+            $('#select_list_pop').removeClass('show');
+            $('#select_tit').removeClass('on');
+            this.getList();
+
+        }
+        , selectOn (){// sort 변경시 select_tit 변경/on 추가
+            $('.select_list .select_item').removeClass('on');
+            if( this.sort == '인기순' ){
+                $('.select_list .select_item1').addClass('on');
+            }else if( this.sort == '연도순' ){
+                console.log( $('.select_tit').text() )
+                $('.select_list .select_item2').addClass('on');
+                console.log( $('.select_list .select_item2') )
+            }else if( this.sort == '제목순' ){
+                $('.select_list .select_item3').addClass('on');
+            }else if( this.sort == '저자순' ){
+                $('.select_list .select_item4').addClass('on');
+            }
+        }
+        , MainCateDefault( index ){
+            let Z = this;
+            <?php # 페이지 번호 1로 초기화 ?>
+
+            <?php # 대메뉴 active 활성화 ?>
+            $('.main_category_list li' ).removeClass('active');
+            $('.main_category_list #list_item_' + index ).addClass('active');
+
+            <?php # 분야 카테고리 표시용 ?>
+            Z.mainCate = $('.main_category_list #list_item_' + index ).text();
+
+            <?php # 필드명 바꿔서 전송해주기 ?>
+            Z.field =  $('.main_category_list #list_item_' + index ).text().trim();
+            this.defaultList();
+
+        }
+        , MainCate( index ){
+            let Z = this;
+            <?php # 검색후 page 1번으로 초기화 ?>
+            Z.page = 1;
+
+            <?php # 대메뉴 active 활성화 ?>
+            $('.main_category_list li' ).removeClass('active');
+            $('.main_category_list #list_item_' + index ).addClass('active');
+
+            <?php # 분야 카테고리 표시용 ?>
+            
+            Z.mainCate = $('.main_category_list #list_item_' + index ).text();
+
+            <?php # 필드명 바꿔서 전송해주기 ?>
+            Z.field =  $('.main_category_list #list_item_' + index ).text().trim();
+            this.getList();
+
+        }
+		, goTop(){
+			$('html, body').animate({scrollTop: '0'}, 100);
+		}
+        , loader() { // lottie 로딩 - 다음에 시도해볼예정,,
+            const Z = this;
+
+            try {
+                let lottieAni = bodymovin.loadAnimation({
+                    container: document.getElementById('lottie_loading'), // 필수, 애니메이션 들어가는 곳 
+                    path: 'https://assets9.lottiefiles.com/private_files/lf30_fup2uejx.json', // 필수(url 또는 json파일 다운로드 경로)
+                    renderer: 'svg', // 필수
+                    loop: true, // 반복재생
+                    autoplay: true // 자동재생
+                });
+
+                lottieAni.play();
+            }
+			catch (e) { console.log(e) }
+        }
+        , paging ($num) {
+            this.page = $num;
+
+            if (typeof $num == 'undefined') {
+                this.page = 1;
+            }
+
+            this.getList();
+        }
+	}
+	, mounted : function () {
+		const Z = this
+        Z.dataCounting();
+        Z.defaultList();
+        Z.getKeyword();
+        Z.getYearKeyword();
+
+		<?php # scroll Top ?>
+		$(window).scroll(function () {
+			let scrollHeight = $(this).scrollTop();
+			if (scrollHeight > 50){
+				$('.btn_go_top').show();
+			}
+			else {
+				$('.btn_go_top').hide();
+			}
+		}); 
+
+		window.addEventListener('resize', function () {
+			let sizeMode = checkSize()
+
+			if (Z.sizeMode != sizeMode) {
+				Z.sizeMode = sizeMode
+			}
+		})
+
+        setTimeout(function() { // 바로 디텍 안돼서 delay
+            Z.sizeMode = checkSize()
+        }, 50)
+        // Z.getList(); // 검색전 인기 게시글 리스트
+	}
+})
+
+
+
+$(function () {
+	//페이지 로드 후 애니메이션
+    $('.width_default').css("opacity", "1");
+
+    // 시작할때 메인 카테고리 전체에 active
+    $('.main_category_list li:nth-child(1)').addClass('active');
+
+})
+
+</script>

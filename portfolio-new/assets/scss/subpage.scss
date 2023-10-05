@@ -143,6 +143,16 @@
                     color: #fff;
                 }
             }
+
+            &.journallab {
+                background: $journallab-primary;
+                color: #fff;
+                border: 1px solid $journallab-primary;
+        
+                &:hover {
+                    color: #fff;
+                }
+            }
         }
     }
 

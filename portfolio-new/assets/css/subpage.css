@@ -246,6 +246,14 @@ i[class^=ico-], i[class*=ico-] {
 #subpage .submain__btnbox a.lexcloud:hover {
   color: #fff;
 }
+#subpage .submain__btnbox a.journallab {
+  background: #122649;
+  color: #fff;
+  border: 1px solid #122649;
+}
+#subpage .submain__btnbox a.journallab:hover {
+  color: #fff;
+}
 #subpage .arw {
   position: absolute;
   bottom: 40px;
