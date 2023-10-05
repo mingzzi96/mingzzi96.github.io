@@ -108,6 +108,11 @@ i[class^=ico-], i[class*=ico-] {
   width: 100%;
   height: 100vh;
 }
+@media (max-width: 1024px) {
+  #subpage .submain {
+    height: auto;
+  }
+}
 #subpage .submain__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,10 +122,22 @@ i[class^=ico-], i[class*=ico-] {
           align-items: center;
   height: 100%;
 }
+@media (max-width: 1024px) {
+  #subpage .submain__wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 #subpage .submain__imgbox {
   width: 50%;
   height: 100%;
   overflow: hidden;
+}
+@media (max-width: 1024px) {
+  #subpage .submain__imgbox {
+    width: 100%;
+    height: 500px;
+  }
 }
 #subpage .submain__imgbox img {
   width: 100%;
@@ -129,6 +146,7 @@ i[class^=ico-], i[class*=ico-] {
      object-fit: cover;
 }
 #subpage .submain__textbox {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,6 +157,21 @@ i[class^=ico-], i[class*=ico-] {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 40px;
+  height: 100%;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  #subpage .submain__textbox {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 40px 0;
+    height: auto;
+    max-width: 1280px;
+    width: 95%;
+    margin: 0 auto;
+  }
 }
 #subpage .submain__textbox h3 {
   font-size: 20px;
@@ -150,7 +183,7 @@ i[class^=ico-], i[class*=ico-] {
 }
 #subpage .subdesc__wrap {
   max-width: 1280px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   padding: 10vw 0;
 }
@@ -187,6 +220,11 @@ i[class^=ico-], i[class*=ico-] {
       flex-wrap: wrap;
   gap: 20px;
 }
+@media (max-width: 1024px) {
+  #subpage .submain__btnbox.mob {
+    display: none;
+  }
+}
 #subpage .submain__btnbox a {
   display: inline-block;
   border-radius: 20px;
@@ -207,4 +245,16 @@ i[class^=ico-], i[class*=ico-] {
 }
 #subpage .submain__btnbox a.lexcloud:hover {
   color: #fff;
+}
+#subpage .arw {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media (max-width: 1024px) {
+  #subpage .arw {
+    display: none;
+  }
 }
