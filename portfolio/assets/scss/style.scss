@@ -383,6 +383,12 @@
             width: 100%;
         }
 
+        // &:nth-child(1) {
+        //     .list__item--textbox {
+        //         background: #181818;
+        //     }
+        // }
+
         &:nth-child(1) {
             .list__item--textbox {
                 background: #181818;
@@ -391,23 +397,17 @@
 
         &:nth-child(2) {
             .list__item--textbox {
-                background: #181818;
+                background: #02091a;
             }
         }
 
         &:nth-child(3) {
             .list__item--textbox {
-                background: #02091a;
-            }
-        }
-
-        &:nth-child(4) {
-            .list__item--textbox {
                 background: #70848e;
             }
         }
 
-        &:nth-child(5) {
+        &:nth-child(4) {
             .list__item--textbox {
                 background: #ab502c;
             }

@@ -598,15 +598,12 @@ i[class^=ico-], i[class*=ico-] {
   background: #181818;
 }
 .list__item:nth-child(2) .list__item--textbox {
-  background: #181818;
-}
-.list__item:nth-child(3) .list__item--textbox {
   background: #02091a;
 }
-.list__item:nth-child(4) .list__item--textbox {
+.list__item:nth-child(3) .list__item--textbox {
   background: #70848e;
 }
-.list__item:nth-child(5) .list__item--textbox {
+.list__item:nth-child(4) .list__item--textbox {
   background: #ab502c;
 }
 .list__item--link {
