@@ -598,7 +598,7 @@ i[class^=ico-], i[class*=ico-] {
   background: #181818;
 }
 .list__item:nth-child(2) .list__item--textbox {
-  background: #02091a;
+  background: #d2c246;
 }
 .list__item:nth-child(3) .list__item--textbox {
   background: #70848e;
