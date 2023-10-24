@@ -595,13 +595,13 @@ i[class^=ico-], i[class*=ico-] {
   }
 }
 .list__item:nth-child(1) .list__item--textbox {
-  background: #356992;
+  background: #131313;
 }
 .list__item:nth-child(2) .list__item--textbox {
-  background: #d2c246;
+  background: #356992;
 }
 .list__item:nth-child(3) .list__item--textbox {
-  background: #70848e;
+  background: #d2c246;
 }
 .list__item:nth-child(4) .list__item--textbox {
   background: #ab502c;
