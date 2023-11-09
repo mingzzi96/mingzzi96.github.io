@@ -402,16 +402,33 @@
             }
         }
 
-        // &:nth-child(4) {
-        // todo list
-        //     .list__item--textbox {
-        //         background: #70848e;
-        //     }
-        // }
-
         &:nth-child(4) {
             .list__item--textbox {
                 background: #ab502c;
+            }
+        }
+
+        &:nth-child(5) {
+            .list__item--textbox {
+                background: #d2c246;
+            }
+        }
+
+        &:nth-child(6) {
+            .list__item--textbox {
+                background: #1f1f1f;
+            }
+        }
+
+        &:nth-child(7) {
+            .list__item--textbox {
+                background: #130e3c;
+            }
+        }
+
+        &:nth-child(8) {
+            .list__item--textbox {
+                background: #70848e;
             }
         }
 

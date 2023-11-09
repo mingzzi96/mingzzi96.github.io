@@ -606,6 +606,18 @@ i[class^=ico-], i[class*=ico-] {
 .list__item:nth-child(4) .list__item--textbox {
   background: #ab502c;
 }
+.list__item:nth-child(5) .list__item--textbox {
+  background: #d2c246;
+}
+.list__item:nth-child(6) .list__item--textbox {
+  background: #1f1f1f;
+}
+.list__item:nth-child(7) .list__item--textbox {
+  background: #130e3c;
+}
+.list__item:nth-child(8) .list__item--textbox {
+  background: #70848e;
+}
 .list__item--link {
   display: block;
   width: 100%;
